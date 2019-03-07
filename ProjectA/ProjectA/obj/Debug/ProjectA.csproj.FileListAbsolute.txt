@@ -1,0 +1,9 @@
+c:\users\mamuna\documents\visual studio 2012\Projects\ProjectA\ProjectA\bin\Debug\ProjectA.exe.config
+c:\users\mamuna\documents\visual studio 2012\Projects\ProjectA\ProjectA\bin\Debug\ProjectA.exe
+c:\users\mamuna\documents\visual studio 2012\Projects\ProjectA\ProjectA\bin\Debug\ProjectA.pdb
+c:\users\mamuna\documents\visual studio 2012\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.csprojResolveAssemblyReference.cache
+c:\users\mamuna\documents\visual studio 2012\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.Form1.resources
+c:\users\mamuna\documents\visual studio 2012\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.Properties.Resources.resources
+c:\users\mamuna\documents\visual studio 2012\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.GenerateResource.Cache
+c:\users\mamuna\documents\visual studio 2012\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.exe
+c:\users\mamuna\documents\visual studio 2012\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.pdb

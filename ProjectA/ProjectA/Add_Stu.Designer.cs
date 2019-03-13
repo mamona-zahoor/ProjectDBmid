@@ -30,8 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TPStudents = new System.Windows.Forms.TabPage();
-            this.TPGroups = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBack = new System.Windows.Forms.LinkLabel();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DTP = new System.Windows.Forms.DateTimePicker();
@@ -48,16 +47,13 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.lblBack = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.TPStudents.SuspendLayout();
-            this.TPGroups.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.TPStudents);
-            this.tabControl1.Controls.Add(this.TPGroups);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -90,28 +86,18 @@
             this.TPStudents.Padding = new System.Windows.Forms.Padding(3);
             this.TPStudents.Size = new System.Drawing.Size(695, 405);
             this.TPStudents.TabIndex = 0;
-            this.TPStudents.Text = "Manage Students";
+            this.TPStudents.Text = "Add Students";
             // 
-            // TPGroups
+            // lblBack
             // 
-            this.TPGroups.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.TPGroups.Controls.Add(this.label1);
-            this.TPGroups.Location = new System.Drawing.Point(4, 22);
-            this.TPGroups.Name = "TPGroups";
-            this.TPGroups.Padding = new System.Windows.Forms.Padding(3);
-            this.TPGroups.Size = new System.Drawing.Size(692, 417);
-            this.TPGroups.TabIndex = 1;
-            this.TPGroups.Text = "Manage Groups";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 27);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Add Group";
+            this.lblBack.AutoSize = true;
+            this.lblBack.Location = new System.Drawing.Point(51, 323);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(67, 13);
+            this.lblBack.TabIndex = 82;
+            this.lblBack.TabStop = true;
+            this.lblBack.Text = "Back To List";
+            this.lblBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblBack_LinkClicked);
             // 
             // cmbGender
             // 
@@ -259,17 +245,6 @@
             this.txtFirstName.Size = new System.Drawing.Size(247, 20);
             this.txtFirstName.TabIndex = 66;
             // 
-            // lblBack
-            // 
-            this.lblBack.AutoSize = true;
-            this.lblBack.Location = new System.Drawing.Point(51, 323);
-            this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(67, 13);
-            this.lblBack.TabIndex = 82;
-            this.lblBack.TabStop = true;
-            this.lblBack.Text = "Back To List";
-            this.lblBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblBack_LinkClicked);
-            // 
             // Add_Stu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,8 +257,6 @@
             this.tabControl1.ResumeLayout(false);
             this.TPStudents.ResumeLayout(false);
             this.TPStudents.PerformLayout();
-            this.TPGroups.ResumeLayout(false);
-            this.TPGroups.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -308,8 +281,6 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.TabPage TPGroups;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel lblBack;
     }
 }

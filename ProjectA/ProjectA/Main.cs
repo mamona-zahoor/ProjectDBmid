@@ -24,13 +24,36 @@ namespace ProjectA
             string q = "Select Person.FirstName, Person.LastName, Person.Contact, Person.Email, Person.DateOfBirth, Person.Gender, Student.RegistrationNo from Person join Student on Person.Id = Student.Id";
             cmd = new SqlCommand(q, sqlConn);
             SqlDataReader reader = cmd.ExecuteReader();
+            List<Student> stu = new List<Student>();
+            while (reader.Read())
+            {
+                Student s = new Student();
+                s.First_Name = reader.GetString(0);
+                s.Last_Name = reader.GetString(1);
+                s.Contacts = reader.GetString(2);
+                s.Emails = reader.GetString(3);
+                s.DateOfBirth = reader.GetDateTime(4);
+                if (reader.GetInt32(5) == 2)
+                {
+                    s.gender = "Female";
+                }
+                else
+                {
+                    s.gender = "Male";
+                }
+                s.RegistrationNo = reader.GetString(6);
+                stu.Add(s);
+            }
+            DGV.DataSource = stu;
             reader.Close();
             reader.Dispose();
-
+            string q1 = "Select * from Advisor";
+            cmd = new SqlCommand(q1, sqlConn);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
-            DGV.DataSource = dt;
+            DGVAd.DataSource = dt;
+
         }
 
         private void cmdLogin_Click(object sender, EventArgs e)
@@ -59,7 +82,27 @@ namespace ProjectA
         {
             
         }
-   
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Add_Advisor ad = new Add_Advisor();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

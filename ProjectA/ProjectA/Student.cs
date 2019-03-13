@@ -10,7 +10,7 @@ namespace ProjectA
     {
         private string FirstName;
         private string LastName;
-        private int Gender;
+        private string Gender;
         private string Email;
         private string Contact;
         private DateTime DOB;
@@ -42,7 +42,7 @@ namespace ProjectA
             }
         }
 
-        public int gender
+        public string gender
         {
             get
             {

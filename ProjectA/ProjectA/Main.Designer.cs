@@ -32,23 +32,26 @@
             this.TPStudents = new System.Windows.Forms.TabPage();
             this.lnkAdd = new System.Windows.Forms.LinkLabel();
             this.DGV = new System.Windows.Forms.DataGridView();
-            this.TPGroups = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.TPAdvisors = new System.Windows.Forms.TabPage();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.DGVAd = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.TPStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
-            this.TPGroups.SuspendLayout();
+            this.TPAdvisors.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVAd)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.TPStudents);
-            this.tabControl1.Controls.Add(this.TPGroups);
+            this.tabControl1.Controls.Add(this.TPAdvisors);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(700, 443);
             this.tabControl1.TabIndex = 35;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // TPStudents
             // 
@@ -84,26 +87,38 @@
             this.DGV.Size = new System.Drawing.Size(668, 345);
             this.DGV.TabIndex = 0;
             // 
-            // TPGroups
+            // TPAdvisors
             // 
-            this.TPGroups.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.TPGroups.Controls.Add(this.label1);
-            this.TPGroups.Location = new System.Drawing.Point(4, 22);
-            this.TPGroups.Name = "TPGroups";
-            this.TPGroups.Padding = new System.Windows.Forms.Padding(3);
-            this.TPGroups.Size = new System.Drawing.Size(538, 364);
-            this.TPGroups.TabIndex = 1;
-            this.TPGroups.Text = "Manage Groups";
+            this.TPAdvisors.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPAdvisors.Controls.Add(this.linkLabel1);
+            this.TPAdvisors.Controls.Add(this.DGVAd);
+            this.TPAdvisors.Location = new System.Drawing.Point(4, 22);
+            this.TPAdvisors.Name = "TPAdvisors";
+            this.TPAdvisors.Padding = new System.Windows.Forms.Padding(3);
+            this.TPAdvisors.Size = new System.Drawing.Size(692, 417);
+            this.TPAdvisors.TabIndex = 1;
+            this.TPAdvisors.Text = "Manage Advisors";
             // 
-            // label1
+            // linkLabel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 27);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Add Group";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(22, 17);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(79, 18);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Create New";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // DGVAd
+            // 
+            this.DGVAd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVAd.Location = new System.Drawing.Point(12, 54);
+            this.DGVAd.Name = "DGVAd";
+            this.DGVAd.Size = new System.Drawing.Size(668, 345);
+            this.DGVAd.TabIndex = 2;
+            this.DGVAd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Main
             // 
@@ -118,8 +133,9 @@
             this.TPStudents.ResumeLayout(false);
             this.TPStudents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
-            this.TPGroups.ResumeLayout(false);
-            this.TPGroups.PerformLayout();
+            this.TPAdvisors.ResumeLayout(false);
+            this.TPAdvisors.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVAd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -128,9 +144,10 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage TPStudents;
-        private System.Windows.Forms.TabPage TPGroups;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage TPAdvisors;
         private System.Windows.Forms.LinkLabel lnkAdd;
         private System.Windows.Forms.DataGridView DGV;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.DataGridView DGVAd;
     }
 }

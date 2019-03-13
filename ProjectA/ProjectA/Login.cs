@@ -35,7 +35,7 @@ namespace ProjectA
         {
             if (txtUserName.Text == "Admin" && txtPword.Text == "FYPAdmin")
             {
-                Add_Student Add_Stu = new Add_Student();
+                Main Add_Stu = new Main();
                 Add_Stu.Show();
                 this.Hide();
             }

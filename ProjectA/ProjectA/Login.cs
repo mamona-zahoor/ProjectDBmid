@@ -16,6 +16,7 @@ namespace ProjectA
         public Login()
         {
             InitializeComponent();
+            lblErrorLogin.Hide();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -39,6 +40,18 @@ namespace ProjectA
                 Add_Stu.Show();
                 this.Hide();
             }
+            else
+            {
+                lblErrorLogin.Text = "Invalid Username or Password.";
+                lblErrorLogin.Show();
+            
+                
+            }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -44,6 +44,11 @@
             this.DGVProj = new System.Windows.Forms.DataGridView();
             this.UpdateProj = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DelProj = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.TPEvaluations = new System.Windows.Forms.TabPage();
+            this.lnkAddEvaluation = new System.Windows.Forms.LinkLabel();
+            this.DGVEvaluations = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.TPProjAd = new System.Windows.Forms.TabPage();
             this.AssignProject = new System.Windows.Forms.LinkLabel();
             this.DGVProjAdv = new System.Windows.Forms.DataGridView();
@@ -54,13 +59,20 @@
             this.DGVgroups = new System.Windows.Forms.DataGridView();
             this.Select_Students = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TPAddStu = new System.Windows.Forms.TabPage();
+            this.txtContact = new System.Windows.Forms.TextBox();
+            this.lblErrGen = new System.Windows.Forms.Label();
+            this.lblErrDOB = new System.Windows.Forms.Label();
+            this.lblErrEmail = new System.Windows.Forms.Label();
+            this.lblErrContact = new System.Windows.Forms.Label();
+            this.lblErrRegNo = new System.Windows.Forms.Label();
+            this.lblErrLN = new System.Windows.Forms.Label();
+            this.lblErrFN = new System.Windows.Forms.Label();
             this.lblEditStuId = new System.Windows.Forms.Label();
             this.lblBack = new System.Windows.Forms.LinkLabel();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DTP = new System.Windows.Forms.DateTimePicker();
             this.cmdCreate = new System.Windows.Forms.Button();
-            this.txtContact = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -85,6 +97,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtAdvisorId = new System.Windows.Forms.TextBox();
             this.TPAddAdvisor = new System.Windows.Forms.TabPage();
+            this.lblErrSal = new System.Windows.Forms.Label();
+            this.lblErrDes = new System.Windows.Forms.Label();
+            this.lblErrId = new System.Windows.Forms.Label();
             this.lblEditAdvId = new System.Windows.Forms.Label();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.cmbDes = new System.Windows.Forms.ComboBox();
@@ -102,8 +117,15 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTitleProj = new System.Windows.Forms.TextBox();
             this.TPEditStu = new System.Windows.Forms.TabPage();
+            this.lblErrGenEdit = new System.Windows.Forms.Label();
+            this.lblErrDOBEdit = new System.Windows.Forms.Label();
+            this.lblErrEmailEdit = new System.Windows.Forms.Label();
+            this.lblErrContactEdit = new System.Windows.Forms.Label();
+            this.lblErrRegNoEdit = new System.Windows.Forms.Label();
+            this.lblErrLNEdit = new System.Windows.Forms.Label();
+            this.lblErrFNEdit = new System.Windows.Forms.Label();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.cmbGN = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -138,21 +160,35 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.txtTitleCh = new System.Windows.Forms.TextBox();
-            this.TPEvaluations = new System.Windows.Forms.TabPage();
-            this.lnkAddEvaluation = new System.Windows.Forms.LinkLabel();
-            this.DGVEvaluations = new System.Windows.Forms.DataGridView();
-            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.TPAddEvaluations = new System.Windows.Forms.TabPage();
+            this.cmdAddEva = new System.Windows.Forms.Button();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.NUPweightage = new System.Windows.Forms.NumericUpDown();
+            this.NUPMarks = new System.Windows.Forms.NumericUpDown();
             this.lblTw = new System.Windows.Forms.Label();
             this.lblTMarks = new System.Windows.Forms.Label();
             this.lblNameEva = new System.Windows.Forms.Label();
             this.txtNameEva = new System.Windows.Forms.TextBox();
-            this.NUPMarks = new System.Windows.Forms.NumericUpDown();
-            this.NUPweightage = new System.Windows.Forms.NumericUpDown();
-            this.label30 = new System.Windows.Forms.Label();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
-            this.cmdAddEva = new System.Windows.Forms.Button();
+            this.TPEditEva = new System.Windows.Forms.TabPage();
+            this.lblEditEvaId = new System.Windows.Forms.Label();
+            this.cmdsaveEva = new System.Windows.Forms.Button();
+            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.lblEditEva = new System.Windows.Forms.Label();
+            this.NUDweightageCh = new System.Windows.Forms.NumericUpDown();
+            this.NUDTMarksCh = new System.Windows.Forms.NumericUpDown();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.lblEditNameEva = new System.Windows.Forms.Label();
+            this.txtNameEvaCh = new System.Windows.Forms.TextBox();
+            this.lblErrTitle = new System.Windows.Forms.Label();
+            this.lblErrTitleEdit = new System.Windows.Forms.Label();
+            this.lblNEva = new System.Windows.Forms.Label();
+            this.lblMarks = new System.Windows.Forms.Label();
+            this.lblWeightage = new System.Windows.Forms.Label();
+            this.lblWCH = new System.Windows.Forms.Label();
+            this.lblTMCh = new System.Windows.Forms.Label();
+            this.lblNameCh = new System.Windows.Forms.Label();
             this.TControl.SuspendLayout();
             this.TPStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
@@ -160,6 +196,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVAd)).BeginInit();
             this.TPProjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProj)).BeginInit();
+            this.TPEvaluations.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVEvaluations)).BeginInit();
             this.TPProjAd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProjAdv)).BeginInit();
             this.TPGroups.SuspendLayout();
@@ -171,11 +209,12 @@
             this.TPEditStu.SuspendLayout();
             this.TPEditAdv.SuspendLayout();
             this.TPEditProj.SuspendLayout();
-            this.TPEvaluations.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVEvaluations)).BeginInit();
             this.TPAddEvaluations.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUPMarks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUPweightage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUPMarks)).BeginInit();
+            this.TPEditEva.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDweightageCh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDTMarksCh)).BeginInit();
             this.SuspendLayout();
             // 
             // TControl
@@ -183,6 +222,7 @@
             this.TControl.Controls.Add(this.TPStudents);
             this.TControl.Controls.Add(this.TPAdvisors);
             this.TControl.Controls.Add(this.TPProjects);
+            this.TControl.Controls.Add(this.TPEvaluations);
             this.TControl.Controls.Add(this.TPProjAd);
             this.TControl.Controls.Add(this.TPGroups);
             this.TControl.Controls.Add(this.TPAddStu);
@@ -192,14 +232,14 @@
             this.TControl.Controls.Add(this.TPEditStu);
             this.TControl.Controls.Add(this.TPEditAdv);
             this.TControl.Controls.Add(this.TPEditProj);
-            this.TControl.Controls.Add(this.TPEvaluations);
             this.TControl.Controls.Add(this.TPAddEvaluations);
+            this.TControl.Controls.Add(this.TPEditEva);
             this.TControl.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TControl.Location = new System.Drawing.Point(0, -3);
             this.TControl.Name = "TControl";
             this.TControl.Padding = new System.Drawing.Point(9, 5);
             this.TControl.SelectedIndex = 0;
-            this.TControl.Size = new System.Drawing.Size(756, 484);
+            this.TControl.Size = new System.Drawing.Size(756, 449);
             this.TControl.TabIndex = 35;
             this.TControl.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -231,6 +271,7 @@
             // 
             // DGV
             // 
+            this.DGV.AllowUserToAddRows = false;
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Update,
@@ -329,10 +370,10 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(26, 33);
+            this.linkLabel2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Location = new System.Drawing.Point(8, 24);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(127, 18);
+            this.linkLabel2.Size = new System.Drawing.Size(147, 20);
             this.linkLabel2.TabIndex = 2;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Create New Project";
@@ -346,10 +387,10 @@
             this.DGVProj.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UpdateProj,
             this.DelProj});
-            this.DGVProj.Location = new System.Drawing.Point(8, 76);
+            this.DGVProj.Location = new System.Drawing.Point(4, 66);
             this.DGVProj.Margin = new System.Windows.Forms.Padding(4);
             this.DGVProj.Name = "DGVProj";
-            this.DGVProj.Size = new System.Drawing.Size(737, 372);
+            this.DGVProj.Size = new System.Drawing.Size(737, 339);
             this.DGVProj.TabIndex = 0;
             this.DGVProj.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProj_CellContentClick);
             // 
@@ -366,6 +407,61 @@
             this.DelProj.Name = "DelProj";
             this.DelProj.Text = "Delete";
             this.DelProj.UseColumnTextForButtonValue = true;
+            // 
+            // TPEvaluations
+            // 
+            this.TPEvaluations.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPEvaluations.Controls.Add(this.lnkAddEvaluation);
+            this.TPEvaluations.Controls.Add(this.DGVEvaluations);
+            this.TPEvaluations.Location = new System.Drawing.Point(4, 30);
+            this.TPEvaluations.Name = "TPEvaluations";
+            this.TPEvaluations.Size = new System.Drawing.Size(748, 450);
+            this.TPEvaluations.TabIndex = 12;
+            this.TPEvaluations.Text = "Manage Evaluations";
+            // 
+            // lnkAddEvaluation
+            // 
+            this.lnkAddEvaluation.AutoSize = true;
+            this.lnkAddEvaluation.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkAddEvaluation.Location = new System.Drawing.Point(13, 12);
+            this.lnkAddEvaluation.Name = "lnkAddEvaluation";
+            this.lnkAddEvaluation.Size = new System.Drawing.Size(79, 18);
+            this.lnkAddEvaluation.TabIndex = 3;
+            this.lnkAddEvaluation.TabStop = true;
+            this.lnkAddEvaluation.Text = "Create New";
+            this.lnkAddEvaluation.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAddEvaluation_LinkClicked);
+            // 
+            // DGVEvaluations
+            // 
+            this.DGVEvaluations.AllowUserToAddRows = false;
+            this.DGVEvaluations.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVEvaluations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVEvaluations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewButtonColumn3,
+            this.dataGridViewButtonColumn4});
+            this.DGVEvaluations.Location = new System.Drawing.Point(4, 54);
+            this.DGVEvaluations.Name = "DGVEvaluations";
+            this.DGVEvaluations.Size = new System.Drawing.Size(740, 384);
+            this.DGVEvaluations.TabIndex = 2;
+            this.DGVEvaluations.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVEvaluations_CellContentClick);
+            // 
+            // dataGridViewButtonColumn3
+            // 
+            this.dataGridViewButtonColumn3.DataPropertyName = "Edit";
+            this.dataGridViewButtonColumn3.HeaderText = "Update";
+            this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
+            this.dataGridViewButtonColumn3.Text = "Edit";
+            this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
+            // 
+            // dataGridViewButtonColumn4
+            // 
+            this.dataGridViewButtonColumn4.DataPropertyName = "Delete";
+            this.dataGridViewButtonColumn4.HeaderText = "";
+            this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
+            this.dataGridViewButtonColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewButtonColumn4.Text = "Delete";
+            this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
             // 
             // TPProjAd
             // 
@@ -401,6 +497,7 @@
             this.DGVProjAdv.Name = "DGVProjAdv";
             this.DGVProjAdv.Size = new System.Drawing.Size(749, 396);
             this.DGVProjAdv.TabIndex = 6;
+            this.DGVProjAdv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProjAdv_CellContentClick);
             // 
             // dataGridViewButtonColumn1
             // 
@@ -458,13 +555,20 @@
             // TPAddStu
             // 
             this.TPAddStu.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPAddStu.Controls.Add(this.txtContact);
+            this.TPAddStu.Controls.Add(this.lblErrGen);
+            this.TPAddStu.Controls.Add(this.lblErrDOB);
+            this.TPAddStu.Controls.Add(this.lblErrEmail);
+            this.TPAddStu.Controls.Add(this.lblErrContact);
+            this.TPAddStu.Controls.Add(this.lblErrRegNo);
+            this.TPAddStu.Controls.Add(this.lblErrLN);
+            this.TPAddStu.Controls.Add(this.lblErrFN);
             this.TPAddStu.Controls.Add(this.lblEditStuId);
             this.TPAddStu.Controls.Add(this.lblBack);
             this.TPAddStu.Controls.Add(this.cmbGender);
             this.TPAddStu.Controls.Add(this.label3);
             this.TPAddStu.Controls.Add(this.DTP);
             this.TPAddStu.Controls.Add(this.cmdCreate);
-            this.TPAddStu.Controls.Add(this.txtContact);
             this.TPAddStu.Controls.Add(this.label7);
             this.TPAddStu.Controls.Add(this.label6);
             this.TPAddStu.Controls.Add(this.label5);
@@ -478,14 +582,91 @@
             this.TPAddStu.Controls.Add(this.txtFirstName);
             this.TPAddStu.Location = new System.Drawing.Point(4, 30);
             this.TPAddStu.Name = "TPAddStu";
-            this.TPAddStu.Size = new System.Drawing.Size(748, 450);
+            this.TPAddStu.Size = new System.Drawing.Size(748, 415);
             this.TPAddStu.TabIndex = 5;
             this.TPAddStu.Text = "Add Student";
+            // 
+            // txtContact
+            // 
+            this.txtContact.Location = new System.Drawing.Point(204, 152);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(247, 25);
+            this.txtContact.TabIndex = 109;
+            // 
+            // lblErrGen
+            // 
+            this.lblErrGen.AutoSize = true;
+            this.lblErrGen.ForeColor = System.Drawing.Color.Red;
+            this.lblErrGen.Location = new System.Drawing.Point(474, 238);
+            this.lblErrGen.Name = "lblErrGen";
+            this.lblErrGen.Size = new System.Drawing.Size(63, 17);
+            this.lblErrGen.TabIndex = 107;
+            this.lblErrGen.Text = "ErrorGen";
+            // 
+            // lblErrDOB
+            // 
+            this.lblErrDOB.AutoSize = true;
+            this.lblErrDOB.ForeColor = System.Drawing.Color.Red;
+            this.lblErrDOB.Location = new System.Drawing.Point(474, 210);
+            this.lblErrDOB.Name = "lblErrDOB";
+            this.lblErrDOB.Size = new System.Drawing.Size(71, 17);
+            this.lblErrDOB.TabIndex = 106;
+            this.lblErrDOB.Text = "ErrorDOB";
+            // 
+            // lblErrEmail
+            // 
+            this.lblErrEmail.AutoSize = true;
+            this.lblErrEmail.ForeColor = System.Drawing.Color.Red;
+            this.lblErrEmail.Location = new System.Drawing.Point(474, 181);
+            this.lblErrEmail.Name = "lblErrEmail";
+            this.lblErrEmail.Size = new System.Drawing.Size(76, 17);
+            this.lblErrEmail.TabIndex = 105;
+            this.lblErrEmail.Text = "Error Email";
+            // 
+            // lblErrContact
+            // 
+            this.lblErrContact.AutoSize = true;
+            this.lblErrContact.ForeColor = System.Drawing.Color.Red;
+            this.lblErrContact.Location = new System.Drawing.Point(474, 160);
+            this.lblErrContact.Name = "lblErrContact";
+            this.lblErrContact.Size = new System.Drawing.Size(89, 17);
+            this.lblErrContact.TabIndex = 104;
+            this.lblErrContact.Text = "Error Contact";
+            // 
+            // lblErrRegNo
+            // 
+            this.lblErrRegNo.AutoSize = true;
+            this.lblErrRegNo.ForeColor = System.Drawing.Color.Red;
+            this.lblErrRegNo.Location = new System.Drawing.Point(474, 265);
+            this.lblErrRegNo.Name = "lblErrRegNo";
+            this.lblErrRegNo.Size = new System.Drawing.Size(85, 17);
+            this.lblErrRegNo.TabIndex = 103;
+            this.lblErrRegNo.Text = "Error RegNo";
+            // 
+            // lblErrLN
+            // 
+            this.lblErrLN.AutoSize = true;
+            this.lblErrLN.ForeColor = System.Drawing.Color.Red;
+            this.lblErrLN.Location = new System.Drawing.Point(474, 129);
+            this.lblErrLN.Name = "lblErrLN";
+            this.lblErrLN.Size = new System.Drawing.Size(105, 17);
+            this.lblErrLN.TabIndex = 102;
+            this.lblErrLN.Text = "Error LastName";
+            // 
+            // lblErrFN
+            // 
+            this.lblErrFN.AutoSize = true;
+            this.lblErrFN.ForeColor = System.Drawing.Color.Red;
+            this.lblErrFN.Location = new System.Drawing.Point(474, 98);
+            this.lblErrFN.Name = "lblErrFN";
+            this.lblErrFN.Size = new System.Drawing.Size(62, 17);
+            this.lblErrFN.TabIndex = 101;
+            this.lblErrFN.Text = "Error FN";
             // 
             // lblEditStuId
             // 
             this.lblEditStuId.AutoSize = true;
-            this.lblEditStuId.Location = new System.Drawing.Point(38, 401);
+            this.lblEditStuId.Location = new System.Drawing.Point(8, 429);
             this.lblEditStuId.Name = "lblEditStuId";
             this.lblEditStuId.Size = new System.Drawing.Size(68, 17);
             this.lblEditStuId.TabIndex = 100;
@@ -495,7 +676,7 @@
             // 
             this.lblBack.AutoSize = true;
             this.lblBack.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBack.Location = new System.Drawing.Point(83, 331);
+            this.lblBack.Location = new System.Drawing.Point(43, 332);
             this.lblBack.Name = "lblBack";
             this.lblBack.Size = new System.Drawing.Size(92, 20);
             this.lblBack.TabIndex = 99;
@@ -510,7 +691,7 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cmbGender.Location = new System.Drawing.Point(307, 236);
+            this.cmbGender.Location = new System.Drawing.Point(204, 230);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(247, 25);
             this.cmbGender.TabIndex = 98;
@@ -519,7 +700,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(145, 60);
+            this.label3.Location = new System.Drawing.Point(28, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(167, 27);
             this.label3.TabIndex = 97;
@@ -527,7 +708,7 @@
             // 
             // DTP
             // 
-            this.DTP.Location = new System.Drawing.Point(307, 210);
+            this.DTP.Location = new System.Drawing.Point(204, 204);
             this.DTP.Name = "DTP";
             this.DTP.Size = new System.Drawing.Size(247, 25);
             this.DTP.TabIndex = 96;
@@ -536,115 +717,108 @@
             // 
             this.cmdCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdCreate.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdCreate.Location = new System.Drawing.Point(494, 315);
+            this.cmdCreate.Location = new System.Drawing.Point(548, 319);
             this.cmdCreate.Name = "cmdCreate";
-            this.cmdCreate.Size = new System.Drawing.Size(115, 41);
+            this.cmdCreate.Size = new System.Drawing.Size(134, 44);
             this.cmdCreate.TabIndex = 95;
             this.cmdCreate.Text = "Add";
             this.cmdCreate.UseVisualStyleBackColor = false;
             this.cmdCreate.Click += new System.EventHandler(this.cmdCreate_Click_1);
             // 
-            // txtContact
-            // 
-            this.txtContact.Location = new System.Drawing.Point(307, 158);
-            this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(247, 25);
-            this.txtContact.TabIndex = 94;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(147, 261);
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(44, 255);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(132, 18);
+            this.label7.Size = new System.Drawing.Size(153, 20);
             this.label7.TabIndex = 93;
             this.label7.Text = "Registration Number";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(147, 232);
+            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(44, 226);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 18);
+            this.label6.Size = new System.Drawing.Size(59, 20);
             this.label6.TabIndex = 92;
             this.label6.Text = "Gender";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(147, 205);
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(44, 199);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 18);
+            this.label5.Size = new System.Drawing.Size(102, 20);
             this.label5.TabIndex = 91;
             this.label5.Text = "Date of Birth";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(147, 180);
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(44, 174);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 18);
+            this.label4.Size = new System.Drawing.Size(45, 20);
             this.label4.TabIndex = 90;
             this.label4.Text = "Email";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(147, 156);
+            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(44, 150);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 18);
+            this.label8.Size = new System.Drawing.Size(64, 20);
             this.label8.TabIndex = 89;
             this.label8.Text = "Contact";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(147, 130);
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(44, 124);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 18);
+            this.label9.Size = new System.Drawing.Size(82, 20);
             this.label9.TabIndex = 88;
             this.label9.Text = "Last Name";
             // 
             // lblFN
             // 
             this.lblFN.AutoSize = true;
-            this.lblFN.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFN.Location = new System.Drawing.Point(147, 104);
+            this.lblFN.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFN.Location = new System.Drawing.Point(44, 98);
             this.lblFN.Name = "lblFN";
-            this.lblFN.Size = new System.Drawing.Size(74, 18);
+            this.lblFN.Size = new System.Drawing.Size(86, 20);
             this.lblFN.TabIndex = 87;
             this.lblFN.Text = "First Name";
             // 
             // txtRegNo
             // 
-            this.txtRegNo.Location = new System.Drawing.Point(307, 263);
+            this.txtRegNo.Location = new System.Drawing.Point(204, 257);
             this.txtRegNo.Name = "txtRegNo";
             this.txtRegNo.Size = new System.Drawing.Size(247, 25);
             this.txtRegNo.TabIndex = 86;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(307, 132);
+            this.txtLastName.Location = new System.Drawing.Point(204, 126);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(247, 25);
             this.txtLastName.TabIndex = 85;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(307, 184);
+            this.txtEmail.Location = new System.Drawing.Point(204, 178);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(247, 25);
             this.txtEmail.TabIndex = 84;
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(307, 102);
+            this.txtFirstName.Location = new System.Drawing.Point(204, 98);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(247, 25);
             this.txtFirstName.TabIndex = 83;
@@ -780,6 +954,9 @@
             // TPAddAdvisor
             // 
             this.TPAddAdvisor.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPAddAdvisor.Controls.Add(this.lblErrSal);
+            this.TPAddAdvisor.Controls.Add(this.lblErrDes);
+            this.TPAddAdvisor.Controls.Add(this.lblErrId);
             this.TPAddAdvisor.Controls.Add(this.lblEditAdvId);
             this.TPAddAdvisor.Controls.Add(this.linkLabel5);
             this.TPAddAdvisor.Controls.Add(this.cmbDes);
@@ -792,9 +969,39 @@
             this.TPAddAdvisor.Controls.Add(this.label15);
             this.TPAddAdvisor.Location = new System.Drawing.Point(4, 30);
             this.TPAddAdvisor.Name = "TPAddAdvisor";
-            this.TPAddAdvisor.Size = new System.Drawing.Size(748, 450);
+            this.TPAddAdvisor.Size = new System.Drawing.Size(748, 415);
             this.TPAddAdvisor.TabIndex = 7;
             this.TPAddAdvisor.Text = "Add Advisor";
+            // 
+            // lblErrSal
+            // 
+            this.lblErrSal.AutoSize = true;
+            this.lblErrSal.ForeColor = System.Drawing.Color.Red;
+            this.lblErrSal.Location = new System.Drawing.Point(456, 186);
+            this.lblErrSal.Name = "lblErrSal";
+            this.lblErrSal.Size = new System.Drawing.Size(80, 17);
+            this.lblErrSal.TabIndex = 119;
+            this.lblErrSal.Text = "Error Salary";
+            // 
+            // lblErrDes
+            // 
+            this.lblErrDes.AutoSize = true;
+            this.lblErrDes.ForeColor = System.Drawing.Color.Red;
+            this.lblErrDes.Location = new System.Drawing.Point(456, 155);
+            this.lblErrDes.Name = "lblErrDes";
+            this.lblErrDes.Size = new System.Drawing.Size(79, 17);
+            this.lblErrDes.TabIndex = 117;
+            this.lblErrDes.Text = "Error DEsig";
+            // 
+            // lblErrId
+            // 
+            this.lblErrId.AutoSize = true;
+            this.lblErrId.ForeColor = System.Drawing.Color.Red;
+            this.lblErrId.Location = new System.Drawing.Point(456, 124);
+            this.lblErrId.Name = "lblErrId";
+            this.lblErrId.Size = new System.Drawing.Size(55, 17);
+            this.lblErrId.TabIndex = 116;
+            this.lblErrId.Text = "Error Id";
             // 
             // lblEditAdvId
             // 
@@ -828,7 +1035,7 @@
             "Professor",
             "Associate Professor",
             "Assisstant Professor"});
-            this.cmbDes.Location = new System.Drawing.Point(305, 159);
+            this.cmbDes.Location = new System.Drawing.Point(203, 151);
             this.cmbDes.Name = "cmbDes";
             this.cmbDes.Size = new System.Drawing.Size(247, 25);
             this.cmbDes.TabIndex = 113;
@@ -852,7 +1059,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(160, 132);
+            this.label13.Location = new System.Drawing.Point(58, 124);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(23, 18);
             this.label13.TabIndex = 111;
@@ -863,7 +1070,7 @@
             this.txtId.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtId.Location = new System.Drawing.Point(305, 130);
+            this.txtId.Location = new System.Drawing.Point(203, 122);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(247, 25);
             this.txtId.TabIndex = 110;
@@ -873,7 +1080,7 @@
             this.txtSalary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSalary.Location = new System.Drawing.Point(305, 186);
+            this.txtSalary.Location = new System.Drawing.Point(203, 178);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(247, 25);
             this.txtSalary.TabIndex = 107;
@@ -885,7 +1092,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSal.AutoSize = true;
             this.lblSal.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSal.Location = new System.Drawing.Point(145, 188);
+            this.lblSal.Location = new System.Drawing.Point(43, 180);
             this.lblSal.Name = "lblSal";
             this.lblSal.Size = new System.Drawing.Size(48, 18);
             this.lblSal.TabIndex = 109;
@@ -898,7 +1105,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(145, 162);
+            this.label14.Location = new System.Drawing.Point(43, 154);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(78, 18);
             this.label14.TabIndex = 108;
@@ -917,13 +1124,14 @@
             // TPAddProj
             // 
             this.TPAddProj.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPAddProj.Controls.Add(this.lblErrTitle);
             this.TPAddProj.Controls.Add(this.lblBacklink);
             this.TPAddProj.Controls.Add(this.cmdAddProj);
             this.TPAddProj.Controls.Add(this.RTBDescr);
             this.TPAddProj.Controls.Add(this.label16);
             this.TPAddProj.Controls.Add(this.label17);
             this.TPAddProj.Controls.Add(this.label18);
-            this.TPAddProj.Controls.Add(this.textBox1);
+            this.TPAddProj.Controls.Add(this.txtTitleProj);
             this.TPAddProj.Location = new System.Drawing.Point(4, 30);
             this.TPAddProj.Name = "TPAddProj";
             this.TPAddProj.Size = new System.Drawing.Size(748, 450);
@@ -934,7 +1142,7 @@
             // 
             this.lblBacklink.AutoSize = true;
             this.lblBacklink.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBacklink.Location = new System.Drawing.Point(96, 317);
+            this.lblBacklink.Location = new System.Drawing.Point(31, 297);
             this.lblBacklink.Name = "lblBacklink";
             this.lblBacklink.Size = new System.Drawing.Size(92, 20);
             this.lblBacklink.TabIndex = 100;
@@ -946,7 +1154,7 @@
             // 
             this.cmdAddProj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdAddProj.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdAddProj.Location = new System.Drawing.Point(518, 306);
+            this.cmdAddProj.Location = new System.Drawing.Point(453, 286);
             this.cmdAddProj.Name = "cmdAddProj";
             this.cmdAddProj.Size = new System.Drawing.Size(115, 41);
             this.cmdAddProj.TabIndex = 99;
@@ -956,7 +1164,7 @@
             // 
             // RTBDescr
             // 
-            this.RTBDescr.Location = new System.Drawing.Point(324, 188);
+            this.RTBDescr.Location = new System.Drawing.Point(259, 168);
             this.RTBDescr.Name = "RTBDescr";
             this.RTBDescr.Size = new System.Drawing.Size(247, 96);
             this.RTBDescr.TabIndex = 98;
@@ -966,7 +1174,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(144, 86);
+            this.label16.Location = new System.Drawing.Point(79, 66);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(123, 27);
             this.label16.TabIndex = 97;
@@ -976,7 +1184,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(164, 199);
+            this.label17.Location = new System.Drawing.Point(99, 179);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(89, 20);
             this.label17.TabIndex = 96;
@@ -986,22 +1194,29 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(164, 151);
+            this.label18.Location = new System.Drawing.Point(99, 131);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(118, 20);
             this.label18.TabIndex = 95;
             this.label18.Text = "Title of project";
             // 
-            // textBox1
+            // txtTitleProj
             // 
-            this.textBox1.Location = new System.Drawing.Point(324, 149);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 25);
-            this.textBox1.TabIndex = 94;
+            this.txtTitleProj.Location = new System.Drawing.Point(259, 129);
+            this.txtTitleProj.Name = "txtTitleProj";
+            this.txtTitleProj.Size = new System.Drawing.Size(247, 25);
+            this.txtTitleProj.TabIndex = 94;
             // 
             // TPEditStu
             // 
             this.TPEditStu.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPEditStu.Controls.Add(this.lblErrGenEdit);
+            this.TPEditStu.Controls.Add(this.lblErrDOBEdit);
+            this.TPEditStu.Controls.Add(this.lblErrEmailEdit);
+            this.TPEditStu.Controls.Add(this.lblErrContactEdit);
+            this.TPEditStu.Controls.Add(this.lblErrRegNoEdit);
+            this.TPEditStu.Controls.Add(this.lblErrLNEdit);
+            this.TPEditStu.Controls.Add(this.lblErrFNEdit);
             this.TPEditStu.Controls.Add(this.linkLabel3);
             this.TPEditStu.Controls.Add(this.cmbGN);
             this.TPEditStu.Controls.Add(this.label19);
@@ -1025,6 +1240,76 @@
             this.TPEditStu.TabIndex = 9;
             this.TPEditStu.Text = "Edit Student";
             // 
+            // lblErrGenEdit
+            // 
+            this.lblErrGenEdit.AutoSize = true;
+            this.lblErrGenEdit.ForeColor = System.Drawing.Color.Red;
+            this.lblErrGenEdit.Location = new System.Drawing.Point(451, 229);
+            this.lblErrGenEdit.Name = "lblErrGenEdit";
+            this.lblErrGenEdit.Size = new System.Drawing.Size(63, 17);
+            this.lblErrGenEdit.TabIndex = 123;
+            this.lblErrGenEdit.Text = "ErrorGen";
+            // 
+            // lblErrDOBEdit
+            // 
+            this.lblErrDOBEdit.AutoSize = true;
+            this.lblErrDOBEdit.ForeColor = System.Drawing.Color.Red;
+            this.lblErrDOBEdit.Location = new System.Drawing.Point(451, 201);
+            this.lblErrDOBEdit.Name = "lblErrDOBEdit";
+            this.lblErrDOBEdit.Size = new System.Drawing.Size(71, 17);
+            this.lblErrDOBEdit.TabIndex = 122;
+            this.lblErrDOBEdit.Text = "ErrorDOB";
+            // 
+            // lblErrEmailEdit
+            // 
+            this.lblErrEmailEdit.AutoSize = true;
+            this.lblErrEmailEdit.ForeColor = System.Drawing.Color.Red;
+            this.lblErrEmailEdit.Location = new System.Drawing.Point(451, 172);
+            this.lblErrEmailEdit.Name = "lblErrEmailEdit";
+            this.lblErrEmailEdit.Size = new System.Drawing.Size(76, 17);
+            this.lblErrEmailEdit.TabIndex = 121;
+            this.lblErrEmailEdit.Text = "Error Email";
+            // 
+            // lblErrContactEdit
+            // 
+            this.lblErrContactEdit.AutoSize = true;
+            this.lblErrContactEdit.ForeColor = System.Drawing.Color.Red;
+            this.lblErrContactEdit.Location = new System.Drawing.Point(451, 151);
+            this.lblErrContactEdit.Name = "lblErrContactEdit";
+            this.lblErrContactEdit.Size = new System.Drawing.Size(89, 17);
+            this.lblErrContactEdit.TabIndex = 120;
+            this.lblErrContactEdit.Text = "Error Contact";
+            // 
+            // lblErrRegNoEdit
+            // 
+            this.lblErrRegNoEdit.AutoSize = true;
+            this.lblErrRegNoEdit.ForeColor = System.Drawing.Color.Red;
+            this.lblErrRegNoEdit.Location = new System.Drawing.Point(451, 256);
+            this.lblErrRegNoEdit.Name = "lblErrRegNoEdit";
+            this.lblErrRegNoEdit.Size = new System.Drawing.Size(85, 17);
+            this.lblErrRegNoEdit.TabIndex = 119;
+            this.lblErrRegNoEdit.Text = "Error RegNo";
+            // 
+            // lblErrLNEdit
+            // 
+            this.lblErrLNEdit.AutoSize = true;
+            this.lblErrLNEdit.ForeColor = System.Drawing.Color.Red;
+            this.lblErrLNEdit.Location = new System.Drawing.Point(451, 120);
+            this.lblErrLNEdit.Name = "lblErrLNEdit";
+            this.lblErrLNEdit.Size = new System.Drawing.Size(105, 17);
+            this.lblErrLNEdit.TabIndex = 118;
+            this.lblErrLNEdit.Text = "Error LastName";
+            // 
+            // lblErrFNEdit
+            // 
+            this.lblErrFNEdit.AutoSize = true;
+            this.lblErrFNEdit.ForeColor = System.Drawing.Color.Red;
+            this.lblErrFNEdit.Location = new System.Drawing.Point(451, 89);
+            this.lblErrFNEdit.Name = "lblErrFNEdit";
+            this.lblErrFNEdit.Size = new System.Drawing.Size(62, 17);
+            this.lblErrFNEdit.TabIndex = 117;
+            this.lblErrFNEdit.Text = "Error FN";
+            // 
             // linkLabel3
             // 
             this.linkLabel3.AutoSize = true;
@@ -1043,7 +1328,7 @@
             this.cmbGN.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cmbGN.Location = new System.Drawing.Point(287, 223);
+            this.cmbGN.Location = new System.Drawing.Point(188, 220);
             this.cmbGN.Name = "cmbGN";
             this.cmbGN.Size = new System.Drawing.Size(247, 25);
             this.cmbGN.TabIndex = 115;
@@ -1052,7 +1337,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(125, 52);
+            this.label19.Location = new System.Drawing.Point(26, 49);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(130, 27);
             this.label19.TabIndex = 114;
@@ -1060,7 +1345,7 @@
             // 
             // DTP2
             // 
-            this.DTP2.Location = new System.Drawing.Point(287, 197);
+            this.DTP2.Location = new System.Drawing.Point(188, 194);
             this.DTP2.Name = "DTP2";
             this.DTP2.Size = new System.Drawing.Size(247, 25);
             this.DTP2.TabIndex = 113;
@@ -1079,7 +1364,7 @@
             // 
             // txtLN
             // 
-            this.txtLN.Location = new System.Drawing.Point(287, 115);
+            this.txtLN.Location = new System.Drawing.Point(188, 112);
             this.txtLN.Name = "txtLN";
             this.txtLN.Size = new System.Drawing.Size(247, 25);
             this.txtLN.TabIndex = 111;
@@ -1088,7 +1373,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(127, 261);
+            this.label20.Location = new System.Drawing.Point(28, 258);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(132, 18);
             this.label20.TabIndex = 110;
@@ -1098,7 +1383,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(129, 230);
+            this.label21.Location = new System.Drawing.Point(30, 227);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(52, 18);
             this.label21.TabIndex = 109;
@@ -1108,7 +1393,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(127, 197);
+            this.label22.Location = new System.Drawing.Point(28, 194);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(88, 18);
             this.label22.TabIndex = 108;
@@ -1118,7 +1403,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(127, 172);
+            this.label23.Location = new System.Drawing.Point(28, 169);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(40, 18);
             this.label23.TabIndex = 107;
@@ -1128,7 +1413,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(127, 148);
+            this.label24.Location = new System.Drawing.Point(28, 145);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(54, 18);
             this.label24.TabIndex = 106;
@@ -1138,7 +1423,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(127, 122);
+            this.label25.Location = new System.Drawing.Point(28, 119);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(70, 18);
             this.label25.TabIndex = 105;
@@ -1148,7 +1433,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(127, 96);
+            this.label26.Location = new System.Drawing.Point(28, 93);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(74, 18);
             this.label26.TabIndex = 104;
@@ -1156,14 +1441,14 @@
             // 
             // txtCN
             // 
-            this.txtCN.Location = new System.Drawing.Point(287, 141);
+            this.txtCN.Location = new System.Drawing.Point(188, 138);
             this.txtCN.Name = "txtCN";
             this.txtCN.Size = new System.Drawing.Size(247, 25);
             this.txtCN.TabIndex = 103;
             // 
             // txtEmailCh
             // 
-            this.txtEmailCh.Location = new System.Drawing.Point(287, 167);
+            this.txtEmailCh.Location = new System.Drawing.Point(188, 164);
             this.txtEmailCh.Name = "txtEmailCh";
             this.txtEmailCh.Size = new System.Drawing.Size(247, 25);
             this.txtEmailCh.TabIndex = 102;
@@ -1171,14 +1456,14 @@
             // 
             // txtReg
             // 
-            this.txtReg.Location = new System.Drawing.Point(287, 254);
+            this.txtReg.Location = new System.Drawing.Point(188, 251);
             this.txtReg.Name = "txtReg";
             this.txtReg.Size = new System.Drawing.Size(247, 25);
             this.txtReg.TabIndex = 101;
             // 
             // txtFN
             // 
-            this.txtFN.Location = new System.Drawing.Point(287, 89);
+            this.txtFN.Location = new System.Drawing.Point(188, 86);
             this.txtFN.Name = "txtFN";
             this.txtFN.Size = new System.Drawing.Size(247, 25);
             this.txtFN.TabIndex = 100;
@@ -1288,6 +1573,7 @@
             // TPEditProj
             // 
             this.TPEditProj.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPEditProj.Controls.Add(this.lblErrTitleEdit);
             this.TPEditProj.Controls.Add(this.lblEditProjId);
             this.TPEditProj.Controls.Add(this.lblBackToProj);
             this.TPEditProj.Controls.Add(this.cmdSaveProjCh);
@@ -1315,7 +1601,7 @@
             // 
             this.lblBackToProj.AutoSize = true;
             this.lblBackToProj.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBackToProj.Location = new System.Drawing.Point(106, 326);
+            this.lblBackToProj.Location = new System.Drawing.Point(52, 297);
             this.lblBackToProj.Name = "lblBackToProj";
             this.lblBackToProj.Size = new System.Drawing.Size(92, 20);
             this.lblBackToProj.TabIndex = 107;
@@ -1327,7 +1613,7 @@
             // 
             this.cmdSaveProjCh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdSaveProjCh.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdSaveProjCh.Location = new System.Drawing.Point(561, 309);
+            this.cmdSaveProjCh.Location = new System.Drawing.Point(507, 280);
             this.cmdSaveProjCh.Name = "cmdSaveProjCh";
             this.cmdSaveProjCh.Size = new System.Drawing.Size(126, 53);
             this.cmdSaveProjCh.TabIndex = 106;
@@ -1337,7 +1623,7 @@
             // 
             // RTBDescCh
             // 
-            this.RTBDescCh.Location = new System.Drawing.Point(334, 197);
+            this.RTBDescCh.Location = new System.Drawing.Point(280, 168);
             this.RTBDescCh.Name = "RTBDescCh";
             this.RTBDescCh.Size = new System.Drawing.Size(247, 96);
             this.RTBDescCh.TabIndex = 105;
@@ -1347,7 +1633,7 @@
             // 
             this.lblEditproj.AutoSize = true;
             this.lblEditproj.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditproj.Location = new System.Drawing.Point(154, 95);
+            this.lblEditproj.Location = new System.Drawing.Point(100, 66);
             this.lblEditproj.Name = "lblEditproj";
             this.lblEditproj.Size = new System.Drawing.Size(124, 27);
             this.lblEditproj.TabIndex = 104;
@@ -1357,7 +1643,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(174, 208);
+            this.label31.Location = new System.Drawing.Point(120, 179);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(89, 20);
             this.label31.TabIndex = 103;
@@ -1367,7 +1653,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(174, 160);
+            this.label32.Location = new System.Drawing.Point(120, 131);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(118, 20);
             this.label32.TabIndex = 102;
@@ -1375,69 +1661,17 @@
             // 
             // txtTitleCh
             // 
-            this.txtTitleCh.Location = new System.Drawing.Point(334, 158);
+            this.txtTitleCh.Location = new System.Drawing.Point(280, 129);
             this.txtTitleCh.Name = "txtTitleCh";
             this.txtTitleCh.Size = new System.Drawing.Size(247, 25);
             this.txtTitleCh.TabIndex = 101;
             // 
-            // TPEvaluations
-            // 
-            this.TPEvaluations.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.TPEvaluations.Controls.Add(this.lnkAddEvaluation);
-            this.TPEvaluations.Controls.Add(this.DGVEvaluations);
-            this.TPEvaluations.Location = new System.Drawing.Point(4, 30);
-            this.TPEvaluations.Name = "TPEvaluations";
-            this.TPEvaluations.Size = new System.Drawing.Size(748, 450);
-            this.TPEvaluations.TabIndex = 12;
-            this.TPEvaluations.Text = "Manage Evaluations";
-            // 
-            // lnkAddEvaluation
-            // 
-            this.lnkAddEvaluation.AutoSize = true;
-            this.lnkAddEvaluation.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkAddEvaluation.Location = new System.Drawing.Point(13, 12);
-            this.lnkAddEvaluation.Name = "lnkAddEvaluation";
-            this.lnkAddEvaluation.Size = new System.Drawing.Size(79, 18);
-            this.lnkAddEvaluation.TabIndex = 3;
-            this.lnkAddEvaluation.TabStop = true;
-            this.lnkAddEvaluation.Text = "Create New";
-            this.lnkAddEvaluation.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAddEvaluation_LinkClicked);
-            // 
-            // DGVEvaluations
-            // 
-            this.DGVEvaluations.AllowUserToAddRows = false;
-            this.DGVEvaluations.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGVEvaluations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVEvaluations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewButtonColumn3,
-            this.dataGridViewButtonColumn4});
-            this.DGVEvaluations.Location = new System.Drawing.Point(4, 54);
-            this.DGVEvaluations.Name = "DGVEvaluations";
-            this.DGVEvaluations.Size = new System.Drawing.Size(740, 384);
-            this.DGVEvaluations.TabIndex = 2;
-            this.DGVEvaluations.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVEvaluations_CellContentClick);
-            // 
-            // dataGridViewButtonColumn3
-            // 
-            this.dataGridViewButtonColumn3.DataPropertyName = "Edit";
-            this.dataGridViewButtonColumn3.HeaderText = "Update";
-            this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
-            this.dataGridViewButtonColumn3.Text = "Edit";
-            this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
-            // 
-            // dataGridViewButtonColumn4
-            // 
-            this.dataGridViewButtonColumn4.DataPropertyName = "Delete";
-            this.dataGridViewButtonColumn4.HeaderText = "";
-            this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
-            this.dataGridViewButtonColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewButtonColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewButtonColumn4.Text = "Delete";
-            this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
-            // 
             // TPAddEvaluations
             // 
             this.TPAddEvaluations.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPAddEvaluations.Controls.Add(this.lblWeightage);
+            this.TPAddEvaluations.Controls.Add(this.lblMarks);
+            this.TPAddEvaluations.Controls.Add(this.lblNEva);
             this.TPAddEvaluations.Controls.Add(this.cmdAddEva);
             this.TPAddEvaluations.Controls.Add(this.linkLabel7);
             this.TPAddEvaluations.Controls.Add(this.label30);
@@ -1453,66 +1687,17 @@
             this.TPAddEvaluations.TabIndex = 13;
             this.TPAddEvaluations.Text = "Add Evaluations";
             // 
-            // lblTw
+            // cmdAddEva
             // 
-            this.lblTw.AutoSize = true;
-            this.lblTw.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTw.Location = new System.Drawing.Point(181, 206);
-            this.lblTw.Name = "lblTw";
-            this.lblTw.Size = new System.Drawing.Size(83, 20);
-            this.lblTw.TabIndex = 99;
-            this.lblTw.Text = "Weightage";
-            // 
-            // lblTMarks
-            // 
-            this.lblTMarks.AutoSize = true;
-            this.lblTMarks.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTMarks.Location = new System.Drawing.Point(181, 175);
-            this.lblTMarks.Name = "lblTMarks";
-            this.lblTMarks.Size = new System.Drawing.Size(94, 20);
-            this.lblTMarks.TabIndex = 98;
-            this.lblTMarks.Text = "Total Marks";
-            // 
-            // lblNameEva
-            // 
-            this.lblNameEva.AutoSize = true;
-            this.lblNameEva.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameEva.Location = new System.Drawing.Point(181, 140);
-            this.lblNameEva.Name = "lblNameEva";
-            this.lblNameEva.Size = new System.Drawing.Size(48, 20);
-            this.lblNameEva.TabIndex = 97;
-            this.lblNameEva.Text = "Name";
-            // 
-            // txtNameEva
-            // 
-            this.txtNameEva.Location = new System.Drawing.Point(341, 138);
-            this.txtNameEva.Name = "txtNameEva";
-            this.txtNameEva.Size = new System.Drawing.Size(247, 25);
-            this.txtNameEva.TabIndex = 95;
-            // 
-            // NUPMarks
-            // 
-            this.NUPMarks.Location = new System.Drawing.Point(341, 170);
-            this.NUPMarks.Name = "NUPMarks";
-            this.NUPMarks.Size = new System.Drawing.Size(247, 25);
-            this.NUPMarks.TabIndex = 101;
-            // 
-            // NUPweightage
-            // 
-            this.NUPweightage.Location = new System.Drawing.Point(341, 201);
-            this.NUPweightage.Name = "NUPweightage";
-            this.NUPweightage.Size = new System.Drawing.Size(247, 25);
-            this.NUPweightage.TabIndex = 102;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(58, 67);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(148, 27);
-            this.label30.TabIndex = 105;
-            this.label30.Text = "Add Evaluation";
+            this.cmdAddEva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.cmdAddEva.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAddEva.Location = new System.Drawing.Point(564, 274);
+            this.cmdAddEva.Name = "cmdAddEva";
+            this.cmdAddEva.Size = new System.Drawing.Size(115, 41);
+            this.cmdAddEva.TabIndex = 108;
+            this.cmdAddEva.Text = "Add";
+            this.cmdAddEva.UseVisualStyleBackColor = false;
+            this.cmdAddEva.Click += new System.EventHandler(this.cmdAddEva_Click);
             // 
             // linkLabel7
             // 
@@ -1526,24 +1711,269 @@
             this.linkLabel7.Text = "Back to List";
             this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked_1);
             // 
-            // cmdAddEva
+            // label30
             // 
-            this.cmdAddEva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.cmdAddEva.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdAddEva.Location = new System.Drawing.Point(564, 274);
-            this.cmdAddEva.Name = "cmdAddEva";
-            this.cmdAddEva.Size = new System.Drawing.Size(115, 41);
-            this.cmdAddEva.TabIndex = 108;
-            this.cmdAddEva.Text = "Add";
-            this.cmdAddEva.UseVisualStyleBackColor = false;
-            this.cmdAddEva.Click += new System.EventHandler(this.cmdAddEva_Click);
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(12, 63);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(148, 27);
+            this.label30.TabIndex = 105;
+            this.label30.Text = "Add Evaluation";
+            // 
+            // NUPweightage
+            // 
+            this.NUPweightage.Location = new System.Drawing.Point(211, 193);
+            this.NUPweightage.Name = "NUPweightage";
+            this.NUPweightage.Size = new System.Drawing.Size(247, 25);
+            this.NUPweightage.TabIndex = 102;
+            // 
+            // NUPMarks
+            // 
+            this.NUPMarks.Location = new System.Drawing.Point(211, 162);
+            this.NUPMarks.Name = "NUPMarks";
+            this.NUPMarks.Size = new System.Drawing.Size(247, 25);
+            this.NUPMarks.TabIndex = 101;
+            // 
+            // lblTw
+            // 
+            this.lblTw.AutoSize = true;
+            this.lblTw.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTw.Location = new System.Drawing.Point(88, 193);
+            this.lblTw.Name = "lblTw";
+            this.lblTw.Size = new System.Drawing.Size(83, 20);
+            this.lblTw.TabIndex = 99;
+            this.lblTw.Text = "Weightage";
+            // 
+            // lblTMarks
+            // 
+            this.lblTMarks.AutoSize = true;
+            this.lblTMarks.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTMarks.Location = new System.Drawing.Point(88, 162);
+            this.lblTMarks.Name = "lblTMarks";
+            this.lblTMarks.Size = new System.Drawing.Size(94, 20);
+            this.lblTMarks.TabIndex = 98;
+            this.lblTMarks.Text = "Total Marks";
+            // 
+            // lblNameEva
+            // 
+            this.lblNameEva.AutoSize = true;
+            this.lblNameEva.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameEva.Location = new System.Drawing.Point(88, 127);
+            this.lblNameEva.Name = "lblNameEva";
+            this.lblNameEva.Size = new System.Drawing.Size(48, 20);
+            this.lblNameEva.TabIndex = 97;
+            this.lblNameEva.Text = "Name";
+            // 
+            // txtNameEva
+            // 
+            this.txtNameEva.Location = new System.Drawing.Point(211, 130);
+            this.txtNameEva.Name = "txtNameEva";
+            this.txtNameEva.Size = new System.Drawing.Size(247, 25);
+            this.txtNameEva.TabIndex = 95;
+            // 
+            // TPEditEva
+            // 
+            this.TPEditEva.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPEditEva.Controls.Add(this.lblWCH);
+            this.TPEditEva.Controls.Add(this.lblTMCh);
+            this.TPEditEva.Controls.Add(this.lblNameCh);
+            this.TPEditEva.Controls.Add(this.lblEditEvaId);
+            this.TPEditEva.Controls.Add(this.cmdsaveEva);
+            this.TPEditEva.Controls.Add(this.linkLabel8);
+            this.TPEditEva.Controls.Add(this.lblEditEva);
+            this.TPEditEva.Controls.Add(this.NUDweightageCh);
+            this.TPEditEva.Controls.Add(this.NUDTMarksCh);
+            this.TPEditEva.Controls.Add(this.label34);
+            this.TPEditEva.Controls.Add(this.label35);
+            this.TPEditEva.Controls.Add(this.lblEditNameEva);
+            this.TPEditEva.Controls.Add(this.txtNameEvaCh);
+            this.TPEditEva.Location = new System.Drawing.Point(4, 30);
+            this.TPEditEva.Name = "TPEditEva";
+            this.TPEditEva.Size = new System.Drawing.Size(748, 415);
+            this.TPEditEva.TabIndex = 14;
+            this.TPEditEva.Text = "Edit Evaluation";
+            // 
+            // lblEditEvaId
+            // 
+            this.lblEditEvaId.AutoSize = true;
+            this.lblEditEvaId.Location = new System.Drawing.Point(53, 368);
+            this.lblEditEvaId.Name = "lblEditEvaId";
+            this.lblEditEvaId.Size = new System.Drawing.Size(85, 17);
+            this.lblEditEvaId.TabIndex = 118;
+            this.lblEditEvaId.Text = "Id Evaluation";
+            // 
+            // cmdsaveEva
+            // 
+            this.cmdsaveEva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.cmdsaveEva.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdsaveEva.Location = new System.Drawing.Point(454, 282);
+            this.cmdsaveEva.Name = "cmdsaveEva";
+            this.cmdsaveEva.Size = new System.Drawing.Size(146, 56);
+            this.cmdsaveEva.TabIndex = 117;
+            this.cmdsaveEva.Text = "Save Changes";
+            this.cmdsaveEva.UseVisualStyleBackColor = false;
+            this.cmdsaveEva.Click += new System.EventHandler(this.cmdsaveEva_Click);
+            // 
+            // linkLabel8
+            // 
+            this.linkLabel8.AutoSize = true;
+            this.linkLabel8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel8.Location = new System.Drawing.Point(46, 301);
+            this.linkLabel8.Name = "linkLabel8";
+            this.linkLabel8.Size = new System.Drawing.Size(92, 20);
+            this.linkLabel8.TabIndex = 116;
+            this.linkLabel8.TabStop = true;
+            this.linkLabel8.Text = "Back to List";
+            this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked);
+            // 
+            // lblEditEva
+            // 
+            this.lblEditEva.AutoSize = true;
+            this.lblEditEva.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditEva.Location = new System.Drawing.Point(63, 64);
+            this.lblEditEva.Name = "lblEditEva";
+            this.lblEditEva.Size = new System.Drawing.Size(149, 27);
+            this.lblEditEva.TabIndex = 115;
+            this.lblEditEva.Text = "Edit Evaluation";
+            // 
+            // NUDweightageCh
+            // 
+            this.NUDweightageCh.Location = new System.Drawing.Point(228, 194);
+            this.NUDweightageCh.Name = "NUDweightageCh";
+            this.NUDweightageCh.Size = new System.Drawing.Size(247, 25);
+            this.NUDweightageCh.TabIndex = 114;
+            // 
+            // NUDTMarksCh
+            // 
+            this.NUDTMarksCh.Location = new System.Drawing.Point(228, 163);
+            this.NUDTMarksCh.Name = "NUDTMarksCh";
+            this.NUDTMarksCh.Size = new System.Drawing.Size(247, 25);
+            this.NUDTMarksCh.TabIndex = 113;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(68, 199);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(83, 20);
+            this.label34.TabIndex = 112;
+            this.label34.Text = "Weightage";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(68, 168);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(94, 20);
+            this.label35.TabIndex = 111;
+            this.label35.Text = "Total Marks";
+            // 
+            // lblEditNameEva
+            // 
+            this.lblEditNameEva.AutoSize = true;
+            this.lblEditNameEva.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditNameEva.Location = new System.Drawing.Point(68, 133);
+            this.lblEditNameEva.Name = "lblEditNameEva";
+            this.lblEditNameEva.Size = new System.Drawing.Size(48, 20);
+            this.lblEditNameEva.TabIndex = 110;
+            this.lblEditNameEva.Text = "Name";
+            // 
+            // txtNameEvaCh
+            // 
+            this.txtNameEvaCh.Location = new System.Drawing.Point(228, 131);
+            this.txtNameEvaCh.Name = "txtNameEvaCh";
+            this.txtNameEvaCh.Size = new System.Drawing.Size(247, 25);
+            this.txtNameEvaCh.TabIndex = 109;
+            // 
+            // lblErrTitle
+            // 
+            this.lblErrTitle.AutoSize = true;
+            this.lblErrTitle.ForeColor = System.Drawing.Color.Red;
+            this.lblErrTitle.Location = new System.Drawing.Point(512, 134);
+            this.lblErrTitle.Name = "lblErrTitle";
+            this.lblErrTitle.Size = new System.Drawing.Size(68, 17);
+            this.lblErrTitle.TabIndex = 118;
+            this.lblErrTitle.Text = "Error Title";
+            // 
+            // lblErrTitleEdit
+            // 
+            this.lblErrTitleEdit.AutoSize = true;
+            this.lblErrTitleEdit.ForeColor = System.Drawing.Color.Red;
+            this.lblErrTitleEdit.Location = new System.Drawing.Point(533, 132);
+            this.lblErrTitleEdit.Name = "lblErrTitleEdit";
+            this.lblErrTitleEdit.Size = new System.Drawing.Size(68, 17);
+            this.lblErrTitleEdit.TabIndex = 119;
+            this.lblErrTitleEdit.Text = "Error Title";
+            // 
+            // lblNEva
+            // 
+            this.lblNEva.AutoSize = true;
+            this.lblNEva.ForeColor = System.Drawing.Color.Red;
+            this.lblNEva.Location = new System.Drawing.Point(514, 130);
+            this.lblNEva.Name = "lblNEva";
+            this.lblNEva.Size = new System.Drawing.Size(79, 17);
+            this.lblNEva.TabIndex = 120;
+            this.lblNEva.Text = "Error Name";
+            // 
+            // lblMarks
+            // 
+            this.lblMarks.AutoSize = true;
+            this.lblMarks.ForeColor = System.Drawing.Color.Red;
+            this.lblMarks.Location = new System.Drawing.Point(514, 162);
+            this.lblMarks.Name = "lblMarks";
+            this.lblMarks.Size = new System.Drawing.Size(68, 17);
+            this.lblMarks.TabIndex = 121;
+            this.lblMarks.Text = "Error Title";
+            // 
+            // lblWeightage
+            // 
+            this.lblWeightage.AutoSize = true;
+            this.lblWeightage.ForeColor = System.Drawing.Color.Red;
+            this.lblWeightage.Location = new System.Drawing.Point(514, 196);
+            this.lblWeightage.Name = "lblWeightage";
+            this.lblWeightage.Size = new System.Drawing.Size(68, 17);
+            this.lblWeightage.TabIndex = 122;
+            this.lblWeightage.Text = "Error Title";
+            // 
+            // lblWCH
+            // 
+            this.lblWCH.AutoSize = true;
+            this.lblWCH.ForeColor = System.Drawing.Color.Red;
+            this.lblWCH.Location = new System.Drawing.Point(499, 202);
+            this.lblWCH.Name = "lblWCH";
+            this.lblWCH.Size = new System.Drawing.Size(68, 17);
+            this.lblWCH.TabIndex = 125;
+            this.lblWCH.Text = "Error Title";
+            // 
+            // lblTMCh
+            // 
+            this.lblTMCh.AutoSize = true;
+            this.lblTMCh.ForeColor = System.Drawing.Color.Red;
+            this.lblTMCh.Location = new System.Drawing.Point(499, 168);
+            this.lblTMCh.Name = "lblTMCh";
+            this.lblTMCh.Size = new System.Drawing.Size(68, 17);
+            this.lblTMCh.TabIndex = 124;
+            this.lblTMCh.Text = "Error Title";
+            // 
+            // lblNameCh
+            // 
+            this.lblNameCh.AutoSize = true;
+            this.lblNameCh.ForeColor = System.Drawing.Color.Red;
+            this.lblNameCh.Location = new System.Drawing.Point(499, 136);
+            this.lblNameCh.Name = "lblNameCh";
+            this.lblNameCh.Size = new System.Drawing.Size(79, 17);
+            this.lblNameCh.TabIndex = 123;
+            this.lblNameCh.Text = "Error Name";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.ClientSize = new System.Drawing.Size(757, 482);
+            this.ClientSize = new System.Drawing.Size(757, 445);
             this.Controls.Add(this.TControl);
             this.Name = "Main";
             this.Text = "FYP Management System";
@@ -1558,6 +1988,9 @@
             this.TPProjects.ResumeLayout(false);
             this.TPProjects.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProj)).EndInit();
+            this.TPEvaluations.ResumeLayout(false);
+            this.TPEvaluations.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVEvaluations)).EndInit();
             this.TPProjAd.ResumeLayout(false);
             this.TPProjAd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProjAdv)).EndInit();
@@ -1577,13 +2010,14 @@
             this.TPEditAdv.PerformLayout();
             this.TPEditProj.ResumeLayout(false);
             this.TPEditProj.PerformLayout();
-            this.TPEvaluations.ResumeLayout(false);
-            this.TPEvaluations.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVEvaluations)).EndInit();
             this.TPAddEvaluations.ResumeLayout(false);
             this.TPAddEvaluations.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUPMarks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUPweightage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUPMarks)).EndInit();
+            this.TPEditEva.ResumeLayout(false);
+            this.TPEditEva.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDweightageCh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDTMarksCh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1614,7 +2048,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker DTP;
         private System.Windows.Forms.Button cmdCreate;
-        private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -1655,7 +2088,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTitleProj;
         private System.Windows.Forms.DataGridViewButtonColumn UpdateProj;
         private System.Windows.Forms.DataGridViewButtonColumn DelProj;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
@@ -1715,5 +2148,42 @@
         private System.Windows.Forms.LinkLabel linkLabel7;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button cmdAddEva;
+        private System.Windows.Forms.TabPage TPEditEva;
+        private System.Windows.Forms.Label lblEditEvaId;
+        private System.Windows.Forms.Button cmdsaveEva;
+        private System.Windows.Forms.LinkLabel linkLabel8;
+        private System.Windows.Forms.Label lblEditEva;
+        private System.Windows.Forms.NumericUpDown NUDweightageCh;
+        private System.Windows.Forms.NumericUpDown NUDTMarksCh;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label lblEditNameEva;
+        private System.Windows.Forms.TextBox txtNameEvaCh;
+        private System.Windows.Forms.Label lblErrGen;
+        private System.Windows.Forms.Label lblErrDOB;
+        private System.Windows.Forms.Label lblErrEmail;
+        private System.Windows.Forms.Label lblErrContact;
+        private System.Windows.Forms.Label lblErrRegNo;
+        private System.Windows.Forms.Label lblErrLN;
+        private System.Windows.Forms.Label lblErrFN;
+        private System.Windows.Forms.TextBox txtContact;
+        private System.Windows.Forms.Label lblErrGenEdit;
+        private System.Windows.Forms.Label lblErrDOBEdit;
+        private System.Windows.Forms.Label lblErrEmailEdit;
+        private System.Windows.Forms.Label lblErrContactEdit;
+        private System.Windows.Forms.Label lblErrRegNoEdit;
+        private System.Windows.Forms.Label lblErrLNEdit;
+        private System.Windows.Forms.Label lblErrFNEdit;
+        private System.Windows.Forms.Label lblErrSal;
+        private System.Windows.Forms.Label lblErrDes;
+        private System.Windows.Forms.Label lblErrId;
+        private System.Windows.Forms.Label lblErrTitle;
+        private System.Windows.Forms.Label lblErrTitleEdit;
+        private System.Windows.Forms.Label lblWeightage;
+        private System.Windows.Forms.Label lblMarks;
+        private System.Windows.Forms.Label lblNEva;
+        private System.Windows.Forms.Label lblWCH;
+        private System.Windows.Forms.Label lblTMCh;
+        private System.Windows.Forms.Label lblNameCh;
     }
 }

@@ -111,6 +111,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.TPAddProj = new System.Windows.Forms.TabPage();
+            this.lblErrTitle = new System.Windows.Forms.Label();
             this.lblBacklink = new System.Windows.Forms.LinkLabel();
             this.cmdAddProj = new System.Windows.Forms.Button();
             this.RTBDescr = new System.Windows.Forms.RichTextBox();
@@ -152,6 +153,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.TPEditProj = new System.Windows.Forms.TabPage();
+            this.lblErrTitleEdit = new System.Windows.Forms.Label();
             this.lblEditProjId = new System.Windows.Forms.Label();
             this.lblBackToProj = new System.Windows.Forms.LinkLabel();
             this.cmdSaveProjCh = new System.Windows.Forms.Button();
@@ -161,6 +163,9 @@
             this.label32 = new System.Windows.Forms.Label();
             this.txtTitleCh = new System.Windows.Forms.TextBox();
             this.TPAddEvaluations = new System.Windows.Forms.TabPage();
+            this.lblWeightage = new System.Windows.Forms.Label();
+            this.lblMarks = new System.Windows.Forms.Label();
+            this.lblNEva = new System.Windows.Forms.Label();
             this.cmdAddEva = new System.Windows.Forms.Button();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.label30 = new System.Windows.Forms.Label();
@@ -171,6 +176,9 @@
             this.lblNameEva = new System.Windows.Forms.Label();
             this.txtNameEva = new System.Windows.Forms.TextBox();
             this.TPEditEva = new System.Windows.Forms.TabPage();
+            this.lblWCH = new System.Windows.Forms.Label();
+            this.lblTMCh = new System.Windows.Forms.Label();
+            this.lblNameCh = new System.Windows.Forms.Label();
             this.lblEditEvaId = new System.Windows.Forms.Label();
             this.cmdsaveEva = new System.Windows.Forms.Button();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
@@ -181,14 +189,22 @@
             this.label35 = new System.Windows.Forms.Label();
             this.lblEditNameEva = new System.Windows.Forms.Label();
             this.txtNameEvaCh = new System.Windows.Forms.TextBox();
-            this.lblErrTitle = new System.Windows.Forms.Label();
-            this.lblErrTitleEdit = new System.Windows.Forms.Label();
-            this.lblNEva = new System.Windows.Forms.Label();
-            this.lblMarks = new System.Windows.Forms.Label();
-            this.lblWeightage = new System.Windows.Forms.Label();
-            this.lblWCH = new System.Windows.Forms.Label();
-            this.lblTMCh = new System.Windows.Forms.Label();
-            this.lblNameCh = new System.Windows.Forms.Label();
+            this.TPEditProjAdv = new System.Windows.Forms.TabPage();
+            this.lblBackProjEdit = new System.Windows.Forms.LinkLabel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.cmbAdvRoleCh = new System.Windows.Forms.ComboBox();
+            this.DTPProjAdvCh = new System.Windows.Forms.DateTimePicker();
+            this.txtProjTitleCh = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtAdvIdCh = new System.Windows.Forms.TextBox();
+            this.lblErrAssignDate = new System.Windows.Forms.Label();
+            this.lblErrAdvId = new System.Windows.Forms.Label();
+            this.lblErrProject = new System.Windows.Forms.Label();
+            this.lblErrAdvRole = new System.Windows.Forms.Label();
             this.TControl.SuspendLayout();
             this.TPStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
@@ -215,6 +231,7 @@
             this.TPEditEva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDweightageCh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDTMarksCh)).BeginInit();
+            this.TPEditProjAdv.SuspendLayout();
             this.SuspendLayout();
             // 
             // TControl
@@ -234,6 +251,7 @@
             this.TControl.Controls.Add(this.TPEditProj);
             this.TControl.Controls.Add(this.TPAddEvaluations);
             this.TControl.Controls.Add(this.TPEditEva);
+            this.TControl.Controls.Add(this.TPEditProjAdv);
             this.TControl.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TControl.Location = new System.Drawing.Point(0, -3);
             this.TControl.Name = "TControl";
@@ -252,7 +270,7 @@
             this.TPStudents.Location = new System.Drawing.Point(4, 30);
             this.TPStudents.Name = "TPStudents";
             this.TPStudents.Padding = new System.Windows.Forms.Padding(3);
-            this.TPStudents.Size = new System.Drawing.Size(748, 450);
+            this.TPStudents.Size = new System.Drawing.Size(748, 415);
             this.TPStudents.TabIndex = 0;
             this.TPStudents.Text = "Manage Students";
             this.TPStudents.Click += new System.EventHandler(this.TPStudents_Click);
@@ -308,7 +326,7 @@
             this.TPAdvisors.Location = new System.Drawing.Point(4, 30);
             this.TPAdvisors.Name = "TPAdvisors";
             this.TPAdvisors.Padding = new System.Windows.Forms.Padding(3);
-            this.TPAdvisors.Size = new System.Drawing.Size(748, 450);
+            this.TPAdvisors.Size = new System.Drawing.Size(748, 415);
             this.TPAdvisors.TabIndex = 1;
             this.TPAdvisors.Text = "Manage Advisors";
             // 
@@ -363,7 +381,7 @@
             this.TPProjects.Controls.Add(this.DGVProj);
             this.TPProjects.Location = new System.Drawing.Point(4, 30);
             this.TPProjects.Name = "TPProjects";
-            this.TPProjects.Size = new System.Drawing.Size(748, 450);
+            this.TPProjects.Size = new System.Drawing.Size(748, 415);
             this.TPProjects.TabIndex = 2;
             this.TPProjects.Text = "Manage Projects";
             // 
@@ -415,7 +433,7 @@
             this.TPEvaluations.Controls.Add(this.DGVEvaluations);
             this.TPEvaluations.Location = new System.Drawing.Point(4, 30);
             this.TPEvaluations.Name = "TPEvaluations";
-            this.TPEvaluations.Size = new System.Drawing.Size(748, 450);
+            this.TPEvaluations.Size = new System.Drawing.Size(748, 415);
             this.TPEvaluations.TabIndex = 12;
             this.TPEvaluations.Text = "Manage Evaluations";
             // 
@@ -470,7 +488,7 @@
             this.TPProjAd.Controls.Add(this.DGVProjAdv);
             this.TPProjAd.Location = new System.Drawing.Point(4, 30);
             this.TPProjAd.Name = "TPProjAd";
-            this.TPProjAd.Size = new System.Drawing.Size(748, 450);
+            this.TPProjAd.Size = new System.Drawing.Size(748, 415);
             this.TPProjAd.TabIndex = 3;
             this.TPProjAd.Text = "Manage Project Advisors";
             // 
@@ -489,6 +507,7 @@
             // DGVProjAdv
             // 
             this.DGVProjAdv.AllowUserToAddRows = false;
+            this.DGVProjAdv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVProjAdv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVProjAdv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewButtonColumn1,
@@ -524,7 +543,7 @@
             this.TPGroups.Controls.Add(this.DGVgroups);
             this.TPGroups.Location = new System.Drawing.Point(4, 30);
             this.TPGroups.Name = "TPGroups";
-            this.TPGroups.Size = new System.Drawing.Size(748, 450);
+            this.TPGroups.Size = new System.Drawing.Size(748, 415);
             this.TPGroups.TabIndex = 4;
             this.TPGroups.Text = "Manage Groups";
             // 
@@ -826,6 +845,10 @@
             // TPAddAdv
             // 
             this.TPAddAdv.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPAddAdv.Controls.Add(this.lblErrAdvRole);
+            this.TPAddAdv.Controls.Add(this.lblErrAssignDate);
+            this.TPAddAdv.Controls.Add(this.lblErrAdvId);
+            this.TPAddAdv.Controls.Add(this.lblErrProject);
             this.TPAddAdv.Controls.Add(this.linkLabel4);
             this.TPAddAdv.Controls.Add(this.cmdAddProjAdv);
             this.TPAddAdv.Controls.Add(this.label1);
@@ -839,7 +862,7 @@
             this.TPAddAdv.Controls.Add(this.txtAdvisorId);
             this.TPAddAdv.Location = new System.Drawing.Point(4, 30);
             this.TPAddAdv.Name = "TPAddAdv";
-            this.TPAddAdv.Size = new System.Drawing.Size(748, 450);
+            this.TPAddAdv.Size = new System.Drawing.Size(748, 415);
             this.TPAddAdv.TabIndex = 6;
             this.TPAddAdv.Text = "Add  Project Advisor";
             // 
@@ -871,7 +894,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 46);
+            this.label1.Location = new System.Drawing.Point(45, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 27);
             this.label1.TabIndex = 115;
@@ -883,8 +906,8 @@
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Items.AddRange(new object[] {
             "Main advisor",
-            "Co-advisor",
-            "Industry advisor"});
+            "Co-Advisror",
+            "Industry Advisor"});
             this.cmbRole.Location = new System.Drawing.Point(242, 203);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(247, 25);
@@ -1134,9 +1157,19 @@
             this.TPAddProj.Controls.Add(this.txtTitleProj);
             this.TPAddProj.Location = new System.Drawing.Point(4, 30);
             this.TPAddProj.Name = "TPAddProj";
-            this.TPAddProj.Size = new System.Drawing.Size(748, 450);
+            this.TPAddProj.Size = new System.Drawing.Size(748, 415);
             this.TPAddProj.TabIndex = 8;
             this.TPAddProj.Text = "Add Projects";
+            // 
+            // lblErrTitle
+            // 
+            this.lblErrTitle.AutoSize = true;
+            this.lblErrTitle.ForeColor = System.Drawing.Color.Red;
+            this.lblErrTitle.Location = new System.Drawing.Point(512, 134);
+            this.lblErrTitle.Name = "lblErrTitle";
+            this.lblErrTitle.Size = new System.Drawing.Size(68, 17);
+            this.lblErrTitle.TabIndex = 118;
+            this.lblErrTitle.Text = "Error Title";
             // 
             // lblBacklink
             // 
@@ -1236,7 +1269,7 @@
             this.TPEditStu.Controls.Add(this.txtFN);
             this.TPEditStu.Location = new System.Drawing.Point(4, 30);
             this.TPEditStu.Name = "TPEditStu";
-            this.TPEditStu.Size = new System.Drawing.Size(748, 450);
+            this.TPEditStu.Size = new System.Drawing.Size(748, 415);
             this.TPEditStu.TabIndex = 9;
             this.TPEditStu.Text = "Edit Student";
             // 
@@ -1480,7 +1513,7 @@
             this.TPEditAdv.Controls.Add(this.label29);
             this.TPEditAdv.Location = new System.Drawing.Point(4, 30);
             this.TPEditAdv.Name = "TPEditAdv";
-            this.TPEditAdv.Size = new System.Drawing.Size(748, 450);
+            this.TPEditAdv.Size = new System.Drawing.Size(748, 415);
             this.TPEditAdv.TabIndex = 10;
             this.TPEditAdv.Text = "Edit Advisor";
             // 
@@ -1584,9 +1617,19 @@
             this.TPEditProj.Controls.Add(this.txtTitleCh);
             this.TPEditProj.Location = new System.Drawing.Point(4, 30);
             this.TPEditProj.Name = "TPEditProj";
-            this.TPEditProj.Size = new System.Drawing.Size(748, 450);
+            this.TPEditProj.Size = new System.Drawing.Size(748, 415);
             this.TPEditProj.TabIndex = 11;
             this.TPEditProj.Text = "Edit Project";
+            // 
+            // lblErrTitleEdit
+            // 
+            this.lblErrTitleEdit.AutoSize = true;
+            this.lblErrTitleEdit.ForeColor = System.Drawing.Color.Red;
+            this.lblErrTitleEdit.Location = new System.Drawing.Point(533, 132);
+            this.lblErrTitleEdit.Name = "lblErrTitleEdit";
+            this.lblErrTitleEdit.Size = new System.Drawing.Size(68, 17);
+            this.lblErrTitleEdit.TabIndex = 119;
+            this.lblErrTitleEdit.Text = "Error Title";
             // 
             // lblEditProjId
             // 
@@ -1683,9 +1726,39 @@
             this.TPAddEvaluations.Controls.Add(this.txtNameEva);
             this.TPAddEvaluations.Location = new System.Drawing.Point(4, 30);
             this.TPAddEvaluations.Name = "TPAddEvaluations";
-            this.TPAddEvaluations.Size = new System.Drawing.Size(748, 450);
+            this.TPAddEvaluations.Size = new System.Drawing.Size(748, 415);
             this.TPAddEvaluations.TabIndex = 13;
             this.TPAddEvaluations.Text = "Add Evaluations";
+            // 
+            // lblWeightage
+            // 
+            this.lblWeightage.AutoSize = true;
+            this.lblWeightage.ForeColor = System.Drawing.Color.Red;
+            this.lblWeightage.Location = new System.Drawing.Point(514, 196);
+            this.lblWeightage.Name = "lblWeightage";
+            this.lblWeightage.Size = new System.Drawing.Size(68, 17);
+            this.lblWeightage.TabIndex = 122;
+            this.lblWeightage.Text = "Error Title";
+            // 
+            // lblMarks
+            // 
+            this.lblMarks.AutoSize = true;
+            this.lblMarks.ForeColor = System.Drawing.Color.Red;
+            this.lblMarks.Location = new System.Drawing.Point(514, 162);
+            this.lblMarks.Name = "lblMarks";
+            this.lblMarks.Size = new System.Drawing.Size(68, 17);
+            this.lblMarks.TabIndex = 121;
+            this.lblMarks.Text = "Error Title";
+            // 
+            // lblNEva
+            // 
+            this.lblNEva.AutoSize = true;
+            this.lblNEva.ForeColor = System.Drawing.Color.Red;
+            this.lblNEva.Location = new System.Drawing.Point(514, 130);
+            this.lblNEva.Name = "lblNEva";
+            this.lblNEva.Size = new System.Drawing.Size(79, 17);
+            this.lblNEva.TabIndex = 120;
+            this.lblNEva.Text = "Error Name";
             // 
             // cmdAddEva
             // 
@@ -1794,6 +1867,36 @@
             this.TPEditEva.TabIndex = 14;
             this.TPEditEva.Text = "Edit Evaluation";
             // 
+            // lblWCH
+            // 
+            this.lblWCH.AutoSize = true;
+            this.lblWCH.ForeColor = System.Drawing.Color.Red;
+            this.lblWCH.Location = new System.Drawing.Point(499, 202);
+            this.lblWCH.Name = "lblWCH";
+            this.lblWCH.Size = new System.Drawing.Size(105, 17);
+            this.lblWCH.TabIndex = 125;
+            this.lblWCH.Text = "Error Weightage";
+            // 
+            // lblTMCh
+            // 
+            this.lblTMCh.AutoSize = true;
+            this.lblTMCh.ForeColor = System.Drawing.Color.Red;
+            this.lblTMCh.Location = new System.Drawing.Point(499, 168);
+            this.lblTMCh.Name = "lblTMCh";
+            this.lblTMCh.Size = new System.Drawing.Size(68, 17);
+            this.lblTMCh.TabIndex = 124;
+            this.lblTMCh.Text = "Error Title";
+            // 
+            // lblNameCh
+            // 
+            this.lblNameCh.AutoSize = true;
+            this.lblNameCh.ForeColor = System.Drawing.Color.Red;
+            this.lblNameCh.Location = new System.Drawing.Point(499, 136);
+            this.lblNameCh.Name = "lblNameCh";
+            this.lblNameCh.Size = new System.Drawing.Size(79, 17);
+            this.lblNameCh.TabIndex = 123;
+            this.lblNameCh.Text = "Error Name";
+            // 
             // lblEditEvaId
             // 
             this.lblEditEvaId.AutoSize = true;
@@ -1888,85 +1991,173 @@
             this.txtNameEvaCh.Size = new System.Drawing.Size(247, 25);
             this.txtNameEvaCh.TabIndex = 109;
             // 
-            // lblErrTitle
+            // TPEditProjAdv
             // 
-            this.lblErrTitle.AutoSize = true;
-            this.lblErrTitle.ForeColor = System.Drawing.Color.Red;
-            this.lblErrTitle.Location = new System.Drawing.Point(512, 134);
-            this.lblErrTitle.Name = "lblErrTitle";
-            this.lblErrTitle.Size = new System.Drawing.Size(68, 17);
-            this.lblErrTitle.TabIndex = 118;
-            this.lblErrTitle.Text = "Error Title";
+            this.TPEditProjAdv.Controls.Add(this.lblBackProjEdit);
+            this.TPEditProjAdv.Controls.Add(this.button2);
+            this.TPEditProjAdv.Controls.Add(this.label33);
+            this.TPEditProjAdv.Controls.Add(this.cmbAdvRoleCh);
+            this.TPEditProjAdv.Controls.Add(this.DTPProjAdvCh);
+            this.TPEditProjAdv.Controls.Add(this.txtProjTitleCh);
+            this.TPEditProjAdv.Controls.Add(this.label36);
+            this.TPEditProjAdv.Controls.Add(this.label37);
+            this.TPEditProjAdv.Controls.Add(this.label38);
+            this.TPEditProjAdv.Controls.Add(this.label39);
+            this.TPEditProjAdv.Controls.Add(this.txtAdvIdCh);
+            this.TPEditProjAdv.Location = new System.Drawing.Point(4, 30);
+            this.TPEditProjAdv.Name = "TPEditProjAdv";
+            this.TPEditProjAdv.Size = new System.Drawing.Size(748, 415);
+            this.TPEditProjAdv.TabIndex = 15;
+            this.TPEditProjAdv.Text = "Edit Project Advisor";
+            this.TPEditProjAdv.UseVisualStyleBackColor = true;
             // 
-            // lblErrTitleEdit
+            // lblBackProjEdit
             // 
-            this.lblErrTitleEdit.AutoSize = true;
-            this.lblErrTitleEdit.ForeColor = System.Drawing.Color.Red;
-            this.lblErrTitleEdit.Location = new System.Drawing.Point(533, 132);
-            this.lblErrTitleEdit.Name = "lblErrTitleEdit";
-            this.lblErrTitleEdit.Size = new System.Drawing.Size(68, 17);
-            this.lblErrTitleEdit.TabIndex = 119;
-            this.lblErrTitleEdit.Text = "Error Title";
+            this.lblBackProjEdit.AutoSize = true;
+            this.lblBackProjEdit.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBackProjEdit.Location = new System.Drawing.Point(100, 321);
+            this.lblBackProjEdit.Name = "lblBackProjEdit";
+            this.lblBackProjEdit.Size = new System.Drawing.Size(92, 20);
+            this.lblBackProjEdit.TabIndex = 129;
+            this.lblBackProjEdit.TabStop = true;
+            this.lblBackProjEdit.Text = "Back to List";
+            this.lblBackProjEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblBackProjEdit_LinkClicked);
             // 
-            // lblNEva
+            // button2
             // 
-            this.lblNEva.AutoSize = true;
-            this.lblNEva.ForeColor = System.Drawing.Color.Red;
-            this.lblNEva.Location = new System.Drawing.Point(514, 130);
-            this.lblNEva.Name = "lblNEva";
-            this.lblNEva.Size = new System.Drawing.Size(79, 17);
-            this.lblNEva.TabIndex = 120;
-            this.lblNEva.Text = "Error Name";
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(483, 291);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(155, 61);
+            this.button2.TabIndex = 127;
+            this.button2.Text = "Save Changes";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_3);
             // 
-            // lblMarks
+            // label33
             // 
-            this.lblMarks.AutoSize = true;
-            this.lblMarks.ForeColor = System.Drawing.Color.Red;
-            this.lblMarks.Location = new System.Drawing.Point(514, 162);
-            this.lblMarks.Name = "lblMarks";
-            this.lblMarks.Size = new System.Drawing.Size(68, 17);
-            this.lblMarks.TabIndex = 121;
-            this.lblMarks.Text = "Error Title";
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(82, 82);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(196, 27);
+            this.label33.TabIndex = 126;
+            this.label33.Text = "Edit Project advisor";
             // 
-            // lblWeightage
+            // cmbAdvRoleCh
             // 
-            this.lblWeightage.AutoSize = true;
-            this.lblWeightage.ForeColor = System.Drawing.Color.Red;
-            this.lblWeightage.Location = new System.Drawing.Point(514, 196);
-            this.lblWeightage.Name = "lblWeightage";
-            this.lblWeightage.Size = new System.Drawing.Size(68, 17);
-            this.lblWeightage.TabIndex = 122;
-            this.lblWeightage.Text = "Error Title";
+            this.cmbAdvRoleCh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAdvRoleCh.FormattingEnabled = true;
+            this.cmbAdvRoleCh.Items.AddRange(new object[] {
+            "Main advisor",
+            "Co-Advisror",
+            "Industry Advisor"});
+            this.cmbAdvRoleCh.Location = new System.Drawing.Point(279, 227);
+            this.cmbAdvRoleCh.Name = "cmbAdvRoleCh";
+            this.cmbAdvRoleCh.Size = new System.Drawing.Size(247, 25);
+            this.cmbAdvRoleCh.TabIndex = 125;
             // 
-            // lblWCH
+            // DTPProjAdvCh
             // 
-            this.lblWCH.AutoSize = true;
-            this.lblWCH.ForeColor = System.Drawing.Color.Red;
-            this.lblWCH.Location = new System.Drawing.Point(499, 202);
-            this.lblWCH.Name = "lblWCH";
-            this.lblWCH.Size = new System.Drawing.Size(68, 17);
-            this.lblWCH.TabIndex = 125;
-            this.lblWCH.Text = "Error Title";
+            this.DTPProjAdvCh.Location = new System.Drawing.Point(279, 201);
+            this.DTPProjAdvCh.Name = "DTPProjAdvCh";
+            this.DTPProjAdvCh.Size = new System.Drawing.Size(247, 25);
+            this.DTPProjAdvCh.TabIndex = 124;
             // 
-            // lblTMCh
+            // txtProjTitleCh
             // 
-            this.lblTMCh.AutoSize = true;
-            this.lblTMCh.ForeColor = System.Drawing.Color.Red;
-            this.lblTMCh.Location = new System.Drawing.Point(499, 168);
-            this.lblTMCh.Name = "lblTMCh";
-            this.lblTMCh.Size = new System.Drawing.Size(68, 17);
-            this.lblTMCh.TabIndex = 124;
-            this.lblTMCh.Text = "Error Title";
+            this.txtProjTitleCh.Location = new System.Drawing.Point(279, 149);
+            this.txtProjTitleCh.Name = "txtProjTitleCh";
+            this.txtProjTitleCh.Size = new System.Drawing.Size(247, 25);
+            this.txtProjTitleCh.TabIndex = 123;
             // 
-            // lblNameCh
+            // label36
             // 
-            this.lblNameCh.AutoSize = true;
-            this.lblNameCh.ForeColor = System.Drawing.Color.Red;
-            this.lblNameCh.Location = new System.Drawing.Point(499, 136);
-            this.lblNameCh.Name = "lblNameCh";
-            this.lblNameCh.Size = new System.Drawing.Size(79, 17);
-            this.lblNameCh.TabIndex = 123;
-            this.lblNameCh.Text = "Error Name";
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(119, 175);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(73, 18);
+            this.label36.TabIndex = 122;
+            this.label36.Text = "Advisor Id";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(119, 204);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(107, 18);
+            this.label37.TabIndex = 121;
+            this.label37.Text = "Assignment Date";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(119, 230);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(84, 18);
+            this.label38.TabIndex = 120;
+            this.label38.Text = "Advisor Role";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(119, 147);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(103, 18);
+            this.label39.TabIndex = 119;
+            this.label39.Text = "Title of Project";
+            // 
+            // txtAdvIdCh
+            // 
+            this.txtAdvIdCh.Location = new System.Drawing.Point(279, 175);
+            this.txtAdvIdCh.Name = "txtAdvIdCh";
+            this.txtAdvIdCh.Size = new System.Drawing.Size(247, 25);
+            this.txtAdvIdCh.TabIndex = 118;
+            // 
+            // lblErrAssignDate
+            // 
+            this.lblErrAssignDate.AutoSize = true;
+            this.lblErrAssignDate.ForeColor = System.Drawing.Color.Red;
+            this.lblErrAssignDate.Location = new System.Drawing.Point(512, 185);
+            this.lblErrAssignDate.Name = "lblErrAssignDate";
+            this.lblErrAssignDate.Size = new System.Drawing.Size(80, 17);
+            this.lblErrAssignDate.TabIndex = 122;
+            this.lblErrAssignDate.Text = "Error Salary";
+            // 
+            // lblErrAdvId
+            // 
+            this.lblErrAdvId.AutoSize = true;
+            this.lblErrAdvId.ForeColor = System.Drawing.Color.Red;
+            this.lblErrAdvId.Location = new System.Drawing.Point(512, 154);
+            this.lblErrAdvId.Name = "lblErrAdvId";
+            this.lblErrAdvId.Size = new System.Drawing.Size(104, 17);
+            this.lblErrAdvId.TabIndex = 121;
+            this.lblErrAdvId.Text = "Error Advisor Id";
+            // 
+            // lblErrProject
+            // 
+            this.lblErrProject.AutoSize = true;
+            this.lblErrProject.ForeColor = System.Drawing.Color.Red;
+            this.lblErrProject.Location = new System.Drawing.Point(512, 123);
+            this.lblErrProject.Name = "lblErrProject";
+            this.lblErrProject.Size = new System.Drawing.Size(85, 17);
+            this.lblErrProject.TabIndex = 120;
+            this.lblErrProject.Text = "Error Project";
+            // 
+            // lblErrAdvRole
+            // 
+            this.lblErrAdvRole.AutoSize = true;
+            this.lblErrAdvRole.ForeColor = System.Drawing.Color.Red;
+            this.lblErrAdvRole.Location = new System.Drawing.Point(512, 211);
+            this.lblErrAdvRole.Name = "lblErrAdvRole";
+            this.lblErrAdvRole.Size = new System.Drawing.Size(119, 17);
+            this.lblErrAdvRole.TabIndex = 123;
+            this.lblErrAdvRole.Text = "Error Advisor Role";
             // 
             // Main
             // 
@@ -2018,6 +2209,8 @@
             this.TPEditEva.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDweightageCh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDTMarksCh)).EndInit();
+            this.TPEditProjAdv.ResumeLayout(false);
+            this.TPEditProjAdv.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2185,5 +2378,21 @@
         private System.Windows.Forms.Label lblWCH;
         private System.Windows.Forms.Label lblTMCh;
         private System.Windows.Forms.Label lblNameCh;
+        private System.Windows.Forms.TabPage TPEditProjAdv;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ComboBox cmbAdvRoleCh;
+        private System.Windows.Forms.DateTimePicker DTPProjAdvCh;
+        private System.Windows.Forms.TextBox txtProjTitleCh;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txtAdvIdCh;
+        private System.Windows.Forms.LinkLabel lblBackProjEdit;
+        private System.Windows.Forms.Label lblErrAdvRole;
+        private System.Windows.Forms.Label lblErrAssignDate;
+        private System.Windows.Forms.Label lblErrAdvId;
+        private System.Windows.Forms.Label lblErrProject;
     }
 }

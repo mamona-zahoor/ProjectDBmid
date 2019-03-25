@@ -28,6 +28,7 @@ namespace ProjectA
             TControl.TabPages.Remove(TPEditProj);
             TControl.TabPages.Remove(TPGroups);
             TControl.TabPages.Remove(TPEditEva);
+            TControl.TabPages.Remove(TPEditProjAdv);
             lblEditProjId.Hide();
             lblEditAdvId.Hide();
             lblEditEvaId.Hide();
@@ -207,6 +208,11 @@ namespace ProjectA
             lblErrSal.Hide();
             lblErrId.Hide();
             lblErrTitle.Hide();
+            lblErrAssignDate.Hide();
+            lblErrAdvId.Hide();
+            lblErrProject.Hide();
+            lblErrAdvRole.Hide();
+
         }
 
         private void DGVgroups_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -616,7 +622,7 @@ namespace ProjectA
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Main m = new Main();
-            m.ChangeTab(3);
+            m.ChangeTab(4);
             this.Hide();
             m.Show();
 
@@ -1045,20 +1051,20 @@ namespace ProjectA
             lblNameCh.Hide();
             if (txtNameEvaCh.Text == "")
             {
-                lblNEva.Text = "Required field";
-                lblNEva.Show();
+                lblNameCh.Text = "Required field";
+                lblNameCh.Show();
                Okay = false;
             }
             if (NUDTMarksCh.Text == 0.ToString())
             {
-                lblMarks.Text = "Marks must be greater than 0.";
-                lblMarks.Show();
+                lblTMCh.Text = "Marks must be greater than 0.";
+                lblTMCh.Show();
                 Okay = false;
             }
             if (NUDweightageCh.Text == 0.ToString())
             {
-                lblWeightage.Text = "Weightage must be greater than 0.";
-                lblWeightage.Show();
+                lblWCH.Text = "Weightage must be greater than 0.";
+                lblWCH.Show();
                 Okay = false;
             }
             if (Okay)
@@ -1082,14 +1088,40 @@ namespace ProjectA
 
             sqlConn.Open();
             if (e.ColumnIndex == 1)
-            { 
-                string que = "DELETE from ProjectAdvisor where AdvisorId ='" + DGVProjAdv[2, e.RowIndex].Value + "' and ProjectId = '" + DGVProjAdv[3, e.RowIndex].Value + "' and AdvisorRole = '" + DGVProjAdv[4, e.RowIndex].Value + "' and AssignmentDate = '"+ DGVProjAdv[5, e.RowIndex].Value + "'";
+            {
+                string que = "DELETE from ProjectAdvisor where AdvisorId ='" + DGVProjAdv[2, e.RowIndex].Value + "' and ProjectId = '" + DGVProjAdv[3, e.RowIndex].Value + "' and AdvisorRole = '" + DGVProjAdv[4, e.RowIndex].Value + "' and AssignmentDate = '" + DGVProjAdv[5, e.RowIndex].Value + "'";
                 SqlCommand cmd = new SqlCommand(que, sqlConn);
                 cmd.ExecuteNonQuery();
                 CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[DGVProjAdv.DataSource];
                 currencyManager1.SuspendBinding();
                 DGVProjAdv.Rows[e.RowIndex].Visible = false;
                 currencyManager1.ResumeBinding();
+            }
+            else if (e.ColumnIndex == 0)
+            {
+                string que = "SELECT Title from Project where  Id = '" + DGVProjAdv[3, e.RowIndex].Value + "'";
+                SqlCommand cmd = new SqlCommand(que, sqlConn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    txtProjTitleCh.Text = reader.GetString(0);
+                }
+                reader.Dispose();
+                reader.Close();
+                DTPProjAdvCh.Text = DGVProjAdv[5, e.RowIndex].Value.ToString();
+                txtAdvIdCh.Text = DGVProjAdv[2, e.RowIndex].Value.ToString();
+               que = "SELECT Value from [Lookup] where  Category = 'ADVISOR_ROLE' and Id = " + DGVProjAdv[4, e.RowIndex].Value + "";
+               cmd = new SqlCommand(que, sqlConn);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    cmbAdvRoleCh.Text = reader.GetString(0);
+                }
+                TControl.TabPages.Insert(4, TPEditProjAdv);
+
+                TControl.TabPages.Remove(TPProjAd);
+                this.ChangeTab(4);
+
             }
         }
 
@@ -1103,6 +1135,25 @@ namespace ProjectA
 
         private void txtContact_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+
+        }
+
+        private void button2_Click_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+        }
+
+        private void lblBackProjEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Main m = new Main();
+            m.ChangeTab(4);
+            m.Show();
+            this.Hide();
+
 
         }
     }

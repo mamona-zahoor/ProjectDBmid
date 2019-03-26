@@ -18,3 +18,13 @@ C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debu
 C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.exe
 C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
 C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.csprojResolveAssemblyReference.cache
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\ProjectA.exe.config
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.exe
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\ProjectA.exe
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\ProjectA.pdb
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.csprojResolveAssemblyReference.cache
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.Login.resources
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.Main.resources
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.Properties.Resources.resources
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.GenerateResource.Cache

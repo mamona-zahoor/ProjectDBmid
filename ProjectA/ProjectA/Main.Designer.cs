@@ -55,9 +55,7 @@
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.TPGroups = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.DGVgroups = new System.Windows.Forms.DataGridView();
-            this.Select_Students = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DGVGroupsList = new System.Windows.Forms.DataGridView();
             this.TPAddStu = new System.Windows.Forms.TabPage();
             this.txtContact = new System.Windows.Forms.TextBox();
             this.lblErrGen = new System.Windows.Forms.Label();
@@ -85,6 +83,10 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.TPAddAdv = new System.Windows.Forms.TabPage();
+            this.lblErrAdvRole = new System.Windows.Forms.Label();
+            this.lblErrAssignDate = new System.Windows.Forms.Label();
+            this.lblErrAdvId = new System.Windows.Forms.Label();
+            this.lblErrProject = new System.Windows.Forms.Label();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.cmdAddProjAdv = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -190,6 +192,12 @@
             this.lblEditNameEva = new System.Windows.Forms.Label();
             this.txtNameEvaCh = new System.Windows.Forms.TextBox();
             this.TPEditProjAdv = new System.Windows.Forms.TabPage();
+            this.lblIdAdvisor = new System.Windows.Forms.Label();
+            this.lblProjAdvId = new System.Windows.Forms.Label();
+            this.lblAdvRoleCh = new System.Windows.Forms.Label();
+            this.lblErrAssigndateCh = new System.Windows.Forms.Label();
+            this.lblErrAdvIdCh = new System.Windows.Forms.Label();
+            this.lblErrProjTitleCh = new System.Windows.Forms.Label();
             this.lblBackProjEdit = new System.Windows.Forms.LinkLabel();
             this.button2 = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
@@ -201,10 +209,36 @@
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.txtAdvIdCh = new System.Windows.Forms.TextBox();
-            this.lblErrAssignDate = new System.Windows.Forms.Label();
-            this.lblErrAdvId = new System.Windows.Forms.Label();
-            this.lblErrProject = new System.Windows.Forms.Label();
-            this.lblErrAdvRole = new System.Windows.Forms.Label();
+            this.TPAddGroup = new System.Windows.Forms.TabPage();
+            this.cmdCreateGroup = new System.Windows.Forms.Button();
+            this.DGVgroupStudents = new System.Windows.Forms.DataGridView();
+            this.Select_Students = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.lnkAddGroup = new System.Windows.Forms.LinkLabel();
+            this.label40 = new System.Windows.Forms.Label();
+            this.TPGroupDetail = new System.Windows.Forms.TabPage();
+            this.DGVDetails = new System.Windows.Forms.DataGridView();
+            this.label41 = new System.Windows.Forms.Label();
+            this.lblGrpMem = new System.Windows.Forms.Label();
+            this.lblIdGroup = new System.Windows.Forms.Label();
+            this.clUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.CLDel = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.lblBacktoGroups = new System.Windows.Forms.LinkLabel();
+            this.TPEditGroupMem = new System.Windows.Forms.TabPage();
+            this.TPAddGrpMem = new System.Windows.Forms.TabPage();
+            this.DGVGroupMem = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cmdAddMem = new System.Windows.Forms.Button();
+            this.lblChoose = new System.Windows.Forms.Label();
+            this.lblGroupIdMem = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.lnkAddNewMem = new System.Windows.Forms.LinkLabel();
+            this.lnkbackToGroups = new System.Windows.Forms.LinkLabel();
+            this.ClDetails = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.CldelGroup = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.lblErrMemCount = new System.Windows.Forms.Label();
+            this.lnkBackToDetails = new System.Windows.Forms.LinkLabel();
             this.TControl.SuspendLayout();
             this.TPStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
@@ -217,7 +251,7 @@
             this.TPProjAd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProjAdv)).BeginInit();
             this.TPGroups.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVgroups)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVGroupsList)).BeginInit();
             this.TPAddStu.SuspendLayout();
             this.TPAddAdv.SuspendLayout();
             this.TPAddAdvisor.SuspendLayout();
@@ -232,6 +266,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.NUDweightageCh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDTMarksCh)).BeginInit();
             this.TPEditProjAdv.SuspendLayout();
+            this.TPAddGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVgroupStudents)).BeginInit();
+            this.TPGroupDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVDetails)).BeginInit();
+            this.TPAddGrpMem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVGroupMem)).BeginInit();
             this.SuspendLayout();
             // 
             // TControl
@@ -252,12 +292,17 @@
             this.TControl.Controls.Add(this.TPAddEvaluations);
             this.TControl.Controls.Add(this.TPEditEva);
             this.TControl.Controls.Add(this.TPEditProjAdv);
+            this.TControl.Controls.Add(this.TPAddGroup);
+            this.TControl.Controls.Add(this.TPGroupDetail);
+            this.TControl.Controls.Add(this.TPEditGroupMem);
+            this.TControl.Controls.Add(this.TPAddGrpMem);
+            this.TControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TControl.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TControl.Location = new System.Drawing.Point(0, -3);
+            this.TControl.Location = new System.Drawing.Point(0, 0);
             this.TControl.Name = "TControl";
             this.TControl.Padding = new System.Drawing.Point(9, 5);
             this.TControl.SelectedIndex = 0;
-            this.TControl.Size = new System.Drawing.Size(756, 449);
+            this.TControl.Size = new System.Drawing.Size(940, 588);
             this.TControl.TabIndex = 35;
             this.TControl.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -270,7 +315,7 @@
             this.TPStudents.Location = new System.Drawing.Point(4, 30);
             this.TPStudents.Name = "TPStudents";
             this.TPStudents.Padding = new System.Windows.Forms.Padding(3);
-            this.TPStudents.Size = new System.Drawing.Size(748, 415);
+            this.TPStudents.Size = new System.Drawing.Size(932, 554);
             this.TPStudents.TabIndex = 0;
             this.TPStudents.Text = "Manage Students";
             this.TPStudents.Click += new System.EventHandler(this.TPStudents_Click);
@@ -296,7 +341,7 @@
             this.Del});
             this.DGV.Location = new System.Drawing.Point(6, 62);
             this.DGV.Name = "DGV";
-            this.DGV.Size = new System.Drawing.Size(740, 384);
+            this.DGV.Size = new System.Drawing.Size(822, 487);
             this.DGV.TabIndex = 0;
             this.DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellContentClick);
             // 
@@ -326,7 +371,7 @@
             this.TPAdvisors.Location = new System.Drawing.Point(4, 30);
             this.TPAdvisors.Name = "TPAdvisors";
             this.TPAdvisors.Padding = new System.Windows.Forms.Padding(3);
-            this.TPAdvisors.Size = new System.Drawing.Size(748, 415);
+            this.TPAdvisors.Size = new System.Drawing.Size(932, 554);
             this.TPAdvisors.TabIndex = 1;
             this.TPAdvisors.Text = "Manage Advisors";
             // 
@@ -338,9 +383,9 @@
             this.DGVAd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UpAd,
             this.DelAD});
-            this.DGVAd.Location = new System.Drawing.Point(43, 82);
+            this.DGVAd.Location = new System.Drawing.Point(0, 76);
             this.DGVAd.Name = "DGVAd";
-            this.DGVAd.Size = new System.Drawing.Size(645, 333);
+            this.DGVAd.Size = new System.Drawing.Size(837, 482);
             this.DGVAd.TabIndex = 4;
             this.DGVAd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAd_CellContentClick);
             // 
@@ -381,7 +426,7 @@
             this.TPProjects.Controls.Add(this.DGVProj);
             this.TPProjects.Location = new System.Drawing.Point(4, 30);
             this.TPProjects.Name = "TPProjects";
-            this.TPProjects.Size = new System.Drawing.Size(748, 415);
+            this.TPProjects.Size = new System.Drawing.Size(932, 554);
             this.TPProjects.TabIndex = 2;
             this.TPProjects.Text = "Manage Projects";
             // 
@@ -408,7 +453,7 @@
             this.DGVProj.Location = new System.Drawing.Point(4, 66);
             this.DGVProj.Margin = new System.Windows.Forms.Padding(4);
             this.DGVProj.Name = "DGVProj";
-            this.DGVProj.Size = new System.Drawing.Size(737, 339);
+            this.DGVProj.Size = new System.Drawing.Size(829, 488);
             this.DGVProj.TabIndex = 0;
             this.DGVProj.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProj_CellContentClick);
             // 
@@ -433,7 +478,7 @@
             this.TPEvaluations.Controls.Add(this.DGVEvaluations);
             this.TPEvaluations.Location = new System.Drawing.Point(4, 30);
             this.TPEvaluations.Name = "TPEvaluations";
-            this.TPEvaluations.Size = new System.Drawing.Size(748, 415);
+            this.TPEvaluations.Size = new System.Drawing.Size(932, 554);
             this.TPEvaluations.TabIndex = 12;
             this.TPEvaluations.Text = "Manage Evaluations";
             // 
@@ -457,9 +502,9 @@
             this.DGVEvaluations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewButtonColumn3,
             this.dataGridViewButtonColumn4});
-            this.DGVEvaluations.Location = new System.Drawing.Point(4, 54);
+            this.DGVEvaluations.Location = new System.Drawing.Point(0, 42);
             this.DGVEvaluations.Name = "DGVEvaluations";
-            this.DGVEvaluations.Size = new System.Drawing.Size(740, 384);
+            this.DGVEvaluations.Size = new System.Drawing.Size(932, 504);
             this.DGVEvaluations.TabIndex = 2;
             this.DGVEvaluations.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVEvaluations_CellContentClick);
             // 
@@ -488,7 +533,7 @@
             this.TPProjAd.Controls.Add(this.DGVProjAdv);
             this.TPProjAd.Location = new System.Drawing.Point(4, 30);
             this.TPProjAd.Name = "TPProjAd";
-            this.TPProjAd.Size = new System.Drawing.Size(748, 415);
+            this.TPProjAd.Size = new System.Drawing.Size(932, 554);
             this.TPProjAd.TabIndex = 3;
             this.TPProjAd.Text = "Manage Project Advisors";
             // 
@@ -514,7 +559,7 @@
             this.dataGridViewButtonColumn2});
             this.DGVProjAdv.Location = new System.Drawing.Point(-4, 56);
             this.DGVProjAdv.Name = "DGVProjAdv";
-            this.DGVProjAdv.Size = new System.Drawing.Size(749, 396);
+            this.DGVProjAdv.Size = new System.Drawing.Size(936, 498);
             this.DGVProjAdv.TabIndex = 6;
             this.DGVProjAdv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProjAdv_CellContentClick);
             // 
@@ -539,37 +584,27 @@
             // TPGroups
             // 
             this.TPGroups.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.TPGroups.Controls.Add(this.button1);
-            this.TPGroups.Controls.Add(this.DGVgroups);
+            this.TPGroups.Controls.Add(this.lnkAddGroup);
+            this.TPGroups.Controls.Add(this.DGVGroupsList);
             this.TPGroups.Location = new System.Drawing.Point(4, 30);
             this.TPGroups.Name = "TPGroups";
-            this.TPGroups.Size = new System.Drawing.Size(748, 415);
+            this.TPGroups.Size = new System.Drawing.Size(932, 554);
             this.TPGroups.TabIndex = 4;
             this.TPGroups.Text = "Manage Groups";
             // 
-            // button1
+            // DGVGroupsList
             // 
-            this.button1.Location = new System.Drawing.Point(569, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // DGVgroups
-            // 
-            this.DGVgroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVgroups.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Select_Students});
-            this.DGVgroups.Location = new System.Drawing.Point(12, 57);
-            this.DGVgroups.Name = "DGVgroups";
-            this.DGVgroups.Size = new System.Drawing.Size(740, 391);
-            this.DGVgroups.TabIndex = 6;
-            // 
-            // Select_Students
-            // 
-            this.Select_Students.HeaderText = "Select Students";
-            this.Select_Students.Name = "Select_Students";
+            this.DGVGroupsList.AllowUserToAddRows = false;
+            this.DGVGroupsList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVGroupsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVGroupsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClDetails,
+            this.CldelGroup});
+            this.DGVGroupsList.Location = new System.Drawing.Point(139, 92);
+            this.DGVGroupsList.Name = "DGVGroupsList";
+            this.DGVGroupsList.Size = new System.Drawing.Size(691, 466);
+            this.DGVGroupsList.TabIndex = 0;
+            this.DGVGroupsList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVGroupsList_CellContentClick);
             // 
             // TPAddStu
             // 
@@ -601,7 +636,7 @@
             this.TPAddStu.Controls.Add(this.txtFirstName);
             this.TPAddStu.Location = new System.Drawing.Point(4, 30);
             this.TPAddStu.Name = "TPAddStu";
-            this.TPAddStu.Size = new System.Drawing.Size(748, 415);
+            this.TPAddStu.Size = new System.Drawing.Size(932, 554);
             this.TPAddStu.TabIndex = 5;
             this.TPAddStu.Text = "Add Student";
             // 
@@ -862,9 +897,49 @@
             this.TPAddAdv.Controls.Add(this.txtAdvisorId);
             this.TPAddAdv.Location = new System.Drawing.Point(4, 30);
             this.TPAddAdv.Name = "TPAddAdv";
-            this.TPAddAdv.Size = new System.Drawing.Size(748, 415);
+            this.TPAddAdv.Size = new System.Drawing.Size(932, 554);
             this.TPAddAdv.TabIndex = 6;
             this.TPAddAdv.Text = "Add  Project Advisor";
+            // 
+            // lblErrAdvRole
+            // 
+            this.lblErrAdvRole.AutoSize = true;
+            this.lblErrAdvRole.ForeColor = System.Drawing.Color.Red;
+            this.lblErrAdvRole.Location = new System.Drawing.Point(172, 229);
+            this.lblErrAdvRole.Name = "lblErrAdvRole";
+            this.lblErrAdvRole.Size = new System.Drawing.Size(119, 17);
+            this.lblErrAdvRole.TabIndex = 123;
+            this.lblErrAdvRole.Text = "Error Advisor Role";
+            // 
+            // lblErrAssignDate
+            // 
+            this.lblErrAssignDate.AutoSize = true;
+            this.lblErrAssignDate.ForeColor = System.Drawing.Color.Red;
+            this.lblErrAssignDate.Location = new System.Drawing.Point(428, 172);
+            this.lblErrAssignDate.Name = "lblErrAssignDate";
+            this.lblErrAssignDate.Size = new System.Drawing.Size(115, 17);
+            this.lblErrAssignDate.TabIndex = 122;
+            this.lblErrAssignDate.Text = "Error Assign Date";
+            // 
+            // lblErrAdvId
+            // 
+            this.lblErrAdvId.AutoSize = true;
+            this.lblErrAdvId.ForeColor = System.Drawing.Color.Red;
+            this.lblErrAdvId.Location = new System.Drawing.Point(428, 145);
+            this.lblErrAdvId.Name = "lblErrAdvId";
+            this.lblErrAdvId.Size = new System.Drawing.Size(104, 17);
+            this.lblErrAdvId.TabIndex = 121;
+            this.lblErrAdvId.Text = "Error Advisor Id";
+            // 
+            // lblErrProject
+            // 
+            this.lblErrProject.AutoSize = true;
+            this.lblErrProject.ForeColor = System.Drawing.Color.Red;
+            this.lblErrProject.Location = new System.Drawing.Point(428, 114);
+            this.lblErrProject.Name = "lblErrProject";
+            this.lblErrProject.Size = new System.Drawing.Size(85, 17);
+            this.lblErrProject.TabIndex = 120;
+            this.lblErrProject.Text = "Error Project";
             // 
             // linkLabel4
             // 
@@ -882,7 +957,7 @@
             // 
             this.cmdAddProjAdv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdAddProjAdv.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdAddProjAdv.Location = new System.Drawing.Point(515, 267);
+            this.cmdAddProjAdv.Location = new System.Drawing.Point(523, 277);
             this.cmdAddProjAdv.Name = "cmdAddProjAdv";
             this.cmdAddProjAdv.Size = new System.Drawing.Size(115, 41);
             this.cmdAddProjAdv.TabIndex = 116;
@@ -908,21 +983,21 @@
             "Main advisor",
             "Co-Advisror",
             "Industry Advisor"});
-            this.cmbRole.Location = new System.Drawing.Point(242, 203);
+            this.cmbRole.Location = new System.Drawing.Point(175, 192);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(247, 25);
             this.cmbRole.TabIndex = 114;
             // 
             // DTPAssignmentDate
             // 
-            this.DTPAssignmentDate.Location = new System.Drawing.Point(242, 177);
+            this.DTPAssignmentDate.Location = new System.Drawing.Point(175, 166);
             this.DTPAssignmentDate.Name = "DTPAssignmentDate";
             this.DTPAssignmentDate.Size = new System.Drawing.Size(247, 25);
             this.DTPAssignmentDate.TabIndex = 113;
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(242, 125);
+            this.txtTitle.Location = new System.Drawing.Point(175, 114);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(247, 25);
             this.txtTitle.TabIndex = 112;
@@ -931,7 +1006,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(82, 151);
+            this.label2.Location = new System.Drawing.Point(40, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 18);
             this.label2.TabIndex = 111;
@@ -941,7 +1016,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(82, 180);
+            this.label10.Location = new System.Drawing.Point(40, 173);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(107, 18);
             this.label10.TabIndex = 110;
@@ -951,7 +1026,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(82, 206);
+            this.label11.Location = new System.Drawing.Point(40, 199);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(84, 18);
             this.label11.TabIndex = 109;
@@ -961,7 +1036,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(82, 123);
+            this.label12.Location = new System.Drawing.Point(40, 116);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(103, 18);
             this.label12.TabIndex = 108;
@@ -969,7 +1044,7 @@
             // 
             // txtAdvisorId
             // 
-            this.txtAdvisorId.Location = new System.Drawing.Point(242, 151);
+            this.txtAdvisorId.Location = new System.Drawing.Point(175, 140);
             this.txtAdvisorId.Name = "txtAdvisorId";
             this.txtAdvisorId.Size = new System.Drawing.Size(247, 25);
             this.txtAdvisorId.TabIndex = 107;
@@ -992,7 +1067,7 @@
             this.TPAddAdvisor.Controls.Add(this.label15);
             this.TPAddAdvisor.Location = new System.Drawing.Point(4, 30);
             this.TPAddAdvisor.Name = "TPAddAdvisor";
-            this.TPAddAdvisor.Size = new System.Drawing.Size(748, 415);
+            this.TPAddAdvisor.Size = new System.Drawing.Size(932, 554);
             this.TPAddAdvisor.TabIndex = 7;
             this.TPAddAdvisor.Text = "Add Advisor";
             // 
@@ -1000,7 +1075,7 @@
             // 
             this.lblErrSal.AutoSize = true;
             this.lblErrSal.ForeColor = System.Drawing.Color.Red;
-            this.lblErrSal.Location = new System.Drawing.Point(456, 186);
+            this.lblErrSal.Location = new System.Drawing.Point(477, 186);
             this.lblErrSal.Name = "lblErrSal";
             this.lblErrSal.Size = new System.Drawing.Size(80, 17);
             this.lblErrSal.TabIndex = 119;
@@ -1010,7 +1085,7 @@
             // 
             this.lblErrDes.AutoSize = true;
             this.lblErrDes.ForeColor = System.Drawing.Color.Red;
-            this.lblErrDes.Location = new System.Drawing.Point(456, 155);
+            this.lblErrDes.Location = new System.Drawing.Point(477, 155);
             this.lblErrDes.Name = "lblErrDes";
             this.lblErrDes.Size = new System.Drawing.Size(79, 17);
             this.lblErrDes.TabIndex = 117;
@@ -1020,7 +1095,7 @@
             // 
             this.lblErrId.AutoSize = true;
             this.lblErrId.ForeColor = System.Drawing.Color.Red;
-            this.lblErrId.Location = new System.Drawing.Point(456, 124);
+            this.lblErrId.Location = new System.Drawing.Point(477, 124);
             this.lblErrId.Name = "lblErrId";
             this.lblErrId.Size = new System.Drawing.Size(55, 17);
             this.lblErrId.TabIndex = 116;
@@ -1057,10 +1132,12 @@
             this.cmbDes.Items.AddRange(new object[] {
             "Professor",
             "Associate Professor",
-            "Assisstant Professor"});
+            "Assisstant Professor",
+            "Lecturer",
+            "Industry Professional"});
             this.cmbDes.Location = new System.Drawing.Point(203, 151);
             this.cmbDes.Name = "cmbDes";
-            this.cmbDes.Size = new System.Drawing.Size(247, 25);
+            this.cmbDes.Size = new System.Drawing.Size(367, 25);
             this.cmbDes.TabIndex = 113;
             // 
             // cmdAdd
@@ -1095,7 +1172,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtId.Location = new System.Drawing.Point(203, 122);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(247, 25);
+            this.txtId.Size = new System.Drawing.Size(367, 25);
             this.txtId.TabIndex = 110;
             // 
             // txtSalary
@@ -1105,7 +1182,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSalary.Location = new System.Drawing.Point(203, 178);
             this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(247, 25);
+            this.txtSalary.Size = new System.Drawing.Size(367, 25);
             this.txtSalary.TabIndex = 107;
             // 
             // lblSal
@@ -1157,7 +1234,7 @@
             this.TPAddProj.Controls.Add(this.txtTitleProj);
             this.TPAddProj.Location = new System.Drawing.Point(4, 30);
             this.TPAddProj.Name = "TPAddProj";
-            this.TPAddProj.Size = new System.Drawing.Size(748, 415);
+            this.TPAddProj.Size = new System.Drawing.Size(932, 554);
             this.TPAddProj.TabIndex = 8;
             this.TPAddProj.Text = "Add Projects";
             // 
@@ -1269,7 +1346,7 @@
             this.TPEditStu.Controls.Add(this.txtFN);
             this.TPEditStu.Location = new System.Drawing.Point(4, 30);
             this.TPEditStu.Name = "TPEditStu";
-            this.TPEditStu.Size = new System.Drawing.Size(748, 415);
+            this.TPEditStu.Size = new System.Drawing.Size(932, 554);
             this.TPEditStu.TabIndex = 9;
             this.TPEditStu.Text = "Edit Student";
             // 
@@ -1513,7 +1590,7 @@
             this.TPEditAdv.Controls.Add(this.label29);
             this.TPEditAdv.Location = new System.Drawing.Point(4, 30);
             this.TPEditAdv.Name = "TPEditAdv";
-            this.TPEditAdv.Size = new System.Drawing.Size(748, 415);
+            this.TPEditAdv.Size = new System.Drawing.Size(932, 554);
             this.TPEditAdv.TabIndex = 10;
             this.TPEditAdv.Text = "Edit Advisor";
             // 
@@ -1551,10 +1628,12 @@
             this.cmbDesCH.Items.AddRange(new object[] {
             "Professor",
             "Associate Professor",
-            "Assisstant Professor"});
+            "Assisstant Professor",
+            "Lecturer",
+            "Industry Professional"});
             this.cmbDesCH.Location = new System.Drawing.Point(334, 146);
             this.cmbDesCH.Name = "cmbDesCH";
-            this.cmbDesCH.Size = new System.Drawing.Size(247, 25);
+            this.cmbDesCH.Size = new System.Drawing.Size(367, 25);
             this.cmbDesCH.TabIndex = 120;
             // 
             // txtSalaryCH
@@ -1564,7 +1643,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSalaryCH.Location = new System.Drawing.Point(334, 173);
             this.txtSalaryCH.Name = "txtSalaryCH";
-            this.txtSalaryCH.Size = new System.Drawing.Size(247, 25);
+            this.txtSalaryCH.Size = new System.Drawing.Size(367, 25);
             this.txtSalaryCH.TabIndex = 116;
             // 
             // label27
@@ -1617,7 +1696,7 @@
             this.TPEditProj.Controls.Add(this.txtTitleCh);
             this.TPEditProj.Location = new System.Drawing.Point(4, 30);
             this.TPEditProj.Name = "TPEditProj";
-            this.TPEditProj.Size = new System.Drawing.Size(748, 415);
+            this.TPEditProj.Size = new System.Drawing.Size(932, 554);
             this.TPEditProj.TabIndex = 11;
             this.TPEditProj.Text = "Edit Project";
             // 
@@ -1726,7 +1805,7 @@
             this.TPAddEvaluations.Controls.Add(this.txtNameEva);
             this.TPAddEvaluations.Location = new System.Drawing.Point(4, 30);
             this.TPAddEvaluations.Name = "TPAddEvaluations";
-            this.TPAddEvaluations.Size = new System.Drawing.Size(748, 415);
+            this.TPAddEvaluations.Size = new System.Drawing.Size(932, 554);
             this.TPAddEvaluations.TabIndex = 13;
             this.TPAddEvaluations.Text = "Add Evaluations";
             // 
@@ -1863,7 +1942,7 @@
             this.TPEditEva.Controls.Add(this.txtNameEvaCh);
             this.TPEditEva.Location = new System.Drawing.Point(4, 30);
             this.TPEditEva.Name = "TPEditEva";
-            this.TPEditEva.Size = new System.Drawing.Size(748, 415);
+            this.TPEditEva.Size = new System.Drawing.Size(932, 554);
             this.TPEditEva.TabIndex = 14;
             this.TPEditEva.Text = "Edit Evaluation";
             // 
@@ -1993,6 +2072,13 @@
             // 
             // TPEditProjAdv
             // 
+            this.TPEditProjAdv.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPEditProjAdv.Controls.Add(this.lblIdAdvisor);
+            this.TPEditProjAdv.Controls.Add(this.lblProjAdvId);
+            this.TPEditProjAdv.Controls.Add(this.lblAdvRoleCh);
+            this.TPEditProjAdv.Controls.Add(this.lblErrAssigndateCh);
+            this.TPEditProjAdv.Controls.Add(this.lblErrAdvIdCh);
+            this.TPEditProjAdv.Controls.Add(this.lblErrProjTitleCh);
             this.TPEditProjAdv.Controls.Add(this.lblBackProjEdit);
             this.TPEditProjAdv.Controls.Add(this.button2);
             this.TPEditProjAdv.Controls.Add(this.label33);
@@ -2006,10 +2092,67 @@
             this.TPEditProjAdv.Controls.Add(this.txtAdvIdCh);
             this.TPEditProjAdv.Location = new System.Drawing.Point(4, 30);
             this.TPEditProjAdv.Name = "TPEditProjAdv";
-            this.TPEditProjAdv.Size = new System.Drawing.Size(748, 415);
+            this.TPEditProjAdv.Size = new System.Drawing.Size(932, 554);
             this.TPEditProjAdv.TabIndex = 15;
             this.TPEditProjAdv.Text = "Edit Project Advisor";
-            this.TPEditProjAdv.UseVisualStyleBackColor = true;
+            // 
+            // lblIdAdvisor
+            // 
+            this.lblIdAdvisor.AutoSize = true;
+            this.lblIdAdvisor.Location = new System.Drawing.Point(122, 371);
+            this.lblIdAdvisor.Name = "lblIdAdvisor";
+            this.lblIdAdvisor.Size = new System.Drawing.Size(69, 17);
+            this.lblIdAdvisor.TabIndex = 135;
+            this.lblIdAdvisor.Text = "Id Advisor";
+            // 
+            // lblProjAdvId
+            // 
+            this.lblProjAdvId.AutoSize = true;
+            this.lblProjAdvId.Location = new System.Drawing.Point(25, 371);
+            this.lblProjAdvId.Name = "lblProjAdvId";
+            this.lblProjAdvId.Size = new System.Drawing.Size(70, 17);
+            this.lblProjAdvId.TabIndex = 134;
+            this.lblProjAdvId.Text = "Id Project ";
+            // 
+            // lblAdvRoleCh
+            // 
+            this.lblAdvRoleCh.AutoSize = true;
+            this.lblAdvRoleCh.ForeColor = System.Drawing.Color.Red;
+            this.lblAdvRoleCh.Location = new System.Drawing.Point(227, 239);
+            this.lblAdvRoleCh.Name = "lblAdvRoleCh";
+            this.lblAdvRoleCh.Size = new System.Drawing.Size(119, 17);
+            this.lblAdvRoleCh.TabIndex = 133;
+            this.lblAdvRoleCh.Text = "Error Advisor Role";
+            // 
+            // lblErrAssigndateCh
+            // 
+            this.lblErrAssigndateCh.AutoSize = true;
+            this.lblErrAssigndateCh.ForeColor = System.Drawing.Color.Red;
+            this.lblErrAssigndateCh.Location = new System.Drawing.Point(483, 182);
+            this.lblErrAssigndateCh.Name = "lblErrAssigndateCh";
+            this.lblErrAssigndateCh.Size = new System.Drawing.Size(115, 17);
+            this.lblErrAssigndateCh.TabIndex = 132;
+            this.lblErrAssigndateCh.Text = "Error Assign Date";
+            // 
+            // lblErrAdvIdCh
+            // 
+            this.lblErrAdvIdCh.AutoSize = true;
+            this.lblErrAdvIdCh.ForeColor = System.Drawing.Color.Red;
+            this.lblErrAdvIdCh.Location = new System.Drawing.Point(483, 155);
+            this.lblErrAdvIdCh.Name = "lblErrAdvIdCh";
+            this.lblErrAdvIdCh.Size = new System.Drawing.Size(104, 17);
+            this.lblErrAdvIdCh.TabIndex = 131;
+            this.lblErrAdvIdCh.Text = "Error Advisor Id";
+            // 
+            // lblErrProjTitleCh
+            // 
+            this.lblErrProjTitleCh.AutoSize = true;
+            this.lblErrProjTitleCh.ForeColor = System.Drawing.Color.Red;
+            this.lblErrProjTitleCh.Location = new System.Drawing.Point(483, 124);
+            this.lblErrProjTitleCh.Name = "lblErrProjTitleCh";
+            this.lblErrProjTitleCh.Size = new System.Drawing.Size(85, 17);
+            this.lblErrProjTitleCh.TabIndex = 130;
+            this.lblErrProjTitleCh.Text = "Error Project";
             // 
             // lblBackProjEdit
             // 
@@ -2027,9 +2170,9 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(483, 291);
+            this.button2.Location = new System.Drawing.Point(554, 321);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 61);
+            this.button2.Size = new System.Drawing.Size(136, 45);
             this.button2.TabIndex = 127;
             this.button2.Text = "Save Changes";
             this.button2.UseVisualStyleBackColor = false;
@@ -2039,7 +2182,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(82, 82);
+            this.label33.Location = new System.Drawing.Point(33, 54);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(196, 27);
             this.label33.TabIndex = 126;
@@ -2053,21 +2196,21 @@
             "Main advisor",
             "Co-Advisror",
             "Industry Advisor"});
-            this.cmbAdvRoleCh.Location = new System.Drawing.Point(279, 227);
+            this.cmbAdvRoleCh.Location = new System.Drawing.Point(230, 199);
             this.cmbAdvRoleCh.Name = "cmbAdvRoleCh";
             this.cmbAdvRoleCh.Size = new System.Drawing.Size(247, 25);
             this.cmbAdvRoleCh.TabIndex = 125;
             // 
             // DTPProjAdvCh
             // 
-            this.DTPProjAdvCh.Location = new System.Drawing.Point(279, 201);
+            this.DTPProjAdvCh.Location = new System.Drawing.Point(230, 173);
             this.DTPProjAdvCh.Name = "DTPProjAdvCh";
             this.DTPProjAdvCh.Size = new System.Drawing.Size(247, 25);
             this.DTPProjAdvCh.TabIndex = 124;
             // 
             // txtProjTitleCh
             // 
-            this.txtProjTitleCh.Location = new System.Drawing.Point(279, 149);
+            this.txtProjTitleCh.Location = new System.Drawing.Point(230, 121);
             this.txtProjTitleCh.Name = "txtProjTitleCh";
             this.txtProjTitleCh.Size = new System.Drawing.Size(247, 25);
             this.txtProjTitleCh.TabIndex = 123;
@@ -2076,7 +2219,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(119, 175);
+            this.label36.Location = new System.Drawing.Point(70, 147);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(73, 18);
             this.label36.TabIndex = 122;
@@ -2086,7 +2229,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(119, 204);
+            this.label37.Location = new System.Drawing.Point(70, 176);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(107, 18);
             this.label37.TabIndex = 121;
@@ -2096,7 +2239,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(119, 230);
+            this.label38.Location = new System.Drawing.Point(70, 202);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(84, 18);
             this.label38.TabIndex = 120;
@@ -2106,7 +2249,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(119, 147);
+            this.label39.Location = new System.Drawing.Point(70, 119);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(103, 18);
             this.label39.TabIndex = 119;
@@ -2114,57 +2257,317 @@
             // 
             // txtAdvIdCh
             // 
-            this.txtAdvIdCh.Location = new System.Drawing.Point(279, 175);
+            this.txtAdvIdCh.Location = new System.Drawing.Point(230, 147);
             this.txtAdvIdCh.Name = "txtAdvIdCh";
             this.txtAdvIdCh.Size = new System.Drawing.Size(247, 25);
             this.txtAdvIdCh.TabIndex = 118;
             // 
-            // lblErrAssignDate
+            // TPAddGroup
             // 
-            this.lblErrAssignDate.AutoSize = true;
-            this.lblErrAssignDate.ForeColor = System.Drawing.Color.Red;
-            this.lblErrAssignDate.Location = new System.Drawing.Point(512, 185);
-            this.lblErrAssignDate.Name = "lblErrAssignDate";
-            this.lblErrAssignDate.Size = new System.Drawing.Size(80, 17);
-            this.lblErrAssignDate.TabIndex = 122;
-            this.lblErrAssignDate.Text = "Error Salary";
+            this.TPAddGroup.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPAddGroup.Controls.Add(this.lblErrMemCount);
+            this.TPAddGroup.Controls.Add(this.lnkbackToGroups);
+            this.TPAddGroup.Controls.Add(this.label40);
+            this.TPAddGroup.Controls.Add(this.cmdCreateGroup);
+            this.TPAddGroup.Controls.Add(this.DGVgroupStudents);
+            this.TPAddGroup.Location = new System.Drawing.Point(4, 30);
+            this.TPAddGroup.Name = "TPAddGroup";
+            this.TPAddGroup.Size = new System.Drawing.Size(932, 554);
+            this.TPAddGroup.TabIndex = 16;
+            this.TPAddGroup.Text = "Add Group";
             // 
-            // lblErrAdvId
+            // cmdCreateGroup
             // 
-            this.lblErrAdvId.AutoSize = true;
-            this.lblErrAdvId.ForeColor = System.Drawing.Color.Red;
-            this.lblErrAdvId.Location = new System.Drawing.Point(512, 154);
-            this.lblErrAdvId.Name = "lblErrAdvId";
-            this.lblErrAdvId.Size = new System.Drawing.Size(104, 17);
-            this.lblErrAdvId.TabIndex = 121;
-            this.lblErrAdvId.Text = "Error Advisor Id";
+            this.cmdCreateGroup.Location = new System.Drawing.Point(751, 462);
+            this.cmdCreateGroup.Name = "cmdCreateGroup";
+            this.cmdCreateGroup.Size = new System.Drawing.Size(138, 50);
+            this.cmdCreateGroup.TabIndex = 8;
+            this.cmdCreateGroup.Text = "Create Group";
+            this.cmdCreateGroup.UseVisualStyleBackColor = true;
+            this.cmdCreateGroup.Click += new System.EventHandler(this.cmdCreateGroup_Click_1);
             // 
-            // lblErrProject
+            // DGVgroupStudents
             // 
-            this.lblErrProject.AutoSize = true;
-            this.lblErrProject.ForeColor = System.Drawing.Color.Red;
-            this.lblErrProject.Location = new System.Drawing.Point(512, 123);
-            this.lblErrProject.Name = "lblErrProject";
-            this.lblErrProject.Size = new System.Drawing.Size(85, 17);
-            this.lblErrProject.TabIndex = 120;
-            this.lblErrProject.Text = "Error Project";
+            this.DGVgroupStudents.AllowUserToAddRows = false;
+            this.DGVgroupStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVgroupStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVgroupStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Select_Students,
+            this.Status});
+            this.DGVgroupStudents.Location = new System.Drawing.Point(72, 70);
+            this.DGVgroupStudents.Name = "DGVgroupStudents";
+            this.DGVgroupStudents.Size = new System.Drawing.Size(817, 369);
+            this.DGVgroupStudents.TabIndex = 7;
+            this.DGVgroupStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVgroupStudents_CellContentClick);
             // 
-            // lblErrAdvRole
+            // Select_Students
             // 
-            this.lblErrAdvRole.AutoSize = true;
-            this.lblErrAdvRole.ForeColor = System.Drawing.Color.Red;
-            this.lblErrAdvRole.Location = new System.Drawing.Point(512, 211);
-            this.lblErrAdvRole.Name = "lblErrAdvRole";
-            this.lblErrAdvRole.Size = new System.Drawing.Size(119, 17);
-            this.lblErrAdvRole.TabIndex = 123;
-            this.lblErrAdvRole.Text = "Error Advisor Role";
+            this.Select_Students.HeaderText = "Select Students";
+            this.Select_Students.Name = "Select_Students";
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Active Student";
+            this.Status.Name = "Status";
+            // 
+            // lnkAddGroup
+            // 
+            this.lnkAddGroup.AutoSize = true;
+            this.lnkAddGroup.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkAddGroup.Location = new System.Drawing.Point(17, 43);
+            this.lnkAddGroup.Name = "lnkAddGroup";
+            this.lnkAddGroup.Size = new System.Drawing.Size(119, 18);
+            this.lnkAddGroup.TabIndex = 2;
+            this.lnkAddGroup.TabStop = true;
+            this.lnkAddGroup.Text = "Create New Group";
+            this.lnkAddGroup.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAddGroup_LinkClicked);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(8, 34);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(129, 21);
+            this.label40.TabIndex = 9;
+            this.label40.Text = "List of Students";
+            // 
+            // TPGroupDetail
+            // 
+            this.TPGroupDetail.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPGroupDetail.Controls.Add(this.lnkAddNewMem);
+            this.TPGroupDetail.Controls.Add(this.lblBacktoGroups);
+            this.TPGroupDetail.Controls.Add(this.lblIdGroup);
+            this.TPGroupDetail.Controls.Add(this.lblGrpMem);
+            this.TPGroupDetail.Controls.Add(this.label41);
+            this.TPGroupDetail.Controls.Add(this.DGVDetails);
+            this.TPGroupDetail.Location = new System.Drawing.Point(4, 30);
+            this.TPGroupDetail.Name = "TPGroupDetail";
+            this.TPGroupDetail.Size = new System.Drawing.Size(932, 554);
+            this.TPGroupDetail.TabIndex = 17;
+            this.TPGroupDetail.Text = "Group Detail";
+            // 
+            // DGVDetails
+            // 
+            this.DGVDetails.AllowUserToAddRows = false;
+            this.DGVDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clUpdate,
+            this.CLDel});
+            this.DGVDetails.Location = new System.Drawing.Point(67, 169);
+            this.DGVDetails.Name = "DGVDetails";
+            this.DGVDetails.Size = new System.Drawing.Size(738, 184);
+            this.DGVDetails.TabIndex = 0;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(62, 42);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(92, 23);
+            this.label41.TabIndex = 1;
+            this.label41.Text = "Group Id : ";
+            // 
+            // lblGrpMem
+            // 
+            this.lblGrpMem.AutoSize = true;
+            this.lblGrpMem.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrpMem.Location = new System.Drawing.Point(64, 131);
+            this.lblGrpMem.Name = "lblGrpMem";
+            this.lblGrpMem.Size = new System.Drawing.Size(117, 20);
+            this.lblGrpMem.TabIndex = 2;
+            this.lblGrpMem.Text = "Group Members";
+            // 
+            // lblIdGroup
+            // 
+            this.lblIdGroup.AutoSize = true;
+            this.lblIdGroup.Location = new System.Drawing.Point(169, 47);
+            this.lblIdGroup.Name = "lblIdGroup";
+            this.lblIdGroup.Size = new System.Drawing.Size(60, 17);
+            this.lblIdGroup.TabIndex = 3;
+            this.lblIdGroup.Text = "Group Id";
+            // 
+            // clUpdate
+            // 
+            this.clUpdate.HeaderText = "Update";
+            this.clUpdate.Name = "clUpdate";
+            this.clUpdate.Text = "Edit";
+            this.clUpdate.UseColumnTextForButtonValue = true;
+            // 
+            // CLDel
+            // 
+            this.CLDel.HeaderText = "";
+            this.CLDel.Name = "CLDel";
+            this.CLDel.Text = "Delete";
+            this.CLDel.UseColumnTextForButtonValue = true;
+            // 
+            // lblBacktoGroups
+            // 
+            this.lblBacktoGroups.AutoSize = true;
+            this.lblBacktoGroups.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBacktoGroups.Location = new System.Drawing.Point(63, 435);
+            this.lblBacktoGroups.Name = "lblBacktoGroups";
+            this.lblBacktoGroups.Size = new System.Drawing.Size(92, 20);
+            this.lblBacktoGroups.TabIndex = 117;
+            this.lblBacktoGroups.TabStop = true;
+            this.lblBacktoGroups.Text = "Back to List";
+            this.lblBacktoGroups.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblBacktoGroups_LinkClicked);
+            // 
+            // TPEditGroupMem
+            // 
+            this.TPEditGroupMem.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPEditGroupMem.Location = new System.Drawing.Point(4, 30);
+            this.TPEditGroupMem.Name = "TPEditGroupMem";
+            this.TPEditGroupMem.Size = new System.Drawing.Size(932, 554);
+            this.TPEditGroupMem.TabIndex = 18;
+            this.TPEditGroupMem.Text = "Edit Group Member";
+            // 
+            // TPAddGrpMem
+            // 
+            this.TPAddGrpMem.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPAddGrpMem.Controls.Add(this.lnkBackToDetails);
+            this.TPAddGrpMem.Controls.Add(this.lblGroupIdMem);
+            this.TPAddGrpMem.Controls.Add(this.label44);
+            this.TPAddGrpMem.Controls.Add(this.lblChoose);
+            this.TPAddGrpMem.Controls.Add(this.cmdAddMem);
+            this.TPAddGrpMem.Controls.Add(this.DGVGroupMem);
+            this.TPAddGrpMem.Location = new System.Drawing.Point(4, 30);
+            this.TPAddGrpMem.Name = "TPAddGrpMem";
+            this.TPAddGrpMem.Size = new System.Drawing.Size(932, 554);
+            this.TPAddGrpMem.TabIndex = 19;
+            this.TPAddGrpMem.Text = "Add Group Member";
+            // 
+            // DGVGroupMem
+            // 
+            this.DGVGroupMem.AllowUserToAddRows = false;
+            this.DGVGroupMem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVGroupMem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVGroupMem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewCheckBoxColumn2});
+            this.DGVGroupMem.Location = new System.Drawing.Point(0, 80);
+            this.DGVGroupMem.Name = "DGVGroupMem";
+            this.DGVGroupMem.Size = new System.Drawing.Size(932, 369);
+            this.DGVGroupMem.TabIndex = 8;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Select Student";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Active Student";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            // 
+            // cmdAddMem
+            // 
+            this.cmdAddMem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.cmdAddMem.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAddMem.Location = new System.Drawing.Point(651, 486);
+            this.cmdAddMem.Name = "cmdAddMem";
+            this.cmdAddMem.Size = new System.Drawing.Size(136, 45);
+            this.cmdAddMem.TabIndex = 128;
+            this.cmdAddMem.Text = "Add Member";
+            this.cmdAddMem.UseVisualStyleBackColor = false;
+            this.cmdAddMem.Click += new System.EventHandler(this.cmdAddMem_Click);
+            // 
+            // lblChoose
+            // 
+            this.lblChoose.AutoSize = true;
+            this.lblChoose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChoose.Location = new System.Drawing.Point(3, 49);
+            this.lblChoose.Name = "lblChoose";
+            this.lblChoose.Size = new System.Drawing.Size(130, 19);
+            this.lblChoose.TabIndex = 130;
+            this.lblChoose.Text = "Choose from the list";
+            // 
+            // lblGroupIdMem
+            // 
+            this.lblGroupIdMem.AutoSize = true;
+            this.lblGroupIdMem.Location = new System.Drawing.Point(106, 20);
+            this.lblGroupIdMem.Name = "lblGroupIdMem";
+            this.lblGroupIdMem.Size = new System.Drawing.Size(60, 17);
+            this.lblGroupIdMem.TabIndex = 133;
+            this.lblGroupIdMem.Text = "Group Id";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(8, 15);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(92, 23);
+            this.label44.TabIndex = 131;
+            this.label44.Text = "Group Id : ";
+            // 
+            // lnkAddNewMem
+            // 
+            this.lnkAddNewMem.AutoSize = true;
+            this.lnkAddNewMem.Location = new System.Drawing.Point(65, 96);
+            this.lnkAddNewMem.Name = "lnkAddNewMem";
+            this.lnkAddNewMem.Size = new System.Drawing.Size(120, 17);
+            this.lnkAddNewMem.TabIndex = 118;
+            this.lnkAddNewMem.TabStop = true;
+            this.lnkAddNewMem.Text = "Add New Member";
+            this.lnkAddNewMem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAddNewMem_LinkClicked);
+            // 
+            // lnkbackToGroups
+            // 
+            this.lnkbackToGroups.AutoSize = true;
+            this.lnkbackToGroups.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkbackToGroups.Location = new System.Drawing.Point(68, 492);
+            this.lnkbackToGroups.Name = "lnkbackToGroups";
+            this.lnkbackToGroups.Size = new System.Drawing.Size(92, 20);
+            this.lnkbackToGroups.TabIndex = 117;
+            this.lnkbackToGroups.TabStop = true;
+            this.lnkbackToGroups.Text = "Back to List";
+            this.lnkbackToGroups.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkbackToGroups_LinkClicked);
+            // 
+            // ClDetails
+            // 
+            this.ClDetails.HeaderText = "";
+            this.ClDetails.Name = "ClDetails";
+            this.ClDetails.Text = "Details";
+            this.ClDetails.UseColumnTextForLinkValue = true;
+            // 
+            // CldelGroup
+            // 
+            this.CldelGroup.HeaderText = "";
+            this.CldelGroup.Name = "CldelGroup";
+            this.CldelGroup.Text = "Delete";
+            this.CldelGroup.UseColumnTextForButtonValue = true;
+            // 
+            // lblErrMemCount
+            // 
+            this.lblErrMemCount.AutoSize = true;
+            this.lblErrMemCount.ForeColor = System.Drawing.Color.Red;
+            this.lblErrMemCount.Location = new System.Drawing.Point(69, 462);
+            this.lblErrMemCount.Name = "lblErrMemCount";
+            this.lblErrMemCount.Size = new System.Drawing.Size(138, 17);
+            this.lblErrMemCount.TabIndex = 118;
+            this.lblErrMemCount.Text = "Error Members Count";
+            // 
+            // lnkBackToDetails
+            // 
+            this.lnkBackToDetails.AutoSize = true;
+            this.lnkBackToDetails.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkBackToDetails.Location = new System.Drawing.Point(41, 476);
+            this.lnkBackToDetails.Name = "lnkBackToDetails";
+            this.lnkBackToDetails.Size = new System.Drawing.Size(92, 20);
+            this.lnkBackToDetails.TabIndex = 134;
+            this.lnkBackToDetails.TabStop = true;
+            this.lnkBackToDetails.Text = "Back to List";
+            this.lnkBackToDetails.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkBackToDetails_LinkClicked);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.ClientSize = new System.Drawing.Size(757, 445);
+            this.ClientSize = new System.Drawing.Size(940, 588);
             this.Controls.Add(this.TControl);
             this.Name = "Main";
             this.Text = "FYP Management System";
@@ -2186,7 +2589,8 @@
             this.TPProjAd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProjAdv)).EndInit();
             this.TPGroups.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGVgroups)).EndInit();
+            this.TPGroups.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVGroupsList)).EndInit();
             this.TPAddStu.ResumeLayout(false);
             this.TPAddStu.PerformLayout();
             this.TPAddAdv.ResumeLayout(false);
@@ -2211,6 +2615,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.NUDTMarksCh)).EndInit();
             this.TPEditProjAdv.ResumeLayout(false);
             this.TPEditProjAdv.PerformLayout();
+            this.TPAddGroup.ResumeLayout(false);
+            this.TPAddGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVgroupStudents)).EndInit();
+            this.TPGroupDetail.ResumeLayout(false);
+            this.TPGroupDetail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVDetails)).EndInit();
+            this.TPAddGrpMem.ResumeLayout(false);
+            this.TPAddGrpMem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVGroupMem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2230,9 +2643,6 @@
         private System.Windows.Forms.LinkLabel AssignProject;
         private System.Windows.Forms.DataGridView DGVProjAdv;
         private System.Windows.Forms.TabPage TPGroups;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView DGVgroups;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Select_Students;
         private System.Windows.Forms.DataGridViewButtonColumn Update;
         private System.Windows.Forms.DataGridViewButtonColumn Del;
         private System.Windows.Forms.TabPage TPAddStu;
@@ -2394,5 +2804,42 @@
         private System.Windows.Forms.Label lblErrAssignDate;
         private System.Windows.Forms.Label lblErrAdvId;
         private System.Windows.Forms.Label lblErrProject;
+        private System.Windows.Forms.Label lblAdvRoleCh;
+        private System.Windows.Forms.Label lblErrAssigndateCh;
+        private System.Windows.Forms.Label lblErrAdvIdCh;
+        private System.Windows.Forms.Label lblErrProjTitleCh;
+        private System.Windows.Forms.Label lblProjAdvId;
+        private System.Windows.Forms.Label lblIdAdvisor;
+        private System.Windows.Forms.TabPage TPAddGroup;
+        private System.Windows.Forms.Button cmdCreateGroup;
+        private System.Windows.Forms.DataGridView DGVgroupStudents;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Select_Students;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Status;
+        private System.Windows.Forms.DataGridView DGVGroupsList;
+        private System.Windows.Forms.LinkLabel lnkAddGroup;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TabPage TPGroupDetail;
+        private System.Windows.Forms.Label lblIdGroup;
+        private System.Windows.Forms.Label lblGrpMem;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.DataGridView DGVDetails;
+        private System.Windows.Forms.DataGridViewButtonColumn clUpdate;
+        private System.Windows.Forms.DataGridViewButtonColumn CLDel;
+        private System.Windows.Forms.LinkLabel lblBacktoGroups;
+        private System.Windows.Forms.LinkLabel lnkAddNewMem;
+        private System.Windows.Forms.TabPage TPEditGroupMem;
+        private System.Windows.Forms.TabPage TPAddGrpMem;
+        private System.Windows.Forms.Label lblGroupIdMem;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label lblChoose;
+        private System.Windows.Forms.Button cmdAddMem;
+        private System.Windows.Forms.DataGridView DGVGroupMem;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.LinkLabel lnkbackToGroups;
+        private System.Windows.Forms.DataGridViewLinkColumn ClDetails;
+        private System.Windows.Forms.DataGridViewButtonColumn CldelGroup;
+        private System.Windows.Forms.Label lblErrMemCount;
+        private System.Windows.Forms.LinkLabel lnkBackToDetails;
     }
 }

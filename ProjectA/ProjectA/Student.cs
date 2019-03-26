@@ -8,13 +8,27 @@ namespace ProjectA
 {
     class Student
     {
+        private string RegNo;
+
         private string FirstName;
         private string LastName;
         private string Gender;
         private string Email;
         private string Contact;
         private DateTime DOB;
-        private string RegNo;
+
+        public string RegistrationNo
+        {
+            get
+            {
+                return RegNo;
+            }
+
+            set
+            {
+                RegNo = value;
+            }
+        }
 
         public string First_Name
         {
@@ -94,17 +108,5 @@ namespace ProjectA
             }
         }
 
-        public string RegistrationNo
-        {
-            get
-            {
-                return RegNo;
-            }
-
-            set
-            {
-                RegNo = value;
-            }
-        }
-    }
+   }
 }

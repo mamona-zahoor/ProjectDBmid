@@ -28,16 +28,16 @@ namespace ProjectA
             TControl.TabPages.Remove(TPEditProj);
             TControl.TabPages.Remove(TPEditEva);
             TControl.TabPages.Remove(TPEditProjAdv);
-           // TControl.TabPages.Remove(TPAddGroup);
+            TControl.TabPages.Remove(TPAddGroup);
             TControl.TabPages.Remove(TPGroupDetail);
             TControl.TabPages.Remove(TPEditGroupMem);
             TControl.TabPages.Remove(TPAddGrpMem);
-
+            TControl.TabPages.Remove(TPAssignProj);
             lblEditProjId.Hide();
             lblEditAdvId.Hide();
             lblEditEvaId.Hide();
             lblEditStuId.Hide();
-            lblGrpMem.Hide();
+         
             SqlConnection sqlConn = new SqlConnection(conn);
             sqlConn.Open();
             SqlCommand cmd = new SqlCommand();
@@ -151,9 +151,31 @@ namespace ProjectA
             da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             DGVgroupStudents.DataSource = dt;
-
-
-
+            DGVGroupMem.DataSource = dt;
+            q1 = "(SELECT Title from Project where Id not in (SELECT ProjectId from ProjectAdvisor))";
+           cmd = new SqlCommand(q1, sqlConn);
+            List<string> titles = new List<string>();
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                titles.Add(reader.GetString(0));
+            }
+            cmbProjectList.DataSource = titles;
+            reader.Dispose();
+            reader.Close();
+            q1 = "(SELECT Id from Advisor )";
+            cmd = new SqlCommand(q1, sqlConn);
+            List<int> AdvIds = new List<int>();
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                AdvIds.Add(reader.GetInt32(0));
+            }
+            reader.Dispose();
+            reader.Close();
+            cmbAdvIdList.DataSource = AdvIds;
+         
+            DGVProjGrp.Hide();
         }
 
         public void ChangeTab(int Index)
@@ -209,6 +231,17 @@ namespace ProjectA
 
         private void Main_Load(object sender, EventArgs e)
         {
+            lblAssignProject.Hide();
+            lblErrProjId.Hide();
+            lblErrAssDate.Hide();
+            lblProjTitleCh.Hide();
+            lblAdvIdCh.Hide();
+            lblErrProject.Hide();
+            lblErrAdvId.Hide();
+            lblErrAssignDate.Hide();
+            lblErrAdvRole.Hide();
+            lblErrAssigndateCh.Hide();
+            lblErrMem.Hide();
             lblErrMemCount.Hide();
             lblIdAdvisor.Hide();
             lblProjAdvId.Hide();
@@ -241,10 +274,7 @@ namespace ProjectA
             lblErrAdvId.Hide();
             lblErrProject.Hide();
             lblErrAdvRole.Hide();
-            lblErrProjTitleCh.Hide();
-            lblErrAdvIdCh.Hide();
-            lblErrAssigndateCh.Hide();
-            lblAdvRoleCh.Hide();
+           lblErrAssigndateCh.Hide();
             lnkAddNewMem.Hide();
         }
 
@@ -623,7 +653,20 @@ namespace ProjectA
 
         private void linkLabel3_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            SqlConnection sqlConn = new SqlConnection(conn);
+            sqlConn.Open();
 
+            string q1 = "(SELECT Title from Project where Id not in (SELECT ProjectId from ProjectAdvisor))";
+            SqlCommand cmd = new SqlCommand(q1, sqlConn);
+            List<string> titles = new List<string>();
+           SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                titles.Add(reader.GetString(0));
+            }
+            cmbProjectList.DataSource = titles;
+            reader.Dispose();
+            reader.Close();
             TControl.TabPages.Insert(4, TPAddAdv);
             this.ChangeTab(4);
             TControl.TabPages.Remove(TPProjAd);
@@ -634,26 +677,24 @@ namespace ProjectA
 
         private void button2_Click(object sender, EventArgs e)
         {
+            lblErrProject.Hide();
+            lblErrAdvId.Hide();
+            lblErrAssignDate.Hide();
+            lblErrAdvRole.Hide();
             SqlConnection sqlConn = new SqlConnection(conn);
             sqlConn.Open();
             bool Okay = true;
-            string Que1 = "Select Id from Project where Title = '" + txtTitle.Text + "'";
+            int Id = 0;
+            string Que1 = "Select Id from Project where Title = '"+cmbProjectList.Text+"'";
             SqlCommand cmd = new SqlCommand(Que1, sqlConn);
-            int Id = -1;
             Id = Convert.ToInt32(cmd.ExecuteScalar());
-            if (txtTitle.Text == "")
+            if (cmbProjectList.Text == "")
             {
                 lblErrProject.Text = "Required field";
                 lblErrProject.Show();
                 Okay = true;
             }
-            if (Id == 0)
-            {
-                Okay = false;
-                lblErrProject.Text = "This project does not exist.";
-                lblErrProject.Show();
-            }
-            if (txtAdvisorId.Text == "")
+            if (cmbAdvIdList.Text == "")
             {
                 Okay = false;
                 lblErrAdvId.Text = "Required field.";
@@ -663,8 +704,6 @@ namespace ProjectA
             if (Okay)
             {
                
-                Que1 = "Select 1 from Advisor where Id = '" + txtAdvisorId.Text + "'";
-                cmd = new SqlCommand(Que1, sqlConn);
                 exist = Convert.ToInt32(cmd.ExecuteScalar());
                 if (exist == 0)
                 {
@@ -707,7 +746,7 @@ namespace ProjectA
                 Que1 = "SELECT Id from [Lookup] where Category = 'ADVISOR_ROLE' and Value = '" + cmbRole.Text + "'";
                 cmd = new SqlCommand(Que1, sqlConn);
                 int AdvId = Convert.ToInt32(cmd.ExecuteScalar());
-                Que1 = "INSERT INTO ProjectAdvisor(AdvisorId, ProjectId, AdvisorRole, AssignmentDate) values (" + txtAdvisorId.Text + ", " + Id + ", " + AdvId + ", '" + DTPAssignmentDate.Value + "')";
+                Que1 = "INSERT INTO ProjectAdvisor(AdvisorId, ProjectId, AdvisorRole, AssignmentDate) values (" +cmbAdvIdList.Text + ", " + Id + ", " + AdvId + ", '" + DTPAssignmentDate.Value + "')";
                 cmd = new SqlCommand(Que1, sqlConn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Project has  been assigned to advisor.");
@@ -901,6 +940,15 @@ namespace ProjectA
                     {
                         cmbDesCH.Text = "Associate Professor";
                     }
+                    else if (reader.GetInt32(1) == 9)
+                    {
+                        cmbDesCH.Text = "Lecturer";
+                    }
+                    else if (reader.GetInt32(1) == 10)
+                    {
+                        cmbDesCH.Text = "Industry Professional";
+                    }
+
                     else
                     {
                         cmbDesCH.Text = "Assisstant Professor";
@@ -1196,19 +1244,21 @@ namespace ProjectA
             else if (e.ColumnIndex == 0)
             {
                 lblProjAdvId.Text = DGVProjAdv[3, e.RowIndex].Value.ToString();
-                lblIdAdvisor.Text = DGVProjAdv[2, e.RowIndex].Value.ToString(); 
-                string que = "SELECT Title from Project where  Id = " + DGVProjAdv[3, e.RowIndex].Value + "";
-                SqlCommand cmd = new SqlCommand(que, sqlConn);
+                lblIdAdvisor.Text = DGVProjAdv[2, e.RowIndex].Value.ToString();
+               
+                txtAdvIdCh.Text = DGVProjAdv[2, e.RowIndex].Value.ToString();
+                string que = "SELECT Title from Project where  Id = "+ DGVProjAdv[3, e.RowIndex].Value +"";
+               SqlCommand  cmd = new SqlCommand(que, sqlConn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    txtProjTitleCh.Text = reader.GetString(0);
+                        txtProjTitleCh.Text = reader.GetString(0);
+                
                 }
                 reader.Dispose();
                 reader.Close();
                 DTPProjAdvCh.Text = DGVProjAdv[5, e.RowIndex].Value.ToString();
-                txtAdvIdCh.Text = DGVProjAdv[2, e.RowIndex].Value.ToString();
-               que = "SELECT Value from [Lookup] where  Category = 'ADVISOR_ROLE' and Id = " + DGVProjAdv[4, e.RowIndex].Value + "";
+                que = "SELECT Value from [Lookup] where  Category = 'ADVISOR_ROLE' and Id = " + DGVProjAdv[4, e.RowIndex].Value + "";
                cmd = new SqlCommand(que, sqlConn);
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -1238,22 +1288,79 @@ namespace ProjectA
 
         private void button2_Click_3(object sender, EventArgs e)
         {
+            lblProjTitleCh.Hide();
+            lblAdvIdCh.Hide();
+            lblErrAssigndateCh.Hide();
             SqlConnection sqlConn = new SqlConnection(conn);
             sqlConn.Open();
+            string Que1 = "Select Id from Project where Title = '" + txtProjTitleCh.Text + "'";
+            SqlCommand cmd = new SqlCommand(Que1, sqlConn);
+            int Id = -1;
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+
+            bool Okay = true;
+            if (txtProjTitleCh.Text == "")
+            {
+                lblProjTitleCh.Text = "Required Field";
+                lblProjTitleCh.Show();
+                Okay = false;
+            }
+            if (txtAdvIdCh.Text == "")
+            {
+                lblAdvIdCh.Text = "Required Field";
+                lblAdvIdCh.Show();
+                Okay = false;
+            }
+            if (DTPAssignmentDate.Value > DateTime.Now)
+            {
+                lblErrAssignDate.Text = "Invalid Assignment date.";
+                lblErrAssignDate.Show();
+                Okay = false;
+            }
+           int exist = 0, AdvExist = 0;
+            if (txtProjTitleCh.Text != "")
+
+            {
+                Que1 = "Select 1 from Project where Title = '" + txtProjTitleCh.Text + "'";
+                cmd = new SqlCommand(Que1, sqlConn);
+                exist = Convert.ToInt32(cmd.ExecuteScalar());
+                if (exist == 0)
+                {
+                    lblProjTitleCh.Text = "This project does not exist.";
+                    lblProjTitleCh.Show();
+                    Okay = false;
+                }
+            }
+            if (txtAdvIdCh.Text != "")
+
+            {
+                Que1 = "Select 1 from Advisor where Id = '" + txtAdvIdCh.Text + "'";
+                cmd = new SqlCommand(Que1, sqlConn);
+                AdvExist = Convert.ToInt32(cmd.ExecuteScalar());
+                if (AdvExist == 0)
+                {
+                    lblAdvIdCh.Text = "Advisor does not exist.";
+                    lblAdvIdCh.Show();
+                    Okay = false;
+                }
+            }
+
+            if (Okay)
+            { 
             string Que = "Select Id from [Lookup] where Category = 'ADVISOR_ROLE' and Value = '" + cmbAdvRoleCh.Text + "'";
-            SqlCommand cmd = new SqlCommand(Que, sqlConn);
+            cmd = new SqlCommand(Que, sqlConn);
             int IdAdvRole = Convert.ToInt32(cmd.ExecuteScalar());
             Que = "Select Id from Project where Title = '" + txtProjTitleCh.Text + "'";
             cmd = new SqlCommand(Que, sqlConn);
-            int Id = Convert.ToInt32(cmd.ExecuteScalar());
-            Que = "UPDATE ProjectAdvisor set AdvisorId = "+ txtAdvIdCh.Text+ ", ProjectId = "+ Id+ ", AssignmentDate = '"+DTPProjAdvCh.Value+"', AdvisorRole = "+IdAdvRole+" where AdvisorId = "+ lblIdAdvisor.Text+ " and ProjectId = "+lblProjAdvId.Text+"";
+            int IdEd = Convert.ToInt32(cmd.ExecuteScalar());
+            Que = "UPDATE ProjectAdvisor set AdvisorId = " + txtAdvIdCh.Text + ", ProjectId = " + IdEd + ", AssignmentDate = '" + DTPProjAdvCh.Value + "', AdvisorRole = " + IdAdvRole + " where AdvisorId = " + lblIdAdvisor.Text + " and ProjectId = " + lblProjAdvId.Text + "";
             cmd = new SqlCommand(Que, sqlConn);
             cmd.ExecuteNonQuery();
             Main m = new Main();
             m.ChangeTab(4);
             m.Show();
             this.Hide();
-
+        }
         }
 
         private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1340,12 +1447,17 @@ namespace ProjectA
                     cmd.ExecuteNonQuery();
                 }
                 MessageBox.Show("Group has been created.");
-                Main m = new Main();
+                TControl.TabPages.Remove(TPAddGroup);
+
+                string q1 = "SELECT m.RegistrationNo, person.FirstName, Person.LastName, Person.Email  FROM (SELECT * from Student where Id not in (SELECT StudentId from GroupStudent)) as m join Person on Person.Id = m.Id";
+                 cmd = new SqlCommand(q1, sqlConn);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                DGVgroupStudents.DataSource = dt;
                 TControl.TabPages.Remove(TPGroups);
                 TControl.TabPages.Insert(5, TPAddGroup);
-                m.ChangeTab(5);
-                m.Show();
-                this.Hide();
+                this.ChangeTab(5);
 
 
             }
@@ -1353,30 +1465,52 @@ namespace ProjectA
 
         private void lnkAddGroup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Main m = new Main();
-            m.TControl.TabPages.Insert(5, TPAddGroup);
-            m.TControl.TabPages.Remove(TPGroups);
-            m.ChangeTab(6);
-            m.Show();
-            this.Hide();
-            
+            SqlConnection sqlConn = new SqlConnection(conn);
+            sqlConn.Open();
+            string q1 = "SELECT m.RegistrationNo, person.FirstName, Person.LastName, Person.Email  FROM (SELECT * from Student where Id not in (SELECT StudentId from GroupStudent)) as m join Person on Person.Id = m.Id";
+            SqlCommand cmd = new SqlCommand(q1, sqlConn);
+           DataTable dt = new DataTable();
+           SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            DGVgroupStudents.DataSource = dt;
+            TControl.TabPages.Remove(TPGroups);
+            TControl.TabPages.Insert(5, TPAddGroup);
+            this.ChangeTab(5);
+         
+
         }
 
         private void DGVGroupsList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            lnkAddNewMem.Hide();
             SqlConnection sqlConn = new SqlConnection(conn);
             sqlConn.Open();
             if (e.ColumnIndex == 0)
             {
-                string que = "SELECT RegistrationNo, Status FROM GroupStudent join Student on GroupStudent.StudentId = Student.Id where GroupStudent.GroupId = "+DGVGroupsList[2, e.RowIndex].Value+"";
+                string que = "SELECT RegistrationNo, Status FROM GroupStudent join Student on GroupStudent.StudentId = Student.Id where GroupStudent.GroupId = " + DGVGroupsList[2, e.RowIndex].Value + "";
                 SqlCommand cmd = new SqlCommand(que, sqlConn);
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Group_Member> gm = new List<Group_Member>();
                 lblIdGroup.Text = DGVGroupsList[2, e.RowIndex].Value.ToString();
                 lblGroupIdMem.Text = DGVGroupsList[2, e.RowIndex].Value.ToString();
-                DGVDetails.DataSource = dt;
-                if(dt.Rows.Count < 4)
+                lblGrpAssignId.Text = DGVGroupsList[2, e.RowIndex].Value.ToString();
+                while (reader.Read())
+                {
+                    Group_Member g = new Group_Member();
+                    g.RegistrationNo = reader.GetString(0);
+                    if (reader.GetInt32(1) == 3)
+                    {
+                        g.Status = "Active";
+                    }
+                    else
+                    {
+                        g.Status = "InActive";
+
+                    }
+                    gm.Add(g);
+                }
+                DGVDetails.DataSource = gm;
+                if (gm.Count < 4)
                 {
                     lnkAddNewMem.Show();
                 }
@@ -1389,7 +1523,7 @@ namespace ProjectA
                 string que = "DELETE from GroupStudent where GroupId= " + DGVGroupsList[2, e.RowIndex].Value + "";
                 SqlCommand cmd = new SqlCommand(que, sqlConn);
                 cmd.ExecuteNonQuery();
-                que = "DELETE from [Group] where Id = "+ DGVGroupsList[2, e.RowIndex].Value + "";
+                que = "DELETE from [Group] where Id = " + DGVGroupsList[2, e.RowIndex].Value + "";
                 cmd = new SqlCommand(que, sqlConn);
                 cmd.ExecuteNonQuery();
                 CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[DGVGroupsList.DataSource];
@@ -1398,6 +1532,7 @@ namespace ProjectA
                 currencyManager1.ResumeBinding();
 
             }
+            
 
         }
 
@@ -1430,6 +1565,73 @@ namespace ProjectA
 
         private void cmdAddMem_Click(object sender, EventArgs e)
         {
+            lblErrMem.Hide();
+            bool Okay = true;
+            DateTime Creation = DateTime.Now;
+
+            SqlConnection sqlConn = new SqlConnection(conn);
+            sqlConn.Open();
+            List<int> Ids = new List<int>(), Status = new List<int>();
+            int count = 0, check = 0;
+            for (int i = 0; i < DGVGroupMem.RowCount; ++i)
+            {
+                if (Convert.ToInt32(DGVGroupMem[0, i].Value) == 1)
+                {
+                    check++;
+                    string qu = "SELECT Id from Student where RegistrationNo = '" + DGVGroupMem[2, i].Value + "'";
+                    SqlCommand cm = new SqlCommand(qu, sqlConn);
+                    Ids.Add(Convert.ToInt32(cm.ExecuteScalar()));
+                    if (Convert.ToInt32(DGVGroupMem[1, i].Value) == 1)
+                    {
+                        qu = "SELECT Id from [LookUp] where Category = 'STATUS' and Value = 'Active'";
+                        cm = new SqlCommand(qu, sqlConn);
+                        Status.Add(Convert.ToInt32(cm.ExecuteScalar()));
+                    }
+                    else
+                    {
+                        qu = "SELECT Id from [LookUp] where Category = 'STATUS' and Value = 'InActive'";
+                        cm = new SqlCommand(qu, sqlConn);
+                        Status.Add(Convert.ToInt32(cm.ExecuteScalar()));
+
+                    }
+
+                }
+            }
+            string q = "SELECT Count(*) from GroupStudent group by GroupId having GroupId  = "+lblGroupIdMem.Text+"";
+            SqlCommand cmd = new SqlCommand(q, sqlConn);
+            count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count + check > 4)
+            {
+                lblErrMem.Text = "A group can have maximum 4 members only.";
+                lblErrMem.Show();
+                Okay = false;
+            }
+            if (check == 0)
+            {
+                lblErrMem.Text = "Select atleast one student to add.";
+                lblErrMem.Show();
+                Okay = false;
+            }
+            if (Okay)
+            {
+               
+                for (int i = 0; i < check; ++i)
+                {
+                    string que = "INSERT INTO GroupStudent(GroupId, StudentId, Status, AssignmentDate) values (" + lblGroupIdMem .Text+ ", " + Ids[i] + ", " + Status[i] + ", '" + Creation + "')";
+                     cmd = new SqlCommand(que, sqlConn);
+                    cmd.ExecuteNonQuery();
+                }
+                MessageBox.Show("Member has been added.");
+                TControl.TabPages.Remove(TPAddGrpMem);
+                string q1 = "Select * from [Group]";
+                cmd = new SqlCommand(q1, sqlConn);
+                DataTable dt = new DataTable();
+               SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                DGVGroupsList.DataSource = dt;
+                TControl.TabPages.Insert(5, TPGroups);
+                this.ChangeTab(5);
+            }
 
         }
 
@@ -1440,13 +1642,214 @@ namespace ProjectA
 
         private void lnkBackToDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Main m = new Main();
+            lnkAddNewMem.Hide();
+            SqlConnection sqlConn = new SqlConnection(conn);
+            sqlConn.Open();
+            string que = "SELECT RegistrationNo, Status FROM GroupStudent join Student on GroupStudent.StudentId = Student.Id where GroupStudent.GroupId = " + lblGroupIdMem.Text + "";
+            SqlCommand cmd = new SqlCommand(que, sqlConn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<Group_Member> gm = new List<Group_Member>();
+            while (reader.Read())
+            {
+                Group_Member g = new Group_Member();
+                g.RegistrationNo = reader.GetString(0);
+                if (reader.GetInt32(1) == 3)
+                {
+                    g.Status = "Active";
+                }
+                else
+                {
+                    g.Status = "InActive";
+
+                }
+                gm.Add(g);
+            }
+            DGVDetails.DataSource = gm;
+            if (gm.Count < 4)
+            {
+                lnkAddNewMem.Show();
+            }
             TControl.TabPages.Remove(TPGroups);
             TControl.TabPages.Insert(5, TPGroupDetail);
+            this.ChangeTab(5);
+        }
+
+        private void DGVDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SqlConnection sqlConn = new SqlConnection(conn);
+            sqlConn.Open();
+            string que = "SELECT Id from Student where RegistrationNo = '"+DGVDetails[2,e.RowIndex].Value+"'";
+            SqlCommand cmd = new SqlCommand(que, sqlConn);
+            if (e.ColumnIndex == 1)
+            {
+                int id = Convert.ToInt32(cmd.ExecuteScalar());
+                que = "DELETE FROM GroupStudent where GroupId = " + lblIdGroup.Text + " and StudentId = " + id + "";
+                cmd = new SqlCommand(que, sqlConn);
+                cmd.ExecuteNonQuery();
+                CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[DGVDetails.DataSource];
+                currencyManager1.SuspendBinding();
+                DGVDetails.Rows[e.RowIndex].Visible = false;
+                currencyManager1.ResumeBinding();
+
+            }
+            else if (e.ColumnIndex == 0)
+            {
+                lblGroupIdCh.Text = lblIdGroup.Text;
+                List<string> RegNo = new List<string>();
+                RegNo.Add(DGVDetails[2, e.RowIndex].Value.ToString());
+                lblMemRegNo.Text = DGVDetails[2, e.RowIndex].Value.ToString();
+                if (DGVDetails[2, e.RowIndex].Value.ToString() == "Active")
+                {
+                   rbActive.Checked = true;
+                }
+                else
+                {
+                    rbInActive.Checked = true;
+                }
+                TControl.TabPages.Insert(5, TPEditGroupMem);
+                TControl.TabPages.Remove(TPGroupDetail);
+                this.ChangeTab(5);
+
+            }
+        }
+
+        private void lblBackToDetail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            TControl.TabPages.Remove(TPEditGroupMem);
+            SqlConnection sqlConn = new SqlConnection(conn);
+            sqlConn.Open();
+            string que = "SELECT RegistrationNo, Status FROM GroupStudent join Student on GroupStudent.StudentId = Student.Id where GroupStudent.GroupId = " + lblGroupIdMem.Text + "";
+            SqlCommand cmd = new SqlCommand(que, sqlConn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<Group_Member> gm = new List<Group_Member>();
+            while (reader.Read())
+            {
+                Group_Member g = new Group_Member();
+                g.RegistrationNo = reader.GetString(0);
+                if (reader.GetInt32(1) == 3)
+                {
+                    g.Status = "Active";
+                }
+                else
+                {
+                    g.Status = "InActive";
+
+                }
+                gm.Add(g);
+            }
+            DGVDetails.DataSource = gm;
+            TControl.TabPages.Remove(TPGroups);
+            TControl.TabPages.Insert(5, TPGroupDetail);
+            this.ChangeTab(5);
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            SqlConnection sqlConn = new SqlConnection(conn);
+            sqlConn.Open();
+            string qu = "SELECT Id from Student where RegistrationNo = '" + lblMemRegNo.Text + "'";
+            SqlCommand cmd = new SqlCommand(qu, sqlConn);
+            int Id =Convert.ToInt32(cmd.ExecuteScalar());
+            int status;
+            if (rbActive.Checked == true)
+            {
+                qu = "SELECT Id from [LookUp] where Category = 'STATUS' and Value = 'Active'";
+                cmd = new SqlCommand(qu, sqlConn);
+                status = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            else
+            {
+                qu = "SELECT Id from [LookUp] where Category = 'STATUS' and Value = 'InActive'";
+                cmd = new SqlCommand(qu, sqlConn);
+                status = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            qu = "UPDATE GroupStudent set Status = "+status+" where StudentId = "+Id+"";
+            cmd = new SqlCommand(qu, sqlConn);
+            cmd.ExecuteNonQuery();
+            TControl.TabPages.Remove(TPEditGroupMem);
+            string que = "SELECT RegistrationNo, Status FROM GroupStudent join Student on GroupStudent.StudentId = Student.Id where GroupStudent.GroupId = " + lblGroupIdMem.Text + "";
+            cmd = new SqlCommand(que, sqlConn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<Group_Member> gm = new List<Group_Member>();
+            while (reader.Read())
+            {
+                Group_Member g = new Group_Member();
+                g.RegistrationNo = reader.GetString(0);
+                if (reader.GetInt32(1) == 3)
+                {
+                    g.Status = "Active";
+                }
+                else
+                {
+                    g.Status = "InActive";
+
+                }
+                gm.Add(g);
+            }
+            DGVDetails.DataSource = gm;
+            TControl.TabPages.Remove(TPGroups);
+            TControl.TabPages.Insert(5, TPGroupDetail);
+            this.ChangeTab(5);
+
+
+
+
+        }
+
+        private void cmdAssignProj_Click(object sender, EventArgs e)
+        {
+            lblErrProjId.Hide();
+            lblErrAssDate.Hide();
+            SqlConnection sqlConn = new SqlConnection(conn);
+            sqlConn.Open();
+            bool Okay = true;
+            if (cmbProjTitles.Text == "")
+            {
+                lblErrProjId.Text = "Required field.";
+                lblErrProjId.Show();
+                Okay = false;
+            }
+            if (DTPAssignProj.Value > DateTime.Now)
+            {
+                lblErrProjId.Text = "Invalid entry.";
+                lblErrProjId.Show();
+                Okay = false;
+            }
+
+            if (Okay)
+            {
+                string Que1 = "Select Id from Project where Title = '" + cmbProjTitles.Text + "'";
+                SqlCommand cmd = new SqlCommand(Que1, sqlConn);
+                int ProjId = Convert.ToInt32(cmd.ExecuteScalar());
+                Que1 = "INSERT INTO GroupProject()ProjectId, GroupId, AssignmentDate) values (" + ProjId + "," + lblGrpAssignId.Text + ",'" + DTPAssignProj.Value + "')";
+                cmd = new SqlCommand(Que1, sqlConn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void lblBackToGrps_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Main m = new Main();
             m.ChangeTab(5);
             m.Show();
             this.Hide();
 
+        }
+
+        private void lblAssignProject_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SqlConnection sqlConn = new SqlConnection(conn);
+            sqlConn.Open();
+            string q1 = " (SELECT Title from Project where Id not in (SELECT ProjectId from GroupProject))";
+            SqlCommand cmd = new SqlCommand(q1, sqlConn);
+            List<string>titles = new List<string>();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                titles.Add(reader.GetString(0));
+            }
+            cmbProjTitles.DataSource = titles;
         }
     }
 }

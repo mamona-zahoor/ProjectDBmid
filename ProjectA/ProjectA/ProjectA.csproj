@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Advisor.cs" />
+    <Compile Include="Group Member.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

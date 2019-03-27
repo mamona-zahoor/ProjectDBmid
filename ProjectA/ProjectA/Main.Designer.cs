@@ -256,13 +256,32 @@
             this.label48 = new System.Windows.Forms.Label();
             this.cmdAssignProj = new System.Windows.Forms.Button();
             this.lblErrAssDate = new System.Windows.Forms.Label();
-            this.lblErrProjId = new System.Windows.Forms.Label();
             this.lblBackToGrps = new System.Windows.Forms.LinkLabel();
-            this.ClDetails = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.CldelGroup = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblAssignProject = new System.Windows.Forms.LinkLabel();
             this.DGVProjGrp = new System.Windows.Forms.DataGridView();
             this.label49 = new System.Windows.Forms.Label();
+            this.lblAssignedProj = new System.Windows.Forms.Label();
+            this.ClDetails = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.CLMarkEva = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.CldelGroup = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.TPGroupEvaluation = new System.Windows.Forms.TabPage();
+            this.DGVgroupEva = new System.Windows.Forms.DataGridView();
+            this.lblGrpIdEvaR = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.TPMarkEva = new System.Windows.Forms.TabPage();
+            this.NUDTMEva = new System.Windows.Forms.NumericUpDown();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.cmbEvaName = new System.Windows.Forms.ComboBox();
+            this.lblGrpIdMarkEva = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.cmdMarkEva = new System.Windows.Forms.Button();
+            this.linkLabel10 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel11 = new System.Windows.Forms.LinkLabel();
+            this.lnklblReload = new System.Windows.Forms.LinkLabel();
             this.TControl.SuspendLayout();
             this.TPStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
@@ -299,6 +318,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVGroupMem)).BeginInit();
             this.TPAssignProj.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProjGrp)).BeginInit();
+            this.TPGroupEvaluation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVgroupEva)).BeginInit();
+            this.TPMarkEva.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDTMEva)).BeginInit();
             this.SuspendLayout();
             // 
             // TControl
@@ -324,6 +347,8 @@
             this.TControl.Controls.Add(this.TPEditGroupMem);
             this.TControl.Controls.Add(this.TPAddGrpMem);
             this.TControl.Controls.Add(this.TPAssignProj);
+            this.TControl.Controls.Add(this.TPGroupEvaluation);
+            this.TControl.Controls.Add(this.TPMarkEva);
             this.TControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TControl.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TControl.Location = new System.Drawing.Point(0, 0);
@@ -639,10 +664,11 @@
             this.DGVGroupsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVGroupsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ClDetails,
+            this.CLMarkEva,
             this.CldelGroup});
-            this.DGVGroupsList.Location = new System.Drawing.Point(139, 92);
+            this.DGVGroupsList.Location = new System.Drawing.Point(84, 88);
             this.DGVGroupsList.Name = "DGVGroupsList";
-            this.DGVGroupsList.Size = new System.Drawing.Size(691, 466);
+            this.DGVGroupsList.Size = new System.Drawing.Size(798, 466);
             this.DGVGroupsList.TabIndex = 0;
             this.DGVGroupsList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVGroupsList_CellContentClick);
             // 
@@ -2326,6 +2352,7 @@
             // TPGroupDetail
             // 
             this.TPGroupDetail.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPGroupDetail.Controls.Add(this.lblAssignedProj);
             this.TPGroupDetail.Controls.Add(this.label49);
             this.TPGroupDetail.Controls.Add(this.DGVProjGrp);
             this.TPGroupDetail.Controls.Add(this.lblAssignProject);
@@ -2344,7 +2371,7 @@
             // lnkAddNewMem
             // 
             this.lnkAddNewMem.AutoSize = true;
-            this.lnkAddNewMem.Location = new System.Drawing.Point(57, 229);
+            this.lnkAddNewMem.Location = new System.Drawing.Point(66, 231);
             this.lnkAddNewMem.Name = "lnkAddNewMem";
             this.lnkAddNewMem.Size = new System.Drawing.Size(120, 17);
             this.lnkAddNewMem.TabIndex = 118;
@@ -2368,7 +2395,7 @@
             // 
             this.lblIdGroup.AutoSize = true;
             this.lblIdGroup.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdGroup.Location = new System.Drawing.Point(161, 67);
+            this.lblIdGroup.Location = new System.Drawing.Point(175, 41);
             this.lblIdGroup.Name = "lblIdGroup";
             this.lblIdGroup.Size = new System.Drawing.Size(65, 19);
             this.lblIdGroup.TabIndex = 3;
@@ -2378,7 +2405,7 @@
             // 
             this.lblGrpMem.AutoSize = true;
             this.lblGrpMem.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrpMem.Location = new System.Drawing.Point(56, 194);
+            this.lblGrpMem.Location = new System.Drawing.Point(65, 196);
             this.lblGrpMem.Name = "lblGrpMem";
             this.lblGrpMem.Size = new System.Drawing.Size(117, 20);
             this.lblGrpMem.TabIndex = 2;
@@ -2388,7 +2415,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(54, 64);
+            this.label41.Location = new System.Drawing.Point(68, 38);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(92, 23);
             this.label41.TabIndex = 1;
@@ -2402,7 +2429,7 @@
             this.DGVDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clUpdate,
             this.CLDel});
-            this.DGVDetails.Location = new System.Drawing.Point(55, 277);
+            this.DGVDetails.Location = new System.Drawing.Point(73, 278);
             this.DGVDetails.Name = "DGVDetails";
             this.DGVDetails.Size = new System.Drawing.Size(809, 184);
             this.DGVDetails.TabIndex = 0;
@@ -2694,7 +2721,6 @@
             // 
             this.TPAssignProj.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.TPAssignProj.Controls.Add(this.lblBackToGrps);
-            this.TPAssignProj.Controls.Add(this.lblErrProjId);
             this.TPAssignProj.Controls.Add(this.lblErrAssDate);
             this.TPAssignProj.Controls.Add(this.cmdAssignProj);
             this.TPAssignProj.Controls.Add(this.DTPAssignProj);
@@ -2798,16 +2824,6 @@
             this.lblErrAssDate.TabIndex = 142;
             this.lblErrAssDate.Text = "Error Assign Date";
             // 
-            // lblErrProjId
-            // 
-            this.lblErrProjId.AutoSize = true;
-            this.lblErrProjId.ForeColor = System.Drawing.Color.Red;
-            this.lblErrProjId.Location = new System.Drawing.Point(628, 152);
-            this.lblErrProjId.Name = "lblErrProjId";
-            this.lblErrProjId.Size = new System.Drawing.Size(101, 17);
-            this.lblErrProjId.TabIndex = 143;
-            this.lblErrProjId.Text = "Error Project Id";
-            // 
             // lblBackToGrps
             // 
             this.lblBackToGrps.AutoSize = true;
@@ -2820,24 +2836,10 @@
             this.lblBackToGrps.Text = "Back to List";
             this.lblBackToGrps.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblBackToGrps_LinkClicked);
             // 
-            // ClDetails
-            // 
-            this.ClDetails.HeaderText = "";
-            this.ClDetails.Name = "ClDetails";
-            this.ClDetails.Text = "Details";
-            this.ClDetails.UseColumnTextForLinkValue = true;
-            // 
-            // CldelGroup
-            // 
-            this.CldelGroup.HeaderText = "";
-            this.CldelGroup.Name = "CldelGroup";
-            this.CldelGroup.Text = "Delete";
-            this.CldelGroup.UseColumnTextForButtonValue = true;
-            // 
             // lblAssignProject
             // 
             this.lblAssignProject.AutoSize = true;
-            this.lblAssignProject.Location = new System.Drawing.Point(57, 134);
+            this.lblAssignProject.Location = new System.Drawing.Point(70, 138);
             this.lblAssignProject.Name = "lblAssignProject";
             this.lblAssignProject.Size = new System.Drawing.Size(94, 17);
             this.lblAssignProject.TabIndex = 119;
@@ -2847,8 +2849,10 @@
             // 
             // DGVProjGrp
             // 
+            this.DGVProjGrp.AllowUserToAddRows = false;
+            this.DGVProjGrp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVProjGrp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVProjGrp.Location = new System.Drawing.Point(69, 104);
+            this.DGVProjGrp.Location = new System.Drawing.Point(73, 104);
             this.DGVProjGrp.Name = "DGVProjGrp";
             this.DGVProjGrp.Size = new System.Drawing.Size(804, 74);
             this.DGVProjGrp.TabIndex = 120;
@@ -2857,11 +2861,240 @@
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(337, 21);
+            this.label49.Location = new System.Drawing.Point(350, 9);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(128, 23);
             this.label49.TabIndex = 121;
             this.label49.Text = "Group Details";
+            // 
+            // lblAssignedProj
+            // 
+            this.lblAssignedProj.AutoSize = true;
+            this.lblAssignedProj.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAssignedProj.Location = new System.Drawing.Point(69, 72);
+            this.lblAssignedProj.Name = "lblAssignedProj";
+            this.lblAssignedProj.Size = new System.Drawing.Size(127, 20);
+            this.lblAssignedProj.TabIndex = 122;
+            this.lblAssignedProj.Text = "Assigned Project";
+            // 
+            // ClDetails
+            // 
+            this.ClDetails.HeaderText = "";
+            this.ClDetails.Name = "ClDetails";
+            this.ClDetails.Text = "Details";
+            this.ClDetails.UseColumnTextForLinkValue = true;
+            // 
+            // CLMarkEva
+            // 
+            this.CLMarkEva.HeaderText = "";
+            this.CLMarkEva.Name = "CLMarkEva";
+            this.CLMarkEva.Text = "Manage Evaluation";
+            this.CLMarkEva.UseColumnTextForLinkValue = true;
+            // 
+            // CldelGroup
+            // 
+            this.CldelGroup.HeaderText = "";
+            this.CldelGroup.Name = "CldelGroup";
+            this.CldelGroup.Text = "Delete";
+            this.CldelGroup.UseColumnTextForButtonValue = true;
+            // 
+            // TPGroupEvaluation
+            // 
+            this.TPGroupEvaluation.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPGroupEvaluation.Controls.Add(this.lnklblReload);
+            this.TPGroupEvaluation.Controls.Add(this.linkLabel11);
+            this.TPGroupEvaluation.Controls.Add(this.linkLabel9);
+            this.TPGroupEvaluation.Controls.Add(this.label52);
+            this.TPGroupEvaluation.Controls.Add(this.lblGrpIdEvaR);
+            this.TPGroupEvaluation.Controls.Add(this.label51);
+            this.TPGroupEvaluation.Controls.Add(this.DGVgroupEva);
+            this.TPGroupEvaluation.Location = new System.Drawing.Point(4, 30);
+            this.TPGroupEvaluation.Name = "TPGroupEvaluation";
+            this.TPGroupEvaluation.Size = new System.Drawing.Size(932, 554);
+            this.TPGroupEvaluation.TabIndex = 21;
+            this.TPGroupEvaluation.Text = "Group Evaluation";
+            // 
+            // DGVgroupEva
+            // 
+            this.DGVgroupEva.AllowUserToAddRows = false;
+            this.DGVgroupEva.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVgroupEva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVgroupEva.Location = new System.Drawing.Point(58, 144);
+            this.DGVgroupEva.Name = "DGVgroupEva";
+            this.DGVgroupEva.Size = new System.Drawing.Size(804, 269);
+            this.DGVgroupEva.TabIndex = 121;
+            // 
+            // lblGrpIdEvaR
+            // 
+            this.lblGrpIdEvaR.AutoSize = true;
+            this.lblGrpIdEvaR.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrpIdEvaR.Location = new System.Drawing.Point(185, 26);
+            this.lblGrpIdEvaR.Name = "lblGrpIdEvaR";
+            this.lblGrpIdEvaR.Size = new System.Drawing.Size(65, 19);
+            this.lblGrpIdEvaR.TabIndex = 123;
+            this.lblGrpIdEvaR.Text = "Group Id";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(71, 21);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(92, 23);
+            this.label51.TabIndex = 122;
+            this.label51.Text = "Group Id : ";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(71, 108);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(165, 20);
+            this.label52.TabIndex = 124;
+            this.label52.Text = "Conducted Evaluations";
+            // 
+            // linkLabel9
+            // 
+            this.linkLabel9.AutoSize = true;
+            this.linkLabel9.Location = new System.Drawing.Point(72, 64);
+            this.linkLabel9.Name = "linkLabel9";
+            this.linkLabel9.Size = new System.Drawing.Size(105, 17);
+            this.linkLabel9.TabIndex = 125;
+            this.linkLabel9.TabStop = true;
+            this.linkLabel9.Text = "Mark Evaluation";
+            this.linkLabel9.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel9_LinkClicked_1);
+            // 
+            // TPMarkEva
+            // 
+            this.TPMarkEva.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPMarkEva.Controls.Add(this.linkLabel10);
+            this.TPMarkEva.Controls.Add(this.cmdMarkEva);
+            this.TPMarkEva.Controls.Add(this.lblGrpIdMarkEva);
+            this.TPMarkEva.Controls.Add(this.label57);
+            this.TPMarkEva.Controls.Add(this.cmbEvaName);
+            this.TPMarkEva.Controls.Add(this.label55);
+            this.TPMarkEva.Controls.Add(this.NUDTMEva);
+            this.TPMarkEva.Controls.Add(this.label53);
+            this.TPMarkEva.Controls.Add(this.label54);
+            this.TPMarkEva.Location = new System.Drawing.Point(4, 30);
+            this.TPMarkEva.Name = "TPMarkEva";
+            this.TPMarkEva.Size = new System.Drawing.Size(932, 554);
+            this.TPMarkEva.TabIndex = 22;
+            this.TPMarkEva.Text = "Mark Evaluation";
+            // 
+            // NUDTMEva
+            // 
+            this.NUDTMEva.Location = new System.Drawing.Point(366, 195);
+            this.NUDTMEva.Name = "NUDTMEva";
+            this.NUDTMEva.Size = new System.Drawing.Size(247, 25);
+            this.NUDTMEva.TabIndex = 105;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(226, 200);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(122, 20);
+            this.label53.TabIndex = 104;
+            this.label53.Text = "Obtained Marks";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Location = new System.Drawing.Point(226, 163);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(123, 20);
+            this.label54.TabIndex = 103;
+            this.label54.Text = "Evaluation Name";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(137, 41);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(158, 26);
+            this.label55.TabIndex = 106;
+            this.label55.Text = "Group Evaluation";
+            // 
+            // cmbEvaName
+            // 
+            this.cmbEvaName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEvaName.FormattingEnabled = true;
+            this.cmbEvaName.Location = new System.Drawing.Point(366, 163);
+            this.cmbEvaName.Name = "cmbEvaName";
+            this.cmbEvaName.Size = new System.Drawing.Size(247, 25);
+            this.cmbEvaName.TabIndex = 107;
+            // 
+            // lblGrpIdMarkEva
+            // 
+            this.lblGrpIdMarkEva.AutoSize = true;
+            this.lblGrpIdMarkEva.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrpIdMarkEva.Location = new System.Drawing.Point(362, 117);
+            this.lblGrpIdMarkEva.Name = "lblGrpIdMarkEva";
+            this.lblGrpIdMarkEva.Size = new System.Drawing.Size(65, 19);
+            this.lblGrpIdMarkEva.TabIndex = 125;
+            this.lblGrpIdMarkEva.Text = "Group Id";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(237, 117);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(83, 20);
+            this.label57.TabIndex = 124;
+            this.label57.Text = "Group Id : ";
+            // 
+            // cmdMarkEva
+            // 
+            this.cmdMarkEva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.cmdMarkEva.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdMarkEva.Location = new System.Drawing.Point(621, 284);
+            this.cmdMarkEva.Name = "cmdMarkEva";
+            this.cmdMarkEva.Size = new System.Drawing.Size(152, 52);
+            this.cmdMarkEva.TabIndex = 142;
+            this.cmdMarkEva.Text = "Save";
+            this.cmdMarkEva.UseVisualStyleBackColor = false;
+            this.cmdMarkEva.Click += new System.EventHandler(this.cmdMarkEva_Click);
+            // 
+            // linkLabel10
+            // 
+            this.linkLabel10.AutoSize = true;
+            this.linkLabel10.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel10.Location = new System.Drawing.Point(158, 325);
+            this.linkLabel10.Name = "linkLabel10";
+            this.linkLabel10.Size = new System.Drawing.Size(92, 20);
+            this.linkLabel10.TabIndex = 145;
+            this.linkLabel10.TabStop = true;
+            this.linkLabel10.Text = "Back to List";
+            this.linkLabel10.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel10_LinkClicked);
+            // 
+            // linkLabel11
+            // 
+            this.linkLabel11.AutoSize = true;
+            this.linkLabel11.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel11.Location = new System.Drawing.Point(71, 497);
+            this.linkLabel11.Name = "linkLabel11";
+            this.linkLabel11.Size = new System.Drawing.Size(92, 20);
+            this.linkLabel11.TabIndex = 146;
+            this.linkLabel11.TabStop = true;
+            this.linkLabel11.Text = "Back to List";
+            this.linkLabel11.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel11_LinkClicked);
+            // 
+            // lnklblReload
+            // 
+            this.lnklblReload.AutoSize = true;
+            this.lnklblReload.Location = new System.Drawing.Point(757, 26);
+            this.lnklblReload.Name = "lnklblReload";
+            this.lnklblReload.Size = new System.Drawing.Size(49, 17);
+            this.lnklblReload.TabIndex = 147;
+            this.lnklblReload.TabStop = true;
+            this.lnklblReload.Text = "Reload";
+            this.lnklblReload.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklblReload_LinkClicked);
             // 
             // Main
             // 
@@ -2930,6 +3163,12 @@
             this.TPAssignProj.ResumeLayout(false);
             this.TPAssignProj.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProjGrp)).EndInit();
+            this.TPGroupEvaluation.ResumeLayout(false);
+            this.TPGroupEvaluation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVgroupEva)).EndInit();
+            this.TPMarkEva.ResumeLayout(false);
+            this.TPMarkEva.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDTMEva)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3164,12 +3403,31 @@
         private System.Windows.Forms.Label lblGrpAssignId;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label lblErrAssDate;
-        private System.Windows.Forms.Label lblErrProjId;
         private System.Windows.Forms.LinkLabel lblBackToGrps;
-        private System.Windows.Forms.DataGridViewLinkColumn ClDetails;
-        private System.Windows.Forms.DataGridViewButtonColumn CldelGroup;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.DataGridView DGVProjGrp;
         private System.Windows.Forms.LinkLabel lblAssignProject;
+        private System.Windows.Forms.Label lblAssignedProj;
+        private System.Windows.Forms.DataGridViewLinkColumn ClDetails;
+        private System.Windows.Forms.DataGridViewLinkColumn CLMarkEva;
+        private System.Windows.Forms.DataGridViewButtonColumn CldelGroup;
+        private System.Windows.Forms.TabPage TPGroupEvaluation;
+        private System.Windows.Forms.LinkLabel linkLabel9;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label lblGrpIdEvaR;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.DataGridView DGVgroupEva;
+        private System.Windows.Forms.TabPage TPMarkEva;
+        private System.Windows.Forms.LinkLabel linkLabel10;
+        private System.Windows.Forms.Button cmdMarkEva;
+        private System.Windows.Forms.Label lblGrpIdMarkEva;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.ComboBox cmbEvaName;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.NumericUpDown NUDTMEva;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.LinkLabel linkLabel11;
+        private System.Windows.Forms.LinkLabel lnklblReload;
     }
 }

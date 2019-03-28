@@ -45,6 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Advisor.cs" />
+    <Compile Include="DS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Group Member.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -78,6 +83,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DS.xsc">
+      <DependentUpon>DS.xsd</DependentUpon>
+    </None>
+    <None Include="DS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS.xss">
+      <DependentUpon>DS.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

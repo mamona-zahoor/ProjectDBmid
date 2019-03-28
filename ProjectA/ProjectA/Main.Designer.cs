@@ -196,6 +196,7 @@
             this.lblEditNameEva = new System.Windows.Forms.Label();
             this.txtNameEvaCh = new System.Windows.Forms.TextBox();
             this.TPEditProjAdv = new System.Windows.Forms.TabPage();
+            this.lblAdvErrRole = new System.Windows.Forms.Label();
             this.lblAdvIdCh = new System.Windows.Forms.Label();
             this.lblProjTitleCh = new System.Windows.Forms.Label();
             this.txtProjTitleCh = new System.Windows.Forms.TextBox();
@@ -284,6 +285,7 @@
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.TPEditEvaMarks = new System.Windows.Forms.TabPage();
+            this.cmdEditMArks = new System.Windows.Forms.Button();
             this.lblEvaName = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.linkLabel12 = new System.Windows.Forms.LinkLabel();
@@ -292,8 +294,7 @@
             this.label58 = new System.Windows.Forms.Label();
             this.NUDEditMArks = new System.Windows.Forms.NumericUpDown();
             this.label59 = new System.Windows.Forms.Label();
-            this.cmdEditMArks = new System.Windows.Forms.Button();
-            this.lblAdvErrRole = new System.Windows.Forms.Label();
+            this.TPGenRep = new System.Windows.Forms.TabPage();
             this.TControl.SuspendLayout();
             this.TPStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
@@ -364,6 +365,7 @@
             this.TControl.Controls.Add(this.TPGroupEvaluation);
             this.TControl.Controls.Add(this.TPMarkEva);
             this.TControl.Controls.Add(this.TPEditEvaMarks);
+            this.TControl.Controls.Add(this.TPGenRep);
             this.TControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TControl.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TControl.Location = new System.Drawing.Point(0, 0);
@@ -2202,6 +2204,16 @@
             this.TPEditProjAdv.TabIndex = 15;
             this.TPEditProjAdv.Text = "Edit Project Advisor";
             // 
+            // lblAdvErrRole
+            // 
+            this.lblAdvErrRole.AutoSize = true;
+            this.lblAdvErrRole.ForeColor = System.Drawing.Color.Red;
+            this.lblAdvErrRole.Location = new System.Drawing.Point(227, 245);
+            this.lblAdvErrRole.Name = "lblAdvErrRole";
+            this.lblAdvErrRole.Size = new System.Drawing.Size(119, 17);
+            this.lblAdvErrRole.TabIndex = 140;
+            this.lblAdvErrRole.Text = "Error Advisor Role";
+            // 
             // lblAdvIdCh
             // 
             this.lblAdvIdCh.AutoSize = true;
@@ -3140,6 +3152,18 @@
             this.TPEditEvaMarks.TabIndex = 23;
             this.TPEditEvaMarks.Text = "Edit Evaluation";
             // 
+            // cmdEditMArks
+            // 
+            this.cmdEditMArks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.cmdEditMArks.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdEditMArks.Location = new System.Drawing.Point(733, 315);
+            this.cmdEditMArks.Name = "cmdEditMArks";
+            this.cmdEditMArks.Size = new System.Drawing.Size(152, 52);
+            this.cmdEditMArks.TabIndex = 158;
+            this.cmdEditMArks.Text = "Save Changes";
+            this.cmdEditMArks.UseVisualStyleBackColor = false;
+            this.cmdEditMArks.Click += new System.EventHandler(this.cmdEditMArks_Click);
+            // 
             // lblEvaName
             // 
             this.lblEvaName.AutoSize = true;
@@ -3219,27 +3243,14 @@
             this.label59.TabIndex = 147;
             this.label59.Text = "Obtained Marks";
             // 
-            // cmdEditMArks
+            // TPGenRep
             // 
-            this.cmdEditMArks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.cmdEditMArks.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdEditMArks.Location = new System.Drawing.Point(733, 315);
-            this.cmdEditMArks.Name = "cmdEditMArks";
-            this.cmdEditMArks.Size = new System.Drawing.Size(152, 52);
-            this.cmdEditMArks.TabIndex = 158;
-            this.cmdEditMArks.Text = "Save Changes";
-            this.cmdEditMArks.UseVisualStyleBackColor = false;
-            this.cmdEditMArks.Click += new System.EventHandler(this.cmdEditMArks_Click);
-            // 
-            // lblAdvErrRole
-            // 
-            this.lblAdvErrRole.AutoSize = true;
-            this.lblAdvErrRole.ForeColor = System.Drawing.Color.Red;
-            this.lblAdvErrRole.Location = new System.Drawing.Point(227, 245);
-            this.lblAdvErrRole.Name = "lblAdvErrRole";
-            this.lblAdvErrRole.Size = new System.Drawing.Size(119, 17);
-            this.lblAdvErrRole.TabIndex = 140;
-            this.lblAdvErrRole.Text = "Error Advisor Role";
+            this.TPGenRep.Location = new System.Drawing.Point(4, 30);
+            this.TPGenRep.Name = "TPGenRep";
+            this.TPGenRep.Size = new System.Drawing.Size(932, 554);
+            this.TPGenRep.TabIndex = 24;
+            this.TPGenRep.Text = "Generate report";
+            this.TPGenRep.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -3589,5 +3600,6 @@
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Button cmdEditMArks;
         private System.Windows.Forms.Label lblAdvErrRole;
+        private System.Windows.Forms.TabPage TPGenRep;
     }
 }

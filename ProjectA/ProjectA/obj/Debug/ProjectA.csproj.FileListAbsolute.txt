@@ -8,16 +8,7 @@ c:\users\mamuna\documents\visual studio 2012\Projects\ProjectA\ProjectA\obj\Debu
 c:\users\mamuna\documents\visual studio 2012\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
 C:\Users\Mamuna\Documents\Visual Studio 2012\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.Login.resources
 C:\Users\Mamuna\Documents\Visual Studio 2012\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.Add_Student.resources
-C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\bin\Debug\ProjectA.exe.config
 C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\bin\Debug\ProjectA.exe
-C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\bin\Debug\ProjectA.pdb
-C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.Login.resources
-C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.Main.resources
-C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.Properties.Resources.resources
-C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.GenerateResource.Cache
-C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.exe
-C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
-C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.csprojResolveAssemblyReference.cache
 C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\ProjectA.exe.config
 C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.exe
 C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
@@ -28,3 +19,14 @@ C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.Lo
 C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.Main.resources
 C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.Properties.Resources.resources
 C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.GenerateResource.Cache
+C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\bin\Debug\ProjectA.exe.config
+C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\bin\Debug\ProjectA.pdb
+C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.Login.resources
+C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.Main.resources
+C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.Properties.Resources.resources
+C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.GenerateResource.Cache
+C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.exe
+C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
+C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.csprojResolveAssemblyReference.cache
+C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\RdlCompile.cache
+C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\RdlCompile.compiled

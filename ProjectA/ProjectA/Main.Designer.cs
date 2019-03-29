@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet1 = new ProjectA.DataSet1();
             this.TControl = new System.Windows.Forms.TabControl();
             this.TPStudents = new System.Windows.Forms.TabPage();
             this.lnkAdd = new System.Windows.Forms.LinkLabel();
@@ -294,7 +300,29 @@
             this.label58 = new System.Windows.Forms.Label();
             this.NUDEditMArks = new System.Windows.Forms.NumericUpDown();
             this.label59 = new System.Windows.Forms.Label();
-            this.TPGenRep = new System.Windows.Forms.TabPage();
+            this.TPGenRep1 = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.linkLabel13 = new System.Windows.Forms.LinkLabel();
+            this.TPReports = new System.Windows.Forms.TabPage();
+            this.linkLabel15 = new System.Windows.Forms.LinkLabel();
+            this.lnklblMarkSheet = new System.Windows.Forms.LinkLabel();
+            this.lnklnlAdvB = new System.Windows.Forms.LinkLabel();
+            this.List = new System.Windows.Forms.ListBox();
+            this.TPMarkSheet = new System.Windows.Forms.TabPage();
+            this.linkLabel14 = new System.Windows.Forms.LinkLabel();
+            this.DataTable1TableAdapter = new ProjectA.DataSet1TableAdapters.DataTable1TableAdapter();
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DataSet2 = new ProjectA.DataSet2();
+            this.DataTable2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataTable2TableAdapter = new ProjectA.DataSet2TableAdapters.DataTable2TableAdapter();
+            this.TPgroupStudents = new System.Windows.Forms.TabPage();
+            this.linkLabel17 = new System.Windows.Forms.LinkLabel();
+            this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DataTable3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet3 = new ProjectA.DataSet3();
+            this.DataTable3TableAdapter = new ProjectA.DataSet3TableAdapters.DataTable3TableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             this.TControl.SuspendLayout();
             this.TPStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
@@ -337,7 +365,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.NUDTMEva)).BeginInit();
             this.TPEditEvaMarks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDEditMArks)).BeginInit();
+            this.TPGenRep1.SuspendLayout();
+            this.TPReports.SuspendLayout();
+            this.TPMarkSheet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTable2BindingSource)).BeginInit();
+            this.TPgroupStudents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTable3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet3)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DataTable1BindingSource
+            // 
+            this.DataTable1BindingSource.DataMember = "DataTable1";
+            this.DataTable1BindingSource.DataSource = this.DataSet1;
+            // 
+            // DataSet1
+            // 
+            this.DataSet1.DataSetName = "DataSet1";
+            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // TControl
             // 
@@ -365,14 +411,16 @@
             this.TControl.Controls.Add(this.TPGroupEvaluation);
             this.TControl.Controls.Add(this.TPMarkEva);
             this.TControl.Controls.Add(this.TPEditEvaMarks);
-            this.TControl.Controls.Add(this.TPGenRep);
-            this.TControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TControl.Controls.Add(this.TPGenRep1);
+            this.TControl.Controls.Add(this.TPReports);
+            this.TControl.Controls.Add(this.TPMarkSheet);
+            this.TControl.Controls.Add(this.TPgroupStudents);
             this.TControl.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TControl.Location = new System.Drawing.Point(0, 0);
+            this.TControl.Location = new System.Drawing.Point(1, 1);
             this.TControl.Name = "TControl";
             this.TControl.Padding = new System.Drawing.Point(9, 5);
             this.TControl.SelectedIndex = 0;
-            this.TControl.Size = new System.Drawing.Size(940, 588);
+            this.TControl.Size = new System.Drawing.Size(924, 562);
             this.TControl.TabIndex = 35;
             this.TControl.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -385,7 +433,7 @@
             this.TPStudents.Location = new System.Drawing.Point(4, 30);
             this.TPStudents.Name = "TPStudents";
             this.TPStudents.Padding = new System.Windows.Forms.Padding(3);
-            this.TPStudents.Size = new System.Drawing.Size(932, 554);
+            this.TPStudents.Size = new System.Drawing.Size(947, 554);
             this.TPStudents.TabIndex = 0;
             this.TPStudents.Text = "Manage Students";
             this.TPStudents.Click += new System.EventHandler(this.TPStudents_Click);
@@ -405,6 +453,10 @@
             // DGV
             // 
             this.DGV.AllowUserToAddRows = false;
+            this.DGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Update,
@@ -441,19 +493,23 @@
             this.TPAdvisors.Location = new System.Drawing.Point(4, 30);
             this.TPAdvisors.Name = "TPAdvisors";
             this.TPAdvisors.Padding = new System.Windows.Forms.Padding(3);
-            this.TPAdvisors.Size = new System.Drawing.Size(932, 554);
+            this.TPAdvisors.Size = new System.Drawing.Size(947, 554);
             this.TPAdvisors.TabIndex = 1;
             this.TPAdvisors.Text = "Manage Advisors";
             // 
             // DGVAd
             // 
             this.DGVAd.AllowUserToAddRows = false;
+            this.DGVAd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVAd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVAd.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVAd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVAd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UpAd,
             this.DelAD});
-            this.DGVAd.Location = new System.Drawing.Point(0, 76);
+            this.DGVAd.Location = new System.Drawing.Point(54, 76);
             this.DGVAd.Name = "DGVAd";
             this.DGVAd.Size = new System.Drawing.Size(837, 482);
             this.DGVAd.TabIndex = 4;
@@ -496,7 +552,7 @@
             this.TPProjects.Controls.Add(this.DGVProj);
             this.TPProjects.Location = new System.Drawing.Point(4, 30);
             this.TPProjects.Name = "TPProjects";
-            this.TPProjects.Size = new System.Drawing.Size(932, 554);
+            this.TPProjects.Size = new System.Drawing.Size(947, 554);
             this.TPProjects.TabIndex = 2;
             this.TPProjects.Text = "Manage Projects";
             // 
@@ -515,6 +571,9 @@
             // DGVProj
             // 
             this.DGVProj.AllowUserToAddRows = false;
+            this.DGVProj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVProj.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVProj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVProj.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -548,7 +607,7 @@
             this.TPEvaluations.Controls.Add(this.DGVEvaluations);
             this.TPEvaluations.Location = new System.Drawing.Point(4, 30);
             this.TPEvaluations.Name = "TPEvaluations";
-            this.TPEvaluations.Size = new System.Drawing.Size(932, 554);
+            this.TPEvaluations.Size = new System.Drawing.Size(947, 554);
             this.TPEvaluations.TabIndex = 12;
             this.TPEvaluations.Text = "Manage Evaluations";
             // 
@@ -567,6 +626,9 @@
             // DGVEvaluations
             // 
             this.DGVEvaluations.AllowUserToAddRows = false;
+            this.DGVEvaluations.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVEvaluations.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVEvaluations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVEvaluations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -603,7 +665,7 @@
             this.TPProjAd.Controls.Add(this.DGVProjAdv);
             this.TPProjAd.Location = new System.Drawing.Point(4, 30);
             this.TPProjAd.Name = "TPProjAd";
-            this.TPProjAd.Size = new System.Drawing.Size(932, 554);
+            this.TPProjAd.Size = new System.Drawing.Size(947, 554);
             this.TPProjAd.TabIndex = 3;
             this.TPProjAd.Text = "Manage Project Advisors";
             // 
@@ -622,6 +684,9 @@
             // DGVProjAdv
             // 
             this.DGVProjAdv.AllowUserToAddRows = false;
+            this.DGVProjAdv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVProjAdv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVProjAdv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVProjAdv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -658,7 +723,7 @@
             this.TPGroups.Controls.Add(this.DGVGroupsList);
             this.TPGroups.Location = new System.Drawing.Point(4, 30);
             this.TPGroups.Name = "TPGroups";
-            this.TPGroups.Size = new System.Drawing.Size(932, 554);
+            this.TPGroups.Size = new System.Drawing.Size(947, 554);
             this.TPGroups.TabIndex = 4;
             this.TPGroups.Text = "Manage Groups";
             // 
@@ -677,6 +742,9 @@
             // DGVGroupsList
             // 
             this.DGVGroupsList.AllowUserToAddRows = false;
+            this.DGVGroupsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVGroupsList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVGroupsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVGroupsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -740,12 +808,15 @@
             this.TPAddStu.Controls.Add(this.txtFirstName);
             this.TPAddStu.Location = new System.Drawing.Point(4, 30);
             this.TPAddStu.Name = "TPAddStu";
-            this.TPAddStu.Size = new System.Drawing.Size(932, 554);
+            this.TPAddStu.Size = new System.Drawing.Size(947, 554);
             this.TPAddStu.TabIndex = 5;
             this.TPAddStu.Text = "Add Student";
             // 
             // txtContact
             // 
+            this.txtContact.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtContact.Location = new System.Drawing.Point(204, 152);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(247, 25);
@@ -753,6 +824,9 @@
             // 
             // lblErrGen
             // 
+            this.lblErrGen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrGen.AutoSize = true;
             this.lblErrGen.ForeColor = System.Drawing.Color.Red;
             this.lblErrGen.Location = new System.Drawing.Point(474, 238);
@@ -763,6 +837,9 @@
             // 
             // lblErrDOB
             // 
+            this.lblErrDOB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrDOB.AutoSize = true;
             this.lblErrDOB.ForeColor = System.Drawing.Color.Red;
             this.lblErrDOB.Location = new System.Drawing.Point(474, 210);
@@ -773,6 +850,9 @@
             // 
             // lblErrEmail
             // 
+            this.lblErrEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrEmail.AutoSize = true;
             this.lblErrEmail.ForeColor = System.Drawing.Color.Red;
             this.lblErrEmail.Location = new System.Drawing.Point(474, 181);
@@ -783,6 +863,9 @@
             // 
             // lblErrContact
             // 
+            this.lblErrContact.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrContact.AutoSize = true;
             this.lblErrContact.ForeColor = System.Drawing.Color.Red;
             this.lblErrContact.Location = new System.Drawing.Point(474, 160);
@@ -793,6 +876,9 @@
             // 
             // lblErrRegNo
             // 
+            this.lblErrRegNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrRegNo.AutoSize = true;
             this.lblErrRegNo.ForeColor = System.Drawing.Color.Red;
             this.lblErrRegNo.Location = new System.Drawing.Point(474, 265);
@@ -803,6 +889,9 @@
             // 
             // lblErrLN
             // 
+            this.lblErrLN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrLN.AutoSize = true;
             this.lblErrLN.ForeColor = System.Drawing.Color.Red;
             this.lblErrLN.Location = new System.Drawing.Point(474, 129);
@@ -813,6 +902,9 @@
             // 
             // lblErrFN
             // 
+            this.lblErrFN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrFN.AutoSize = true;
             this.lblErrFN.ForeColor = System.Drawing.Color.Red;
             this.lblErrFN.Location = new System.Drawing.Point(474, 98);
@@ -832,6 +924,9 @@
             // 
             // lblBack
             // 
+            this.lblBack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBack.AutoSize = true;
             this.lblBack.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBack.Location = new System.Drawing.Point(43, 332);
@@ -844,6 +939,9 @@
             // 
             // cmbGender
             // 
+            this.cmbGender.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Items.AddRange(new object[] {
@@ -856,6 +954,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(28, 28);
@@ -866,6 +967,9 @@
             // 
             // DTP
             // 
+            this.DTP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DTP.Location = new System.Drawing.Point(204, 204);
             this.DTP.Name = "DTP";
             this.DTP.Size = new System.Drawing.Size(247, 25);
@@ -873,6 +977,9 @@
             // 
             // cmdCreate
             // 
+            this.cmdCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdCreate.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCreate.Location = new System.Drawing.Point(548, 319);
@@ -885,6 +992,9 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(44, 255);
@@ -895,6 +1005,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(44, 226);
@@ -905,6 +1018,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(44, 199);
@@ -915,6 +1031,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(44, 174);
@@ -925,6 +1044,9 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(44, 150);
@@ -935,6 +1057,9 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(44, 124);
@@ -945,6 +1070,9 @@
             // 
             // lblFN
             // 
+            this.lblFN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFN.AutoSize = true;
             this.lblFN.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFN.Location = new System.Drawing.Point(44, 98);
@@ -955,6 +1083,9 @@
             // 
             // txtRegNo
             // 
+            this.txtRegNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRegNo.Location = new System.Drawing.Point(204, 257);
             this.txtRegNo.Name = "txtRegNo";
             this.txtRegNo.Size = new System.Drawing.Size(247, 25);
@@ -962,6 +1093,9 @@
             // 
             // txtLastName
             // 
+            this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLastName.Location = new System.Drawing.Point(204, 126);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(247, 25);
@@ -969,6 +1103,9 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Location = new System.Drawing.Point(204, 178);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(247, 25);
@@ -976,6 +1113,9 @@
             // 
             // txtFirstName
             // 
+            this.txtFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFirstName.Location = new System.Drawing.Point(204, 98);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(247, 25);
@@ -1001,12 +1141,15 @@
             this.TPAddAdv.Controls.Add(this.label12);
             this.TPAddAdv.Location = new System.Drawing.Point(4, 30);
             this.TPAddAdv.Name = "TPAddAdv";
-            this.TPAddAdv.Size = new System.Drawing.Size(932, 554);
+            this.TPAddAdv.Size = new System.Drawing.Size(947, 554);
             this.TPAddAdv.TabIndex = 6;
             this.TPAddAdv.Text = "Add  Project Advisor";
             // 
             // cmbAdvIdList
             // 
+            this.cmbAdvIdList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbAdvIdList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAdvIdList.FormattingEnabled = true;
             this.cmbAdvIdList.Location = new System.Drawing.Point(281, 163);
@@ -1016,6 +1159,9 @@
             // 
             // cmbProjectList
             // 
+            this.cmbProjectList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbProjectList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProjectList.FormattingEnabled = true;
             this.cmbProjectList.Location = new System.Drawing.Point(281, 135);
@@ -1025,6 +1171,9 @@
             // 
             // lblErrAdvRole
             // 
+            this.lblErrAdvRole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrAdvRole.AutoSize = true;
             this.lblErrAdvRole.ForeColor = System.Drawing.Color.Red;
             this.lblErrAdvRole.Location = new System.Drawing.Point(278, 255);
@@ -1035,6 +1184,9 @@
             // 
             // lblErrAssignDate
             // 
+            this.lblErrAssignDate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrAssignDate.AutoSize = true;
             this.lblErrAssignDate.ForeColor = System.Drawing.Color.Red;
             this.lblErrAssignDate.Location = new System.Drawing.Point(534, 198);
@@ -1045,6 +1197,9 @@
             // 
             // lblErrAdvId
             // 
+            this.lblErrAdvId.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrAdvId.AutoSize = true;
             this.lblErrAdvId.ForeColor = System.Drawing.Color.Red;
             this.lblErrAdvId.Location = new System.Drawing.Point(534, 171);
@@ -1055,6 +1210,9 @@
             // 
             // lblErrProject
             // 
+            this.lblErrProject.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrProject.AutoSize = true;
             this.lblErrProject.ForeColor = System.Drawing.Color.Red;
             this.lblErrProject.Location = new System.Drawing.Point(534, 140);
@@ -1065,6 +1223,9 @@
             // 
             // linkLabel4
             // 
+            this.linkLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel4.Location = new System.Drawing.Point(187, 314);
@@ -1077,6 +1238,9 @@
             // 
             // cmdAddProjAdv
             // 
+            this.cmdAddProjAdv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdAddProjAdv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdAddProjAdv.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAddProjAdv.Location = new System.Drawing.Point(629, 303);
@@ -1089,6 +1253,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(151, 84);
@@ -1099,6 +1266,9 @@
             // 
             // cmbRole
             // 
+            this.cmbRole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Items.AddRange(new object[] {
@@ -1112,6 +1282,9 @@
             // 
             // DTPAssignmentDate
             // 
+            this.DTPAssignmentDate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DTPAssignmentDate.Location = new System.Drawing.Point(281, 192);
             this.DTPAssignmentDate.Name = "DTPAssignmentDate";
             this.DTPAssignmentDate.Size = new System.Drawing.Size(247, 25);
@@ -1119,6 +1292,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(146, 170);
@@ -1129,6 +1305,9 @@
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(146, 199);
@@ -1139,6 +1318,9 @@
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(146, 225);
@@ -1149,6 +1331,9 @@
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(146, 142);
@@ -1175,12 +1360,15 @@
             this.TPAddAdvisor.Controls.Add(this.label15);
             this.TPAddAdvisor.Location = new System.Drawing.Point(4, 30);
             this.TPAddAdvisor.Name = "TPAddAdvisor";
-            this.TPAddAdvisor.Size = new System.Drawing.Size(932, 554);
+            this.TPAddAdvisor.Size = new System.Drawing.Size(947, 554);
             this.TPAddAdvisor.TabIndex = 7;
             this.TPAddAdvisor.Text = "Add Advisor";
             // 
             // lblErrSal
             // 
+            this.lblErrSal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrSal.AutoSize = true;
             this.lblErrSal.ForeColor = System.Drawing.Color.Red;
             this.lblErrSal.Location = new System.Drawing.Point(477, 186);
@@ -1191,6 +1379,9 @@
             // 
             // lblErrDes
             // 
+            this.lblErrDes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrDes.AutoSize = true;
             this.lblErrDes.ForeColor = System.Drawing.Color.Red;
             this.lblErrDes.Location = new System.Drawing.Point(477, 155);
@@ -1201,6 +1392,9 @@
             // 
             // lblErrId
             // 
+            this.lblErrId.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrId.AutoSize = true;
             this.lblErrId.ForeColor = System.Drawing.Color.Red;
             this.lblErrId.Location = new System.Drawing.Point(477, 124);
@@ -1220,6 +1414,9 @@
             // 
             // linkLabel5
             // 
+            this.linkLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel5.AutoSize = true;
             this.linkLabel5.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel5.Location = new System.Drawing.Point(84, 290);
@@ -1250,6 +1447,9 @@
             // 
             // cmdAdd
             // 
+            this.cmdAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdAdd.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAdd.Location = new System.Drawing.Point(564, 258);
@@ -1321,6 +1521,9 @@
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(60, 46);
@@ -1342,12 +1545,15 @@
             this.TPAddProj.Controls.Add(this.txtTitleProj);
             this.TPAddProj.Location = new System.Drawing.Point(4, 30);
             this.TPAddProj.Name = "TPAddProj";
-            this.TPAddProj.Size = new System.Drawing.Size(932, 554);
+            this.TPAddProj.Size = new System.Drawing.Size(947, 554);
             this.TPAddProj.TabIndex = 8;
             this.TPAddProj.Text = "Add Projects";
             // 
             // lblErrTitle
             // 
+            this.lblErrTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrTitle.AutoSize = true;
             this.lblErrTitle.ForeColor = System.Drawing.Color.Red;
             this.lblErrTitle.Location = new System.Drawing.Point(512, 134);
@@ -1358,6 +1564,9 @@
             // 
             // lblBacklink
             // 
+            this.lblBacklink.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBacklink.AutoSize = true;
             this.lblBacklink.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBacklink.Location = new System.Drawing.Point(31, 297);
@@ -1370,6 +1579,9 @@
             // 
             // cmdAddProj
             // 
+            this.cmdAddProj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdAddProj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdAddProj.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAddProj.Location = new System.Drawing.Point(453, 286);
@@ -1382,6 +1594,9 @@
             // 
             // RTBDescr
             // 
+            this.RTBDescr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RTBDescr.Location = new System.Drawing.Point(259, 168);
             this.RTBDescr.Name = "RTBDescr";
             this.RTBDescr.Size = new System.Drawing.Size(247, 96);
@@ -1390,6 +1605,9 @@
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(79, 66);
@@ -1400,6 +1618,9 @@
             // 
             // label17
             // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(99, 179);
@@ -1410,6 +1631,9 @@
             // 
             // label18
             // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(99, 131);
@@ -1420,6 +1644,9 @@
             // 
             // txtTitleProj
             // 
+            this.txtTitleProj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTitleProj.Location = new System.Drawing.Point(259, 129);
             this.txtTitleProj.Name = "txtTitleProj";
             this.txtTitleProj.Size = new System.Drawing.Size(247, 25);
@@ -1454,12 +1681,15 @@
             this.TPEditStu.Controls.Add(this.txtFN);
             this.TPEditStu.Location = new System.Drawing.Point(4, 30);
             this.TPEditStu.Name = "TPEditStu";
-            this.TPEditStu.Size = new System.Drawing.Size(932, 554);
+            this.TPEditStu.Size = new System.Drawing.Size(947, 554);
             this.TPEditStu.TabIndex = 9;
             this.TPEditStu.Text = "Edit Student";
             // 
             // lblErrGenEdit
             // 
+            this.lblErrGenEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrGenEdit.AutoSize = true;
             this.lblErrGenEdit.ForeColor = System.Drawing.Color.Red;
             this.lblErrGenEdit.Location = new System.Drawing.Point(451, 229);
@@ -1470,6 +1700,9 @@
             // 
             // lblErrDOBEdit
             // 
+            this.lblErrDOBEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrDOBEdit.AutoSize = true;
             this.lblErrDOBEdit.ForeColor = System.Drawing.Color.Red;
             this.lblErrDOBEdit.Location = new System.Drawing.Point(451, 201);
@@ -1480,6 +1713,9 @@
             // 
             // lblErrEmailEdit
             // 
+            this.lblErrEmailEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrEmailEdit.AutoSize = true;
             this.lblErrEmailEdit.ForeColor = System.Drawing.Color.Red;
             this.lblErrEmailEdit.Location = new System.Drawing.Point(451, 172);
@@ -1490,6 +1726,9 @@
             // 
             // lblErrContactEdit
             // 
+            this.lblErrContactEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrContactEdit.AutoSize = true;
             this.lblErrContactEdit.ForeColor = System.Drawing.Color.Red;
             this.lblErrContactEdit.Location = new System.Drawing.Point(451, 151);
@@ -1500,6 +1739,9 @@
             // 
             // lblErrRegNoEdit
             // 
+            this.lblErrRegNoEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrRegNoEdit.AutoSize = true;
             this.lblErrRegNoEdit.ForeColor = System.Drawing.Color.Red;
             this.lblErrRegNoEdit.Location = new System.Drawing.Point(451, 256);
@@ -1510,6 +1752,9 @@
             // 
             // lblErrLNEdit
             // 
+            this.lblErrLNEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrLNEdit.AutoSize = true;
             this.lblErrLNEdit.ForeColor = System.Drawing.Color.Red;
             this.lblErrLNEdit.Location = new System.Drawing.Point(451, 120);
@@ -1520,6 +1765,9 @@
             // 
             // lblErrFNEdit
             // 
+            this.lblErrFNEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrFNEdit.AutoSize = true;
             this.lblErrFNEdit.ForeColor = System.Drawing.Color.Red;
             this.lblErrFNEdit.Location = new System.Drawing.Point(451, 89);
@@ -1530,6 +1778,9 @@
             // 
             // linkLabel3
             // 
+            this.linkLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Location = new System.Drawing.Point(63, 323);
             this.linkLabel3.Name = "linkLabel3";
@@ -1541,6 +1792,9 @@
             // 
             // cmbGN
             // 
+            this.cmbGN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbGN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGN.FormattingEnabled = true;
             this.cmbGN.Items.AddRange(new object[] {
@@ -1553,6 +1807,9 @@
             // 
             // label19
             // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(26, 49);
@@ -1563,6 +1820,9 @@
             // 
             // DTP2
             // 
+            this.DTP2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DTP2.Location = new System.Drawing.Point(188, 194);
             this.DTP2.Name = "DTP2";
             this.DTP2.Size = new System.Drawing.Size(247, 25);
@@ -1570,6 +1830,9 @@
             // 
             // cmdSave
             // 
+            this.cmdSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdSave.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdSave.Location = new System.Drawing.Point(519, 290);
@@ -1582,6 +1845,9 @@
             // 
             // txtLN
             // 
+            this.txtLN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLN.Location = new System.Drawing.Point(188, 112);
             this.txtLN.Name = "txtLN";
             this.txtLN.Size = new System.Drawing.Size(247, 25);
@@ -1589,6 +1855,9 @@
             // 
             // label20
             // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(28, 258);
@@ -1599,6 +1868,9 @@
             // 
             // label21
             // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(30, 227);
@@ -1609,6 +1881,9 @@
             // 
             // label22
             // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(28, 194);
@@ -1619,6 +1894,9 @@
             // 
             // label23
             // 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(28, 169);
@@ -1629,6 +1907,9 @@
             // 
             // label24
             // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(28, 145);
@@ -1639,6 +1920,9 @@
             // 
             // label25
             // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(28, 119);
@@ -1649,6 +1933,9 @@
             // 
             // label26
             // 
+            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(28, 93);
@@ -1659,6 +1946,9 @@
             // 
             // txtCN
             // 
+            this.txtCN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCN.Location = new System.Drawing.Point(188, 138);
             this.txtCN.Name = "txtCN";
             this.txtCN.Size = new System.Drawing.Size(247, 25);
@@ -1666,6 +1956,9 @@
             // 
             // txtEmailCh
             // 
+            this.txtEmailCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmailCh.Location = new System.Drawing.Point(188, 164);
             this.txtEmailCh.Name = "txtEmailCh";
             this.txtEmailCh.Size = new System.Drawing.Size(247, 25);
@@ -1674,6 +1967,9 @@
             // 
             // txtReg
             // 
+            this.txtReg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtReg.Location = new System.Drawing.Point(188, 251);
             this.txtReg.Name = "txtReg";
             this.txtReg.Size = new System.Drawing.Size(247, 25);
@@ -1681,6 +1977,9 @@
             // 
             // txtFN
             // 
+            this.txtFN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFN.Location = new System.Drawing.Point(188, 86);
             this.txtFN.Name = "txtFN";
             this.txtFN.Size = new System.Drawing.Size(247, 25);
@@ -1698,12 +1997,15 @@
             this.TPEditAdv.Controls.Add(this.label29);
             this.TPEditAdv.Location = new System.Drawing.Point(4, 30);
             this.TPEditAdv.Name = "TPEditAdv";
-            this.TPEditAdv.Size = new System.Drawing.Size(932, 554);
+            this.TPEditAdv.Size = new System.Drawing.Size(947, 554);
             this.TPEditAdv.TabIndex = 10;
             this.TPEditAdv.Text = "Edit Advisor";
             // 
             // cmdSaveAdv
             // 
+            this.cmdSaveAdv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdSaveAdv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdSaveAdv.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdSaveAdv.Location = new System.Drawing.Point(507, 252);
@@ -1716,6 +2018,9 @@
             // 
             // linkLabel6
             // 
+            this.linkLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel6.AutoSize = true;
             this.linkLabel6.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel6.Location = new System.Drawing.Point(105, 268);
@@ -1782,6 +2087,9 @@
             // 
             // label29
             // 
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.Location = new System.Drawing.Point(62, 93);
@@ -1804,12 +2112,15 @@
             this.TPEditProj.Controls.Add(this.txtTitleCh);
             this.TPEditProj.Location = new System.Drawing.Point(4, 30);
             this.TPEditProj.Name = "TPEditProj";
-            this.TPEditProj.Size = new System.Drawing.Size(932, 554);
+            this.TPEditProj.Size = new System.Drawing.Size(947, 554);
             this.TPEditProj.TabIndex = 11;
             this.TPEditProj.Text = "Edit Project";
             // 
             // lblErrTitleEdit
             // 
+            this.lblErrTitleEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrTitleEdit.AutoSize = true;
             this.lblErrTitleEdit.ForeColor = System.Drawing.Color.Red;
             this.lblErrTitleEdit.Location = new System.Drawing.Point(533, 132);
@@ -1829,6 +2140,9 @@
             // 
             // lblBackToProj
             // 
+            this.lblBackToProj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBackToProj.AutoSize = true;
             this.lblBackToProj.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBackToProj.Location = new System.Drawing.Point(52, 297);
@@ -1841,6 +2155,9 @@
             // 
             // cmdSaveProjCh
             // 
+            this.cmdSaveProjCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdSaveProjCh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdSaveProjCh.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdSaveProjCh.Location = new System.Drawing.Point(507, 280);
@@ -1853,6 +2170,9 @@
             // 
             // RTBDescCh
             // 
+            this.RTBDescCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RTBDescCh.Location = new System.Drawing.Point(280, 168);
             this.RTBDescCh.Name = "RTBDescCh";
             this.RTBDescCh.Size = new System.Drawing.Size(247, 96);
@@ -1861,6 +2181,9 @@
             // 
             // lblEditproj
             // 
+            this.lblEditproj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEditproj.AutoSize = true;
             this.lblEditproj.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditproj.Location = new System.Drawing.Point(100, 66);
@@ -1871,6 +2194,9 @@
             // 
             // label31
             // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(120, 179);
@@ -1881,6 +2207,9 @@
             // 
             // label32
             // 
+            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(120, 131);
@@ -1891,6 +2220,9 @@
             // 
             // txtTitleCh
             // 
+            this.txtTitleCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTitleCh.Location = new System.Drawing.Point(280, 129);
             this.txtTitleCh.Name = "txtTitleCh";
             this.txtTitleCh.Size = new System.Drawing.Size(247, 25);
@@ -1913,12 +2245,15 @@
             this.TPAddEvaluations.Controls.Add(this.txtNameEva);
             this.TPAddEvaluations.Location = new System.Drawing.Point(4, 30);
             this.TPAddEvaluations.Name = "TPAddEvaluations";
-            this.TPAddEvaluations.Size = new System.Drawing.Size(932, 554);
+            this.TPAddEvaluations.Size = new System.Drawing.Size(947, 554);
             this.TPAddEvaluations.TabIndex = 13;
             this.TPAddEvaluations.Text = "Add Evaluations";
             // 
             // lblWeightage
             // 
+            this.lblWeightage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWeightage.AutoSize = true;
             this.lblWeightage.ForeColor = System.Drawing.Color.Red;
             this.lblWeightage.Location = new System.Drawing.Point(514, 196);
@@ -1929,6 +2264,9 @@
             // 
             // lblMarks
             // 
+            this.lblMarks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMarks.AutoSize = true;
             this.lblMarks.ForeColor = System.Drawing.Color.Red;
             this.lblMarks.Location = new System.Drawing.Point(514, 162);
@@ -1939,6 +2277,9 @@
             // 
             // lblNEva
             // 
+            this.lblNEva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNEva.AutoSize = true;
             this.lblNEva.ForeColor = System.Drawing.Color.Red;
             this.lblNEva.Location = new System.Drawing.Point(514, 130);
@@ -1949,6 +2290,9 @@
             // 
             // cmdAddEva
             // 
+            this.cmdAddEva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdAddEva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdAddEva.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAddEva.Location = new System.Drawing.Point(564, 274);
@@ -1961,6 +2305,9 @@
             // 
             // linkLabel7
             // 
+            this.linkLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel7.AutoSize = true;
             this.linkLabel7.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel7.Location = new System.Drawing.Point(110, 285);
@@ -1973,6 +2320,9 @@
             // 
             // label30
             // 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(12, 63);
@@ -1983,6 +2333,9 @@
             // 
             // NUPweightage
             // 
+            this.NUPweightage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NUPweightage.Location = new System.Drawing.Point(211, 193);
             this.NUPweightage.Name = "NUPweightage";
             this.NUPweightage.Size = new System.Drawing.Size(247, 25);
@@ -1990,6 +2343,9 @@
             // 
             // NUPMarks
             // 
+            this.NUPMarks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NUPMarks.Location = new System.Drawing.Point(211, 162);
             this.NUPMarks.Name = "NUPMarks";
             this.NUPMarks.Size = new System.Drawing.Size(247, 25);
@@ -1997,6 +2353,9 @@
             // 
             // lblTw
             // 
+            this.lblTw.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTw.AutoSize = true;
             this.lblTw.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTw.Location = new System.Drawing.Point(88, 193);
@@ -2007,6 +2366,9 @@
             // 
             // lblTMarks
             // 
+            this.lblTMarks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTMarks.AutoSize = true;
             this.lblTMarks.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTMarks.Location = new System.Drawing.Point(88, 162);
@@ -2017,6 +2379,9 @@
             // 
             // lblNameEva
             // 
+            this.lblNameEva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNameEva.AutoSize = true;
             this.lblNameEva.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameEva.Location = new System.Drawing.Point(88, 127);
@@ -2027,6 +2392,9 @@
             // 
             // txtNameEva
             // 
+            this.txtNameEva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNameEva.Location = new System.Drawing.Point(211, 130);
             this.txtNameEva.Name = "txtNameEva";
             this.txtNameEva.Size = new System.Drawing.Size(247, 25);
@@ -2050,12 +2418,15 @@
             this.TPEditEva.Controls.Add(this.txtNameEvaCh);
             this.TPEditEva.Location = new System.Drawing.Point(4, 30);
             this.TPEditEva.Name = "TPEditEva";
-            this.TPEditEva.Size = new System.Drawing.Size(932, 554);
+            this.TPEditEva.Size = new System.Drawing.Size(947, 554);
             this.TPEditEva.TabIndex = 14;
             this.TPEditEva.Text = "Edit Evaluation";
             // 
             // lblWCH
             // 
+            this.lblWCH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWCH.AutoSize = true;
             this.lblWCH.ForeColor = System.Drawing.Color.Red;
             this.lblWCH.Location = new System.Drawing.Point(499, 202);
@@ -2066,6 +2437,9 @@
             // 
             // lblTMCh
             // 
+            this.lblTMCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTMCh.AutoSize = true;
             this.lblTMCh.ForeColor = System.Drawing.Color.Red;
             this.lblTMCh.Location = new System.Drawing.Point(499, 168);
@@ -2076,6 +2450,9 @@
             // 
             // lblNameCh
             // 
+            this.lblNameCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNameCh.AutoSize = true;
             this.lblNameCh.ForeColor = System.Drawing.Color.Red;
             this.lblNameCh.Location = new System.Drawing.Point(499, 136);
@@ -2086,6 +2463,9 @@
             // 
             // lblEditEvaId
             // 
+            this.lblEditEvaId.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEditEvaId.AutoSize = true;
             this.lblEditEvaId.Location = new System.Drawing.Point(53, 368);
             this.lblEditEvaId.Name = "lblEditEvaId";
@@ -2095,6 +2475,9 @@
             // 
             // cmdsaveEva
             // 
+            this.cmdsaveEva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdsaveEva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdsaveEva.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdsaveEva.Location = new System.Drawing.Point(454, 282);
@@ -2107,6 +2490,9 @@
             // 
             // linkLabel8
             // 
+            this.linkLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel8.AutoSize = true;
             this.linkLabel8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel8.Location = new System.Drawing.Point(46, 301);
@@ -2119,6 +2505,9 @@
             // 
             // lblEditEva
             // 
+            this.lblEditEva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEditEva.AutoSize = true;
             this.lblEditEva.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditEva.Location = new System.Drawing.Point(63, 64);
@@ -2129,6 +2518,9 @@
             // 
             // NUDweightageCh
             // 
+            this.NUDweightageCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NUDweightageCh.Location = new System.Drawing.Point(228, 194);
             this.NUDweightageCh.Name = "NUDweightageCh";
             this.NUDweightageCh.Size = new System.Drawing.Size(247, 25);
@@ -2136,6 +2528,9 @@
             // 
             // NUDTMarksCh
             // 
+            this.NUDTMarksCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NUDTMarksCh.Location = new System.Drawing.Point(228, 163);
             this.NUDTMarksCh.Name = "NUDTMarksCh";
             this.NUDTMarksCh.Size = new System.Drawing.Size(247, 25);
@@ -2143,6 +2538,9 @@
             // 
             // label34
             // 
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.Location = new System.Drawing.Point(68, 199);
@@ -2153,6 +2551,9 @@
             // 
             // label35
             // 
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.Location = new System.Drawing.Point(68, 168);
@@ -2163,6 +2564,9 @@
             // 
             // lblEditNameEva
             // 
+            this.lblEditNameEva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEditNameEva.AutoSize = true;
             this.lblEditNameEva.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditNameEva.Location = new System.Drawing.Point(68, 133);
@@ -2173,6 +2577,9 @@
             // 
             // txtNameEvaCh
             // 
+            this.txtNameEvaCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNameEvaCh.Location = new System.Drawing.Point(228, 131);
             this.txtNameEvaCh.Name = "txtNameEvaCh";
             this.txtNameEvaCh.Size = new System.Drawing.Size(247, 25);
@@ -2200,12 +2607,15 @@
             this.TPEditProjAdv.Controls.Add(this.label39);
             this.TPEditProjAdv.Location = new System.Drawing.Point(4, 30);
             this.TPEditProjAdv.Name = "TPEditProjAdv";
-            this.TPEditProjAdv.Size = new System.Drawing.Size(932, 554);
+            this.TPEditProjAdv.Size = new System.Drawing.Size(947, 554);
             this.TPEditProjAdv.TabIndex = 15;
             this.TPEditProjAdv.Text = "Edit Project Advisor";
             // 
             // lblAdvErrRole
             // 
+            this.lblAdvErrRole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAdvErrRole.AutoSize = true;
             this.lblAdvErrRole.ForeColor = System.Drawing.Color.Red;
             this.lblAdvErrRole.Location = new System.Drawing.Point(227, 245);
@@ -2216,6 +2626,9 @@
             // 
             // lblAdvIdCh
             // 
+            this.lblAdvIdCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAdvIdCh.AutoSize = true;
             this.lblAdvIdCh.ForeColor = System.Drawing.Color.Red;
             this.lblAdvIdCh.Location = new System.Drawing.Point(483, 150);
@@ -2226,6 +2639,9 @@
             // 
             // lblProjTitleCh
             // 
+            this.lblProjTitleCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProjTitleCh.AutoSize = true;
             this.lblProjTitleCh.ForeColor = System.Drawing.Color.Red;
             this.lblProjTitleCh.Location = new System.Drawing.Point(483, 115);
@@ -2236,6 +2652,9 @@
             // 
             // txtProjTitleCh
             // 
+            this.txtProjTitleCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProjTitleCh.Location = new System.Drawing.Point(230, 112);
             this.txtProjTitleCh.Name = "txtProjTitleCh";
             this.txtProjTitleCh.Size = new System.Drawing.Size(247, 25);
@@ -2243,6 +2662,9 @@
             // 
             // txtAdvIdCh
             // 
+            this.txtAdvIdCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAdvIdCh.Location = new System.Drawing.Point(230, 142);
             this.txtAdvIdCh.Name = "txtAdvIdCh";
             this.txtAdvIdCh.Size = new System.Drawing.Size(247, 25);
@@ -2250,6 +2672,9 @@
             // 
             // lblIdAdvisor
             // 
+            this.lblIdAdvisor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIdAdvisor.AutoSize = true;
             this.lblIdAdvisor.Location = new System.Drawing.Point(122, 371);
             this.lblIdAdvisor.Name = "lblIdAdvisor";
@@ -2259,6 +2684,9 @@
             // 
             // lblProjAdvId
             // 
+            this.lblProjAdvId.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProjAdvId.AutoSize = true;
             this.lblProjAdvId.Location = new System.Drawing.Point(25, 371);
             this.lblProjAdvId.Name = "lblProjAdvId";
@@ -2268,6 +2696,9 @@
             // 
             // lblErrAssigndateCh
             // 
+            this.lblErrAssigndateCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrAssigndateCh.AutoSize = true;
             this.lblErrAssigndateCh.ForeColor = System.Drawing.Color.Red;
             this.lblErrAssigndateCh.Location = new System.Drawing.Point(483, 182);
@@ -2278,6 +2709,9 @@
             // 
             // lblBackProjEdit
             // 
+            this.lblBackProjEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBackProjEdit.AutoSize = true;
             this.lblBackProjEdit.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBackProjEdit.Location = new System.Drawing.Point(100, 321);
@@ -2290,6 +2724,9 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(554, 321);
@@ -2302,6 +2739,9 @@
             // 
             // label33
             // 
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Location = new System.Drawing.Point(33, 54);
@@ -2312,6 +2752,9 @@
             // 
             // cmbAdvRoleCh
             // 
+            this.cmbAdvRoleCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbAdvRoleCh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAdvRoleCh.FormattingEnabled = true;
             this.cmbAdvRoleCh.Items.AddRange(new object[] {
@@ -2325,6 +2768,9 @@
             // 
             // DTPProjAdvCh
             // 
+            this.DTPProjAdvCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DTPProjAdvCh.Location = new System.Drawing.Point(230, 173);
             this.DTPProjAdvCh.Name = "DTPProjAdvCh";
             this.DTPProjAdvCh.Size = new System.Drawing.Size(247, 25);
@@ -2332,6 +2778,9 @@
             // 
             // label36
             // 
+            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.Location = new System.Drawing.Point(70, 147);
@@ -2342,6 +2791,9 @@
             // 
             // label37
             // 
+            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.Location = new System.Drawing.Point(70, 176);
@@ -2352,6 +2804,9 @@
             // 
             // label38
             // 
+            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.Location = new System.Drawing.Point(70, 202);
@@ -2362,6 +2817,9 @@
             // 
             // label39
             // 
+            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.Location = new System.Drawing.Point(70, 119);
@@ -2380,7 +2838,7 @@
             this.TPAddGroup.Controls.Add(this.DGVgroupStudents);
             this.TPAddGroup.Location = new System.Drawing.Point(4, 30);
             this.TPAddGroup.Name = "TPAddGroup";
-            this.TPAddGroup.Size = new System.Drawing.Size(932, 554);
+            this.TPAddGroup.Size = new System.Drawing.Size(947, 554);
             this.TPAddGroup.TabIndex = 16;
             this.TPAddGroup.Text = "Add Group";
             // 
@@ -2429,6 +2887,9 @@
             // DGVgroupStudents
             // 
             this.DGVgroupStudents.AllowUserToAddRows = false;
+            this.DGVgroupStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVgroupStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVgroupStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVgroupStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2465,12 +2926,15 @@
             this.TPGroupDetail.Controls.Add(this.DGVDetails);
             this.TPGroupDetail.Location = new System.Drawing.Point(4, 30);
             this.TPGroupDetail.Name = "TPGroupDetail";
-            this.TPGroupDetail.Size = new System.Drawing.Size(932, 554);
+            this.TPGroupDetail.Size = new System.Drawing.Size(947, 554);
             this.TPGroupDetail.TabIndex = 17;
             this.TPGroupDetail.Text = "Group Detail";
             // 
             // lblAssignedProj
             // 
+            this.lblAssignedProj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAssignedProj.AutoSize = true;
             this.lblAssignedProj.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAssignedProj.Location = new System.Drawing.Point(69, 72);
@@ -2481,6 +2945,9 @@
             // 
             // label49
             // 
+            this.label49.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label49.Location = new System.Drawing.Point(350, 9);
@@ -2492,6 +2959,9 @@
             // DGVProjGrp
             // 
             this.DGVProjGrp.AllowUserToAddRows = false;
+            this.DGVProjGrp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVProjGrp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVProjGrp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVProjGrp.Location = new System.Drawing.Point(73, 104);
@@ -2501,6 +2971,9 @@
             // 
             // lblAssignProject
             // 
+            this.lblAssignProject.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAssignProject.AutoSize = true;
             this.lblAssignProject.Location = new System.Drawing.Point(70, 138);
             this.lblAssignProject.Name = "lblAssignProject";
@@ -2512,6 +2985,9 @@
             // 
             // lnkAddNewMem
             // 
+            this.lnkAddNewMem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lnkAddNewMem.AutoSize = true;
             this.lnkAddNewMem.Location = new System.Drawing.Point(66, 231);
             this.lnkAddNewMem.Name = "lnkAddNewMem";
@@ -2523,6 +2999,9 @@
             // 
             // lblBacktoGroups
             // 
+            this.lblBacktoGroups.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBacktoGroups.AutoSize = true;
             this.lblBacktoGroups.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBacktoGroups.Location = new System.Drawing.Point(51, 510);
@@ -2535,6 +3014,9 @@
             // 
             // lblIdGroup
             // 
+            this.lblIdGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIdGroup.AutoSize = true;
             this.lblIdGroup.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdGroup.Location = new System.Drawing.Point(175, 41);
@@ -2545,6 +3027,9 @@
             // 
             // lblGrpMem
             // 
+            this.lblGrpMem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGrpMem.AutoSize = true;
             this.lblGrpMem.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrpMem.Location = new System.Drawing.Point(65, 196);
@@ -2555,6 +3040,9 @@
             // 
             // label41
             // 
+            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.Location = new System.Drawing.Point(68, 38);
@@ -2566,6 +3054,9 @@
             // DGVDetails
             // 
             this.DGVDetails.AllowUserToAddRows = false;
+            this.DGVDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2605,12 +3096,15 @@
             this.TPEditGroupMem.Controls.Add(this.label43);
             this.TPEditGroupMem.Location = new System.Drawing.Point(4, 30);
             this.TPEditGroupMem.Name = "TPEditGroupMem";
-            this.TPEditGroupMem.Size = new System.Drawing.Size(932, 554);
+            this.TPEditGroupMem.Size = new System.Drawing.Size(947, 554);
             this.TPEditGroupMem.TabIndex = 18;
             this.TPEditGroupMem.Text = "Edit Group Member";
             // 
             // label42
             // 
+            this.label42.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.Location = new System.Drawing.Point(159, 99);
@@ -2621,6 +3115,9 @@
             // 
             // lblMemRegNo
             // 
+            this.lblMemRegNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMemRegNo.AutoSize = true;
             this.lblMemRegNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMemRegNo.Location = new System.Drawing.Point(368, 103);
@@ -2631,6 +3128,9 @@
             // 
             // rbInActive
             // 
+            this.rbInActive.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbInActive.AutoSize = true;
             this.rbInActive.Location = new System.Drawing.Point(433, 221);
             this.rbInActive.Name = "rbInActive";
@@ -2642,6 +3142,9 @@
             // 
             // rbActive
             // 
+            this.rbActive.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbActive.AutoSize = true;
             this.rbActive.Location = new System.Drawing.Point(433, 194);
             this.rbActive.Name = "rbActive";
@@ -2653,6 +3156,9 @@
             // 
             // lblBackToDetail
             // 
+            this.lblBackToDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBackToDetail.AutoSize = true;
             this.lblBackToDetail.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBackToDetail.Location = new System.Drawing.Point(257, 345);
@@ -2665,6 +3171,9 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(705, 299);
@@ -2677,6 +3186,9 @@
             // 
             // lblStatus
             // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStatus.AutoSize = true;
             this.lblStatus.Location = new System.Drawing.Point(277, 198);
             this.lblStatus.Name = "lblStatus";
@@ -2686,6 +3198,9 @@
             // 
             // lblGroupIdCh
             // 
+            this.lblGroupIdCh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGroupIdCh.AutoSize = true;
             this.lblGroupIdCh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGroupIdCh.Location = new System.Drawing.Point(272, 71);
@@ -2696,6 +3211,9 @@
             // 
             // label43
             // 
+            this.label43.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.Location = new System.Drawing.Point(161, 68);
@@ -2716,7 +3234,7 @@
             this.TPAddGrpMem.Controls.Add(this.DGVGroupMem);
             this.TPAddGrpMem.Location = new System.Drawing.Point(4, 30);
             this.TPAddGrpMem.Name = "TPAddGrpMem";
-            this.TPAddGrpMem.Size = new System.Drawing.Size(932, 554);
+            this.TPAddGrpMem.Size = new System.Drawing.Size(947, 554);
             this.TPAddGrpMem.TabIndex = 19;
             this.TPAddGrpMem.Text = "Add Group Member";
             // 
@@ -2734,7 +3252,7 @@
             // 
             this.lnkBackToDetails.AutoSize = true;
             this.lnkBackToDetails.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkBackToDetails.Location = new System.Drawing.Point(19, 484);
+            this.lnkBackToDetails.Location = new System.Drawing.Point(19, 491);
             this.lnkBackToDetails.Name = "lnkBackToDetails";
             this.lnkBackToDetails.Size = new System.Drawing.Size(92, 20);
             this.lnkBackToDetails.TabIndex = 134;
@@ -2744,6 +3262,9 @@
             // 
             // lblGroupIdMem
             // 
+            this.lblGroupIdMem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGroupIdMem.AutoSize = true;
             this.lblGroupIdMem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGroupIdMem.Location = new System.Drawing.Point(106, 15);
@@ -2754,6 +3275,9 @@
             // 
             // label44
             // 
+            this.label44.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.Location = new System.Drawing.Point(8, 15);
@@ -2764,6 +3288,9 @@
             // 
             // lblChoose
             // 
+            this.lblChoose.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblChoose.AutoSize = true;
             this.lblChoose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChoose.Location = new System.Drawing.Point(3, 49);
@@ -2787,6 +3314,9 @@
             // DGVGroupMem
             // 
             this.DGVGroupMem.AllowUserToAddRows = false;
+            this.DGVGroupMem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVGroupMem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVGroupMem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVGroupMem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2822,12 +3352,15 @@
             this.TPAssignProj.Controls.Add(this.label46);
             this.TPAssignProj.Location = new System.Drawing.Point(4, 30);
             this.TPAssignProj.Name = "TPAssignProj";
-            this.TPAssignProj.Size = new System.Drawing.Size(932, 554);
+            this.TPAssignProj.Size = new System.Drawing.Size(947, 554);
             this.TPAssignProj.TabIndex = 20;
             this.TPAssignProj.Text = "Assign Project ";
             // 
             // lblBackToGrps
             // 
+            this.lblBackToGrps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBackToGrps.AutoSize = true;
             this.lblBackToGrps.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBackToGrps.Location = new System.Drawing.Point(137, 365);
@@ -2840,6 +3373,9 @@
             // 
             // lblErrAssDate
             // 
+            this.lblErrAssDate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrAssDate.AutoSize = true;
             this.lblErrAssDate.ForeColor = System.Drawing.Color.Red;
             this.lblErrAssDate.Location = new System.Drawing.Point(628, 205);
@@ -2850,6 +3386,9 @@
             // 
             // cmdAssignProj
             // 
+            this.cmdAssignProj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdAssignProj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdAssignProj.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAssignProj.Location = new System.Drawing.Point(641, 340);
@@ -2862,6 +3401,9 @@
             // 
             // DTPAssignProj
             // 
+            this.DTPAssignProj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DTPAssignProj.Location = new System.Drawing.Point(362, 199);
             this.DTPAssignProj.Name = "DTPAssignProj";
             this.DTPAssignProj.Size = new System.Drawing.Size(247, 25);
@@ -2869,6 +3411,9 @@
             // 
             // label48
             // 
+            this.label48.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label48.Location = new System.Drawing.Point(204, 204);
@@ -2879,6 +3424,9 @@
             // 
             // label47
             // 
+            this.label47.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label47.Location = new System.Drawing.Point(204, 152);
@@ -2889,6 +3437,9 @@
             // 
             // cmbProjTitles
             // 
+            this.cmbProjTitles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbProjTitles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProjTitles.FormattingEnabled = true;
             this.cmbProjTitles.Location = new System.Drawing.Point(362, 152);
@@ -2898,6 +3449,9 @@
             // 
             // label45
             // 
+            this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.Location = new System.Drawing.Point(137, 105);
@@ -2908,6 +3462,9 @@
             // 
             // lblGrpAssignId
             // 
+            this.lblGrpAssignId.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGrpAssignId.AutoSize = true;
             this.lblGrpAssignId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrpAssignId.Location = new System.Drawing.Point(235, 54);
@@ -2918,6 +3475,9 @@
             // 
             // label46
             // 
+            this.label46.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.Location = new System.Drawing.Point(137, 50);
@@ -2938,12 +3498,15 @@
             this.TPGroupEvaluation.Controls.Add(this.DGVgroupEva);
             this.TPGroupEvaluation.Location = new System.Drawing.Point(4, 30);
             this.TPGroupEvaluation.Name = "TPGroupEvaluation";
-            this.TPGroupEvaluation.Size = new System.Drawing.Size(932, 554);
+            this.TPGroupEvaluation.Size = new System.Drawing.Size(947, 554);
             this.TPGroupEvaluation.TabIndex = 21;
             this.TPGroupEvaluation.Text = "Group Evaluation";
             // 
             // lnklblReload
             // 
+            this.lnklblReload.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lnklblReload.AutoSize = true;
             this.lnklblReload.Location = new System.Drawing.Point(757, 26);
             this.lnklblReload.Name = "lnklblReload";
@@ -2967,6 +3530,9 @@
             // 
             // linkLabel9
             // 
+            this.linkLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel9.AutoSize = true;
             this.linkLabel9.Location = new System.Drawing.Point(72, 64);
             this.linkLabel9.Name = "linkLabel9";
@@ -2978,6 +3544,9 @@
             // 
             // label52
             // 
+            this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label52.Location = new System.Drawing.Point(71, 108);
@@ -2988,6 +3557,9 @@
             // 
             // lblGrpIdEvaR
             // 
+            this.lblGrpIdEvaR.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGrpIdEvaR.AutoSize = true;
             this.lblGrpIdEvaR.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrpIdEvaR.Location = new System.Drawing.Point(185, 26);
@@ -2998,6 +3570,9 @@
             // 
             // label51
             // 
+            this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label51.Location = new System.Drawing.Point(71, 21);
@@ -3009,6 +3584,9 @@
             // DGVgroupEva
             // 
             this.DGVgroupEva.AllowUserToAddRows = false;
+            this.DGVgroupEva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVgroupEva.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVgroupEva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVgroupEva.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -3040,12 +3618,15 @@
             this.TPMarkEva.Controls.Add(this.label54);
             this.TPMarkEva.Location = new System.Drawing.Point(4, 30);
             this.TPMarkEva.Name = "TPMarkEva";
-            this.TPMarkEva.Size = new System.Drawing.Size(932, 554);
+            this.TPMarkEva.Size = new System.Drawing.Size(947, 554);
             this.TPMarkEva.TabIndex = 22;
             this.TPMarkEva.Text = "Mark Evaluation";
             // 
             // linkLabel10
             // 
+            this.linkLabel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel10.AutoSize = true;
             this.linkLabel10.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel10.Location = new System.Drawing.Point(158, 325);
@@ -3058,6 +3639,9 @@
             // 
             // cmdMarkEva
             // 
+            this.cmdMarkEva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdMarkEva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdMarkEva.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdMarkEva.Location = new System.Drawing.Point(621, 284);
@@ -3070,6 +3654,9 @@
             // 
             // lblGrpIdMarkEva
             // 
+            this.lblGrpIdMarkEva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGrpIdMarkEva.AutoSize = true;
             this.lblGrpIdMarkEva.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrpIdMarkEva.Location = new System.Drawing.Point(362, 117);
@@ -3080,6 +3667,9 @@
             // 
             // label57
             // 
+            this.label57.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label57.AutoSize = true;
             this.label57.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label57.Location = new System.Drawing.Point(237, 117);
@@ -3090,6 +3680,9 @@
             // 
             // cmbEvaName
             // 
+            this.cmbEvaName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbEvaName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEvaName.FormattingEnabled = true;
             this.cmbEvaName.Location = new System.Drawing.Point(366, 163);
@@ -3099,6 +3692,9 @@
             // 
             // label55
             // 
+            this.label55.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label55.Location = new System.Drawing.Point(137, 41);
@@ -3109,6 +3705,9 @@
             // 
             // NUDTMEva
             // 
+            this.NUDTMEva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NUDTMEva.Location = new System.Drawing.Point(366, 195);
             this.NUDTMEva.Name = "NUDTMEva";
             this.NUDTMEva.Size = new System.Drawing.Size(247, 25);
@@ -3116,6 +3715,9 @@
             // 
             // label53
             // 
+            this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label53.Location = new System.Drawing.Point(226, 200);
@@ -3126,6 +3728,9 @@
             // 
             // label54
             // 
+            this.label54.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label54.Location = new System.Drawing.Point(226, 163);
@@ -3148,15 +3753,18 @@
             this.TPEditEvaMarks.Controls.Add(this.label59);
             this.TPEditEvaMarks.Location = new System.Drawing.Point(4, 30);
             this.TPEditEvaMarks.Name = "TPEditEvaMarks";
-            this.TPEditEvaMarks.Size = new System.Drawing.Size(932, 554);
+            this.TPEditEvaMarks.Size = new System.Drawing.Size(947, 554);
             this.TPEditEvaMarks.TabIndex = 23;
             this.TPEditEvaMarks.Text = "Edit Evaluation";
             // 
             // cmdEditMArks
             // 
+            this.cmdEditMArks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdEditMArks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cmdEditMArks.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdEditMArks.Location = new System.Drawing.Point(733, 315);
+            this.cmdEditMArks.Location = new System.Drawing.Point(731, 346);
             this.cmdEditMArks.Name = "cmdEditMArks";
             this.cmdEditMArks.Size = new System.Drawing.Size(152, 52);
             this.cmdEditMArks.TabIndex = 158;
@@ -3166,9 +3774,12 @@
             // 
             // lblEvaName
             // 
+            this.lblEvaName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEvaName.AutoSize = true;
             this.lblEvaName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEvaName.Location = new System.Drawing.Point(435, 180);
+            this.lblEvaName.Location = new System.Drawing.Point(433, 211);
             this.lblEvaName.Name = "lblEvaName";
             this.lblEvaName.Size = new System.Drawing.Size(46, 19);
             this.lblEvaName.TabIndex = 156;
@@ -3176,9 +3787,12 @@
             // 
             // label60
             // 
+            this.label60.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label60.AutoSize = true;
             this.label60.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(285, 179);
+            this.label60.Location = new System.Drawing.Point(283, 210);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(131, 20);
             this.label60.TabIndex = 155;
@@ -3186,9 +3800,12 @@
             // 
             // linkLabel12
             // 
+            this.linkLabel12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel12.AutoSize = true;
             this.linkLabel12.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel12.Location = new System.Drawing.Point(206, 347);
+            this.linkLabel12.Location = new System.Drawing.Point(204, 378);
             this.linkLabel12.Name = "linkLabel12";
             this.linkLabel12.Size = new System.Drawing.Size(92, 20);
             this.linkLabel12.TabIndex = 154;
@@ -3198,9 +3815,12 @@
             // 
             // lblEditMarksGrpId
             // 
+            this.lblEditMarksGrpId.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEditMarksGrpId.AutoSize = true;
             this.lblEditMarksGrpId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditMarksGrpId.Location = new System.Drawing.Point(435, 140);
+            this.lblEditMarksGrpId.Location = new System.Drawing.Point(433, 171);
             this.lblEditMarksGrpId.Name = "lblEditMarksGrpId";
             this.lblEditMarksGrpId.Size = new System.Drawing.Size(65, 19);
             this.lblEditMarksGrpId.TabIndex = 152;
@@ -3208,9 +3828,12 @@
             // 
             // label56
             // 
+            this.label56.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(285, 139);
+            this.label56.Location = new System.Drawing.Point(283, 170);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(83, 20);
             this.label56.TabIndex = 151;
@@ -3218,9 +3841,12 @@
             // 
             // label58
             // 
+            this.label58.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(185, 63);
+            this.label58.Location = new System.Drawing.Point(183, 94);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(199, 26);
             this.label58.TabIndex = 149;
@@ -3228,40 +3854,250 @@
             // 
             // NUDEditMArks
             // 
-            this.NUDEditMArks.Location = new System.Drawing.Point(439, 224);
+            this.NUDEditMArks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NUDEditMArks.Location = new System.Drawing.Point(437, 255);
             this.NUDEditMArks.Name = "NUDEditMArks";
             this.NUDEditMArks.Size = new System.Drawing.Size(247, 25);
             this.NUDEditMArks.TabIndex = 148;
             // 
             // label59
             // 
+            this.label59.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(285, 229);
+            this.label59.Location = new System.Drawing.Point(283, 260);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(122, 20);
             this.label59.TabIndex = 147;
             this.label59.Text = "Obtained Marks";
             // 
-            // TPGenRep
+            // TPGenRep1
             // 
-            this.TPGenRep.Location = new System.Drawing.Point(4, 30);
-            this.TPGenRep.Name = "TPGenRep";
-            this.TPGenRep.Size = new System.Drawing.Size(932, 554);
-            this.TPGenRep.TabIndex = 24;
-            this.TPGenRep.Text = "Generate report";
-            this.TPGenRep.UseVisualStyleBackColor = true;
+            this.TPGenRep1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPGenRep1.Controls.Add(this.reportViewer1);
+            this.TPGenRep1.Controls.Add(this.linkLabel13);
+            this.TPGenRep1.Location = new System.Drawing.Point(4, 30);
+            this.TPGenRep1.Name = "TPGenRep1";
+            this.TPGenRep1.Size = new System.Drawing.Size(947, 554);
+            this.TPGenRep1.TabIndex = 24;
+            this.TPGenRep1.Text = "Advisory Board Report";
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.DataTable1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProjectA.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(3, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(951, 483);
+            this.reportViewer1.TabIndex = 156;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            // 
+            // linkLabel13
+            // 
+            this.linkLabel13.AutoSize = true;
+            this.linkLabel13.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel13.Location = new System.Drawing.Point(41, 506);
+            this.linkLabel13.Name = "linkLabel13";
+            this.linkLabel13.Size = new System.Drawing.Size(92, 20);
+            this.linkLabel13.TabIndex = 155;
+            this.linkLabel13.TabStop = true;
+            this.linkLabel13.Text = "Back to List";
+            this.linkLabel13.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel13_LinkClicked);
+            // 
+            // TPReports
+            // 
+            this.TPReports.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPReports.Controls.Add(this.linkLabel15);
+            this.TPReports.Controls.Add(this.lnklblMarkSheet);
+            this.TPReports.Controls.Add(this.lnklnlAdvB);
+            this.TPReports.Controls.Add(this.List);
+            this.TPReports.Location = new System.Drawing.Point(4, 30);
+            this.TPReports.Name = "TPReports";
+            this.TPReports.Size = new System.Drawing.Size(916, 528);
+            this.TPReports.TabIndex = 25;
+            this.TPReports.Text = "View Reports";
+            // 
+            // linkLabel15
+            // 
+            this.linkLabel15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel15.AutoSize = true;
+            this.linkLabel15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel15.Location = new System.Drawing.Point(163, 152);
+            this.linkLabel15.Name = "linkLabel15";
+            this.linkLabel15.Size = new System.Drawing.Size(257, 19);
+            this.linkLabel15.TabIndex = 4;
+            this.linkLabel15.TabStop = true;
+            this.linkLabel15.Text = "Group Students\' status along with project";
+            this.linkLabel15.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel15_LinkClicked);
+            // 
+            // lnklblMarkSheet
+            // 
+            this.lnklblMarkSheet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lnklblMarkSheet.AutoSize = true;
+            this.lnklblMarkSheet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnklblMarkSheet.Location = new System.Drawing.Point(163, 234);
+            this.lnklblMarkSheet.Name = "lnklblMarkSheet";
+            this.lnklblMarkSheet.Size = new System.Drawing.Size(231, 19);
+            this.lnklblMarkSheet.TabIndex = 3;
+            this.lnklblMarkSheet.TabStop = true;
+            this.lnklblMarkSheet.Text = "Mark Sheet for Students\' evaluations";
+            this.lnklblMarkSheet.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklblMarkSheet_LinkClicked);
+            // 
+            // lnklnlAdvB
+            // 
+            this.lnklnlAdvB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lnklnlAdvB.AutoSize = true;
+            this.lnklnlAdvB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnklnlAdvB.Location = new System.Drawing.Point(163, 195);
+            this.lnklnlAdvB.Name = "lnklnlAdvB";
+            this.lnklnlAdvB.Size = new System.Drawing.Size(313, 19);
+            this.lnklnlAdvB.TabIndex = 2;
+            this.lnklnlAdvB.TabStop = true;
+            this.lnklnlAdvB.Text = "Report for Groups, Members and Advisory Board";
+            this.lnklnlAdvB.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklnlAdvB_LinkClicked);
+            // 
+            // List
+            // 
+            this.List.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.List.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.List.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.List.FormattingEnabled = true;
+            this.List.ItemHeight = 19;
+            this.List.Location = new System.Drawing.Point(102, 74);
+            this.List.Name = "List";
+            this.List.Size = new System.Drawing.Size(578, 346);
+            this.List.TabIndex = 1;
+            // 
+            // TPMarkSheet
+            // 
+            this.TPMarkSheet.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPMarkSheet.Controls.Add(this.reportViewer2);
+            this.TPMarkSheet.Controls.Add(this.linkLabel14);
+            this.TPMarkSheet.Location = new System.Drawing.Point(4, 30);
+            this.TPMarkSheet.Name = "TPMarkSheet";
+            this.TPMarkSheet.Size = new System.Drawing.Size(1603, 815);
+            this.TPMarkSheet.TabIndex = 26;
+            this.TPMarkSheet.Text = "Mark Sheet";
+            // 
+            // linkLabel14
+            // 
+            this.linkLabel14.AutoSize = true;
+            this.linkLabel14.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel14.Location = new System.Drawing.Point(50, 517);
+            this.linkLabel14.Name = "linkLabel14";
+            this.linkLabel14.Size = new System.Drawing.Size(92, 20);
+            this.linkLabel14.TabIndex = 156;
+            this.linkLabel14.TabStop = true;
+            this.linkLabel14.Text = "Back to List";
+            this.linkLabel14.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel14_LinkClicked);
+            // 
+            // DataTable1TableAdapter
+            // 
+            this.DataTable1TableAdapter.ClearBeforeFill = true;
+            // 
+            // reportViewer2
+            // 
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = this.DataTable2BindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "ProjectA.Report2.rdlc";
+            this.reportViewer2.Location = new System.Drawing.Point(-4, 0);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.Size = new System.Drawing.Size(955, 488);
+            this.reportViewer2.TabIndex = 157;
+            // 
+            // DataSet2
+            // 
+            this.DataSet2.DataSetName = "DataSet2";
+            this.DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DataTable2BindingSource
+            // 
+            this.DataTable2BindingSource.DataMember = "DataTable2";
+            this.DataTable2BindingSource.DataSource = this.DataSet2;
+            // 
+            // DataTable2TableAdapter
+            // 
+            this.DataTable2TableAdapter.ClearBeforeFill = true;
+            // 
+            // TPgroupStudents
+            // 
+            this.TPgroupStudents.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TPgroupStudents.Controls.Add(this.reportViewer3);
+            this.TPgroupStudents.Controls.Add(this.linkLabel17);
+            this.TPgroupStudents.Location = new System.Drawing.Point(4, 30);
+            this.TPgroupStudents.Name = "TPgroupStudents";
+            this.TPgroupStudents.Size = new System.Drawing.Size(947, 554);
+            this.TPgroupStudents.TabIndex = 27;
+            this.TPgroupStudents.Text = "Students";
+            // 
+            // linkLabel17
+            // 
+            this.linkLabel17.AutoSize = true;
+            this.linkLabel17.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel17.Location = new System.Drawing.Point(25, 511);
+            this.linkLabel17.Name = "linkLabel17";
+            this.linkLabel17.Size = new System.Drawing.Size(95, 20);
+            this.linkLabel17.TabIndex = 157;
+            this.linkLabel17.TabStop = true;
+            this.linkLabel17.Text = "Back To List";
+            this.linkLabel17.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel17_LinkClicked);
+            // 
+            // reportViewer3
+            // 
+            reportDataSource3.Name = "DataSet3";
+            reportDataSource3.Value = this.DataTable3BindingSource;
+            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer3.LocalReport.ReportEmbeddedResource = "ProjectA.Report3.rdlc";
+            this.reportViewer3.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer3.Name = "reportViewer3";
+            this.reportViewer3.Size = new System.Drawing.Size(951, 487);
+            this.reportViewer3.TabIndex = 158;
+            // 
+            // DataTable3BindingSource
+            // 
+            this.DataTable3BindingSource.DataMember = "DataTable3";
+            this.DataTable3BindingSource.DataSource = this.DataSet3;
+            // 
+            // DataSet3
+            // 
+            this.DataSet3.DataSetName = "DataSet3";
+            this.DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DataTable3TableAdapter
+            // 
+            this.DataTable3TableAdapter.ClearBeforeFill = true;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.ClientSize = new System.Drawing.Size(940, 588);
+            this.ClientSize = new System.Drawing.Size(926, 600);
             this.Controls.Add(this.TControl);
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "FYP Management System";
             this.Load += new System.EventHandler(this.Main_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
             this.TControl.ResumeLayout(false);
             this.TPStudents.ResumeLayout(false);
             this.TPStudents.PerformLayout();
@@ -3328,6 +4164,18 @@
             this.TPEditEvaMarks.ResumeLayout(false);
             this.TPEditEvaMarks.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDEditMArks)).EndInit();
+            this.TPGenRep1.ResumeLayout(false);
+            this.TPGenRep1.PerformLayout();
+            this.TPReports.ResumeLayout(false);
+            this.TPReports.PerformLayout();
+            this.TPMarkSheet.ResumeLayout(false);
+            this.TPMarkSheet.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTable2BindingSource)).EndInit();
+            this.TPgroupStudents.ResumeLayout(false);
+            this.TPgroupStudents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTable3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3600,6 +4448,30 @@
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Button cmdEditMArks;
         private System.Windows.Forms.Label lblAdvErrRole;
-        private System.Windows.Forms.TabPage TPGenRep;
+        private System.Windows.Forms.TabPage TPGenRep1;
+        private System.Windows.Forms.BindingSource DataTable1BindingSource;
+        private DataSet1 DataSet1;
+        private DataSet1TableAdapters.DataTable1TableAdapter DataTable1TableAdapter;
+        private System.Windows.Forms.TabPage TPReports;
+        private System.Windows.Forms.LinkLabel linkLabel15;
+        private System.Windows.Forms.LinkLabel lnklblMarkSheet;
+        private System.Windows.Forms.LinkLabel lnklnlAdvB;
+        private System.Windows.Forms.ListBox List;
+        private System.Windows.Forms.TabPage TPMarkSheet;
+        private System.Windows.Forms.LinkLabel linkLabel13;
+        private System.Windows.Forms.LinkLabel linkLabel14;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+        private System.Windows.Forms.BindingSource DataTable2BindingSource;
+        private DataSet2 DataSet2;
+        private DataSet2TableAdapters.DataTable2TableAdapter DataTable2TableAdapter;
+        private System.Windows.Forms.TabPage TPgroupStudents;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
+        private System.Windows.Forms.LinkLabel linkLabel17;
+        private System.Windows.Forms.BindingSource DataTable3BindingSource;
+        private DataSet3 DataSet3;
+        private DataSet3TableAdapters.DataTable3TableAdapter DataTable3TableAdapter;
+
+        
     }
 }

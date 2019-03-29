@@ -30,3 +30,14 @@ C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debu
 C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\ProjectA.csprojResolveAssemblyReference.cache
 C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\RdlCompile.cache
 C:\Users\Mamuna\Documents\Visual Studio 2015\Projects\ProjectA\ProjectA\obj\Debug\RdlCompile.compiled
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Mamuna\Desktop\ABC\ProjectDBmid\ProjectA\ProjectA\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll

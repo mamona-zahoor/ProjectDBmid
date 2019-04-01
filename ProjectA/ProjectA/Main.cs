@@ -274,7 +274,7 @@ namespace ProjectA
                 sqlConn.Open();
                 SqlCommand cmd = new SqlCommand(q1, sqlConn);
                 lblEditStuId.Text = (cmd.ExecuteScalar()).ToString();
-                string que = "Select Person.FirstName, Person.LastName, Person.Contact, Person.Email, Person.DateOfBirth, Person.Gender, Student.RegistrationNo from Person join Student on Person.Id = Student.Id WHERE Person.Id = " + lblEditStuId.Text + "";
+                string que = "Select Person.FirstName, Person.LastName, Person.Contact, Person.Email, Person.DateOfBirth, [LookUp].Value as Gender, Student.RegistrationNo from [LookUp] join Person on [LookUp].Id = Person.Gender join Student on Person.Id = Student.Id WHERE Person.Id = " + lblEditStuId.Text + "";
                 cmd = new SqlCommand(que, sqlConn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -293,15 +293,8 @@ namespace ProjectA
                     if (!reader.IsDBNull(5))
                     {
 
-                        if (reader.GetInt32(5) == 2)
-                        {
-                            cmbGN.Text = "Female";
-                        }
-                        else
-                        {
-                            cmbGN.Text = "Male";
-                        }
-                    }
+                            cmbGN.Text = reader.GetString(5);
+                     }
                     txtReg.Text = reader.GetString(6);
                 }
                 reader.Dispose();
@@ -576,15 +569,9 @@ namespace ProjectA
                 cmd.ExecuteNonQuery();
                 string Que3 = "Select id from Person where Email = '" + txtEmail.Text + "'";
                 cmd = new SqlCommand(Que3, sqlConn);
-                SqlDataReader reader = cmd.ExecuteReader();
                 int id = 0;
-                while (reader.Read())
-                {
-                    id = reader.GetInt32(0);
-                }
-                reader.Close();
-                reader.Dispose();
-                string Que4 = "INSERT INTO Student(Id, RegistrationNo) values (" + id + ", '" + txtRegNo.Text + "')";
+                id = Convert.ToInt32(cmd.ExecuteScalar());
+                 string Que4 = "INSERT INTO Student(Id, RegistrationNo) values (" + id + ", '" + txtRegNo.Text + "')";
                 cmd = new SqlCommand(Que4, sqlConn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Student has been added!");
@@ -612,11 +599,10 @@ namespace ProjectA
         {
             SqlConnection sqlConn = new SqlConnection(conn);
             sqlConn.Open();
-
             string q1 = "(SELECT Title from Project where Project.Id not in (SELECT Id from Project intersect((SELECT ProjectId  from ProjectAdvisor group by ProjectId having Count(ProjectId) = 3) )))";
             SqlCommand cmd = new SqlCommand(q1, sqlConn);
             List<string> titles = new List<string>();
-           SqlDataReader reader = cmd.ExecuteReader();
+            SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 titles.Add(reader.GetString(0));
@@ -700,9 +686,13 @@ namespace ProjectA
                 cmd = new SqlCommand(Que1, sqlConn);
                 int pre = Convert.ToInt32(cmd.ExecuteScalar());
                 if (pre != 0)
-                {
+                {                                                                                                                                                                                                           
+                    Que1 = "SELECT [LookUp].Value from ProjectAdvisor join [LookUp] on ProjectAdvisor.AdvisorRole = [LookUp].Id where ProjectId = " + Id + " and AdvisorId = " + cmbAdvIdList.Text + "";
+                    cmd = new SqlCommand(Que1, sqlConn);
+                    string role = cmd.ExecuteScalar().ToString();
+
                     Okay = false;
-                    lblErrAdvRole.Text = "This project has already been assigned Advisor with Id " + cmbAdvIdList.Text + ". \n Change Advisor Id.";
+                    lblErrAdvRole.Text = "This project has already been assigned Advisor with Id " + cmbAdvIdList.Text + " as "+role+". \n Change Advisor Id.";
                     lblErrAdvRole.Show();
 
                 }
@@ -786,14 +776,8 @@ namespace ProjectA
                 sqlConn.Open();
                 string Que = "Select Id from [Lookup] where Category = 'DESIGNATION' and Value = '" + cmbDes.Text + "'";
                 SqlCommand cmd = new SqlCommand(Que, sqlConn);
-                SqlDataReader reader = cmd.ExecuteReader();
                 int Id = 0;
-                while (reader.Read())
-                {
-                    Id = reader.GetInt32(0);
-                }
-                reader.Close();
-                reader.Dispose();
+                Id = Convert.ToInt32(cmd.ExecuteScalar());
                 string Que1 = "INSERT INTO advisor(Id, Designation, Salary) values (" + txtId.Text + ", " + Id + " ," + txtSalary.Text + ")";
                 cmd = new SqlCommand(Que1, sqlConn);
                 cmd.ExecuteNonQuery();
@@ -839,17 +823,31 @@ namespace ProjectA
                 Okay = false;
 
             }
+            SqlConnection sqlConn = new SqlConnection(conn);
+            sqlConn.Open();
+
             if (Okay)
             {
-                SqlConnection sqlConn = new SqlConnection(conn);
-                sqlConn.Open();
+                string q = "SELECT 1 from Project where Title = '" + txtTitleProj.Text + "'";
+                int exist = 0;
+                SqlCommand cmd = new SqlCommand(q, sqlConn);
+                exist = Convert.ToInt32(cmd.ExecuteScalar());
+                if (exist != 0)
+                {
+                    lblErrTitle.Text = "Project with title "+txtTitleProj.Text+" already exists.";
+                    lblErrTitle.Show();
+
+                    Okay = false;
+                }
+            }
+            if (Okay)
+            {
                 string Que1 = "INSERT INTO Project(Title, Description) values ('" + txtTitleProj.Text + "', '" + RTBDescr.Text + "')";
                 SqlCommand cmd = new SqlCommand(Que1, sqlConn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Project saved successfully.");
                 txtTitleProj.Text = "";
                 RTBDescr.Text = "";
-            
             }
 
         }
@@ -888,7 +886,6 @@ namespace ProjectA
                 currencyManager1.SuspendBinding();
                 DGVAd.Rows[e.RowIndex].Visible = false;
                 currencyManager1.ResumeBinding();
-
                 Main m = new Main();
                 m.ChangeTab(1);
                 m.Show();
@@ -897,36 +894,14 @@ namespace ProjectA
             if (e.ColumnIndex == 0)
             {
                 sqlConn.Open();
-                string smd = "SELECT * FROM ADVISOR where Id = " + DGVAd[2, e.RowIndex].Value + "";
+                string smd = "SELECT [LookUp].Value, Advisor.Salary FROM ADVISOR join [LookUp] on [LookUp].Id = Advisor.Designation where Advisor.Id = " + DGVAd[2, e.RowIndex].Value + "";
                 SqlCommand cmd = new SqlCommand(smd, sqlConn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
-                {
-                    if (reader.GetInt32(1) == 6)
+                {       cmbDesCH.Text = reader.GetString(0);
+                    if (!reader.IsDBNull(1))
                     {
-                        cmbDesCH.Text = "Professor";
-                    }
-                    else if (reader.GetInt32(1) == 7)
-                    {
-                        cmbDesCH.Text = "Associate Professor";
-                    }
-                    else if (reader.GetInt32(1) == 9)
-                    {
-                        cmbDesCH.Text = "Lecturer";
-                    }
-                    else if (reader.GetInt32(1) == 10)
-                    {
-                        cmbDesCH.Text = "Industry Professional";
-                    }
-
-                    else
-                    {
-                        cmbDesCH.Text = "Assisstant Professor";
-
-                    }
-                    if (!reader.IsDBNull(2))
-                    {
-                        txtSalaryCH.Text = reader.GetDecimal(2).ToString();
+                        txtSalaryCH.Text = reader.GetDecimal(1).ToString();
                     }
 
                 }
@@ -934,6 +909,7 @@ namespace ProjectA
                 reader.Close();
                 EditAdv = Convert.ToInt32(DGVAd[2, e.RowIndex].Value);
                 lblEditAdvId.Text = EditAdv.ToString();
+                lblAdvIdch2.Text = lblEditAdvId.Text;
                 TControl.TabPages.Insert(2, TPEditAdv);
                 this.ChangeTab(2);
                 TControl.TabPages.Remove(TPAdvisors);
@@ -1049,11 +1025,27 @@ namespace ProjectA
                 Okay = false;
 
             }
+            SqlConnection sqlConn = new SqlConnection(conn);
+            sqlConn.Open();
+
             if (Okay)
             {
-                SqlConnection sqlConn = new SqlConnection(conn);
-                sqlConn.Open();
-                string Que = "UPDATE Project SET Title = '" + txtTitleCh.Text + "', Description = '" + RTBDescCh.Text + "' where Id = " + lblEditProjId.Text + "";
+                string q = "SELECT 1 from Project where Title = '" + txtTitleCh.Text + "' and Id != " +lblEditProjId.Text +"";
+                int exist = 0;
+                SqlCommand cmd = new SqlCommand(q, sqlConn);
+                exist = Convert.ToInt32(cmd.ExecuteScalar());
+                if (exist != 0)
+                {
+                    lblErrTitleEdit.Text = "Project with title " + txtTitleCh.Text + " already exists.";
+                    lblErrTitleEdit.Show();
+
+                    Okay = false;
+                }
+            }
+
+            if (Okay)
+            {
+            string Que = "UPDATE Project SET Title = '" + txtTitleCh.Text + "', Description = '" + RTBDescCh.Text + "' where Id = " + lblEditProjId.Text + "";
                 SqlCommand cmd = new SqlCommand(Que, sqlConn);
                 cmd.ExecuteNonQuery();
                 Main m = new Main();
@@ -1338,7 +1330,7 @@ namespace ProjectA
                 if (exist != 0)
                 {
                     Okay = false;
-                    lblAdvErrRole.Text = "This project has already been assigned a " + cmbAdvRoleCh.Text+ ". \n Change the role or edit from list.";
+                    lblAdvErrRole.Text = "This project has already been assigned a " + cmbAdvRoleCh.Text+ ".";
                     lblAdvErrRole.Show();
                 }
                 Que1 = "SELECT 1 from ProjectAdvisor where ProjectId = " + Id + " and AdvisorId = " + txtAdvIdCh.Text + "";
@@ -1346,8 +1338,12 @@ namespace ProjectA
                 int pre = Convert.ToInt32(cmd.ExecuteScalar());
                 if (pre != 0)
                 {
+                       Que1 = "SELECT [LookUp].Value from ProjectAdvisor join [LookUp] on ProjectAdvisor.AdvisorRole = [LookUp].Id where ProjectId = " + Id + " and AdvisorId = " + txtAdvIdCh.Text + "";
+                cmd = new SqlCommand(Que1, sqlConn);
+                    string role = cmd.ExecuteScalar().ToString();
+            
                     Okay = false;
-                    lblAdvErrRole.Text = "This project has already been assigned Advisor with Id " + txtAdvIdCh.Text + ". \n Change Advisor Id.";
+                    lblAdvErrRole.Text = "This project has already been assigned Advisor with Id " + txtAdvIdCh.Text + " as "+role+". \n Change Advisor Id.";
                     lblAdvErrRole.Show();
 
                 }
@@ -1499,7 +1495,7 @@ namespace ProjectA
                  lblIdGroup.Text = DGVGroupsList[3, e.RowIndex].Value.ToString();
                 lblGroupIdMem.Text = DGVGroupsList[3, e.RowIndex].Value.ToString();
                 lblGrpAssignId.Text = DGVGroupsList[3, e.RowIndex].Value.ToString();
-                string que = "SELECT RegistrationNo, Status, [LookUp].Value FROM GroupStudent join Student on GroupStudent.StudentId = Student.Id join [LookUp] on [LookUp].Id = GroupStudent.Status where GroupStudent.GroupId = " + DGVGroupsList[3, e.RowIndex].Value + " ";
+                string que = "SELECT RegistrationNo, [LookUp].Value as Status FROM GroupStudent join Student on GroupStudent.StudentId = Student.Id join [LookUp] on [LookUp].Id = GroupStudent.Status where GroupStudent.GroupId = " + DGVGroupsList[3, e.RowIndex].Value + " ";
                 SqlCommand cmd = new SqlCommand(que, sqlConn);
      
                 DataTable dt = new DataTable();
@@ -1757,7 +1753,7 @@ namespace ProjectA
         {
             TControl.TabPages.Remove(TPEditGroupMem);
             SqlConnection sqlConn = new SqlConnection(conn);
-            sqlConn.Open(); string que = "SELECT RegistrationNo, Status, [LookUp].Value FROM GroupStudent join Student on GroupStudent.StudentId = Student.Id join [LookUp] on [LookUp].Id = GroupStudent.Status where GroupStudent.GroupId = " + lblGroupIdMem.Text + " ";
+            sqlConn.Open(); string que = "SELECT RegistrationNo, [LookUp].Value as Status FROM GroupStudent join Student on GroupStudent.StudentId = Student.Id join [LookUp] on [LookUp].Id = GroupStudent.Status where GroupStudent.GroupId = " + lblGroupIdMem.Text + " ";
             SqlCommand cmd = new SqlCommand(que, sqlConn);
 
             DataTable dt = new DataTable();
@@ -1797,7 +1793,7 @@ namespace ProjectA
             TControl.TabPages.Remove(TPEditGroupMem);
             string que = "SELECT RegistrationNo, Status FROM GroupStudent join Student on GroupStudent.StudentId = Student.Id where GroupStudent.GroupId = " + lblGroupIdMem.Text + "";
             cmd = new SqlCommand(que, sqlConn);
-            que = "SELECT RegistrationNo, Status, [LookUp].Value FROM GroupStudent join Student on GroupStudent.StudentId = Student.Id join [LookUp] on [LookUp].Id = GroupStudent.Status where GroupStudent.GroupId = " + lblGroupIdMem.Text + " ";
+            que = "SELECT RegistrationNo, [LookUp].Value as Status FROM GroupStudent join Student on GroupStudent.StudentId = Student.Id join [LookUp] on [LookUp].Id = GroupStudent.Status where GroupStudent.GroupId = " + lblGroupIdMem.Text + " ";
            cmd = new SqlCommand(que, sqlConn);
 
             DataTable dt = new DataTable();
@@ -2089,6 +2085,11 @@ namespace ProjectA
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TPEditProj_Click(object sender, EventArgs e)
         {
 
         }
